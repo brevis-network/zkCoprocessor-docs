@@ -1,0 +1,2301 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title></title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-cc69e1fb.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-56612340.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-d6dbe3fc.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-d0a39c87.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p>Brevis is a highly efficient ZK coprocessor that empowers smart contracts to read from the full historical on-chain data from all supported blockchains and run customizable computations in a completely trust-free way. With the power of trust-free historical data, Brevis enables exciting new use cases like data-driven DeFi, user retention and engagement features, trust-free active liquidity management, omnichain activity-based identity, and many more. Read <a href="https://blog.brevis.network/2023/11/01/uniswap-v4-hook-brevis-zk-coprocessor-data-driven-dex-experiences/">this blog for examples. </a></p>
+<p>Integrating your dApp with Brevis only takes three simple steps:</p>
+<ol>
+<li><strong>Data Access</strong>: Smart contracts, through Brevis’s APIs, can trustlessly access the full historical on-chain data, such as states, transactions, and events, from Ethereum and other chains.</li>
+<li><strong>Computation</strong>: Developers then can build and deploy their customized business logic as application circuits without any prior knowledge of ZK using Brevis’s SDK. Brevis runs the computation and generates a ZK proof off-chain for the results. </li>
+<li><strong>Using the Results:</strong> The computation results, along with the ZK proof, are submitted back on-chain for application smart contracts to seamlessly verify and consume.</li>
+</ol>
+<p>Check out this short intro video to get an idea of what Brevis does:</p>
+<p><a href="https://www.youtube.com/embed/TMwaMF1JziE?si=ZVeBvCAZwRiBFJ3a"><img src="https://img.youtube.com/vi/TMwaMF1JziE/maxresdefault.jpg" alt="YouTube Video"></a></p>
+<p><a href="https://www.youtube.com/embed/TMwaMF1JziE?si=ZVeBvCAZwRiBFJ3a">Watch on YouTube</a></p>
+<p>You can also check out a concrete example of Uniswap v4 trading fee discount hook built with Brevis SDK. </p>
+<p><a href="https://www.youtube.com/watch?v=1cjC8D_-jso"><img src="https://img.youtube.com/vi/1cjC8D_-jso/maxresdefault.jpg" alt="YouTube Video"></a></p>
+<p><a href="https://www.youtube.com/watch?v=1cjC8D_-jso">Watch on YouTube</a></p>
+<p>In the following sections, we break down these steps with an end-to-end workflow.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="brevis-cochain"><a class="header" href="#brevis-cochain">Brevis coChain</a></h1>
+<p>Brevis can operate both in the “pure-ZK” and “OP” (aka coChain) models. </p>
+<p>In the “pure-ZK” model, ZK proofs for data access and computation results are required to be generated upfront and submitted to the smart contract applications for ZK verification and app-specific processing. While the pure-ZK model provides simplicity and a trustless framework to work from, it is not without its own set of drawbacks:</p>
+<ul>
+<li><strong>High Proof Generation Costs and Limited Scalability</strong>: While Brevis delivers world-leading performance in ZK Coprocessing and is confident in the innovations of ZK performance optimization, we must acknowledge the fundamental computational overhead introduced by ZK at this current stage. The costs of ZK proof generation and the resulting delays still present challenges. These costs ultimately contribute to a suboptimal user experience and act as barriers to the widespread adoption of data-driven dApps.</li>
+<li><strong>Inability to Generate Proofs for Some Key Use Cases:</strong> Within the pure-ZK model, it is extremely challenging to generate proofs of non-existence. For example, proving that a user did not engage in a transaction with a specific protocol using ZK is very difficult. It would require a comprehensive ZK proof encompassing every transaction across all historical blocks—a feat that is practically infeasible. However, non-existence proofs can be utilized in important use cases such as new user acquisition, identity, account abstraction, and compliance. </li>
+</ul>
+<p>These limitations, if left unaddressed, render ZK Coprocessors impractical for numerous high-value applications, especially those involving substantially large amounts of data and users, where maintaining a minimal cost per user is crucial.</p>
+<p>This is why we are introducing Brevis coChain (OP Model).</p>
+<p><img src=".gitbook/assets/image (17).png" alt=""><figcaption></figcaption></p>
+<p>Brevis coChain is a Proof-of-Stake (PoS) blockchain featuring on-Ethereum staking and slashing functionalities. It accepts coprocessing requests from smart contracts and “<strong>optimistically”</strong> generates coprocessing results through PoS consensus. These PoS-generated results are submitted to blockchains as “proposals” that are subject to be “challenged” via Zero-Knowledge (ZK) proofs. Successful ZK-proof challenges will trigger the slashing of the corresponding validators’ stakes directly on Ethereum. If no challenge is initiated, the results can be used by dApps directly without incurring ZK proof generation costs. Additionally, Brevis coChain is set to integrate with EigenLayer, empowering developers to dynamically adjust the level of crypto-economics security used in the proposal stage. This fusion of crypto-economics and ZK proofs not only ensures the secure and trustless nature of Brevis but also provides developers with a versatile tradeoff space to explore so they can design according to their specific use case.</p>
+<p>Also as an important note, developers will be able to seamlessly integrate with Brevis coChain with no extra effort required. By leveraging the Brevis SDK, you only need to write the application’s business logic once. Then, you have the flexibility to deploy your applications in either the “pure-ZK” model or the coChain model.\</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="brevis-app-workflow"><a class="header" href="#brevis-app-workflow">Brevis App Workflow</a></h1>
+<p>To build a Brevis-powered dApp, developers need to implement the following three things using Brevis’s SDK:</p>
+<ol>
+<li>The <strong>Data Access Module</strong> to specify the historical blockchain data needed by the App Contract. </li>
+<li>The <strong>App Circuit</strong> to specify the computation logic to run on the specified historical on-chain data.</li>
+<li>The <strong>App Contract</strong> to receive and process the ZK-verified or coChain-verified computation results.</li>
+</ol>
+<p>These three implemented modules are highlighted in Blue in the following workflow diagram: </p>
+<p><img src=".gitbook/assets/image (25).png" alt=""><figcaption></figcaption></p>
+<p>The diagram illustrates how these modules interact with Brevis. In this section we’ll only give a high-level walkthrough of the application flow with a more detailed explanation provided in the following sections. </p>
+<p>The entry point of a Brevis-powered dApp is the App Service component, which receives input from users or operators. For example, an App Service of a DEX calculating the trading volume of a batch of traders during a certain period of time will accept a list of wallet addresses and an interested time interval as input parameters.</p>
+<p>Then, the App Service is expected to obtain all the data that is needed, according to the application’s business logic, through <em>an off-chain blockchain data indexing solution</em> such as Dune Analytics<em>.</em> Continuing with the DEX example, the Data Access Module in App Service will obtain all trade transactions of specified traders during the specified time period.</p>
+<p>Note that Brevis is not an off-chain data indexing and query platform. Instead, Brevis’s purpose is to generate ZK proofs to convince the application smart contracts that 1) the raw data obtained from off-chain indexing solutions do exist in the history of the blockchain and 2) the corresponding computation results on top of this data is correct. </p>
+<p>With the raw blockchain data available, a ZK proof can be generated to show that both the computation of the application’s business logic and the on-chain data dependency are valid and correct. The App Circuit’s proof generation process can be hosted as part of the App Service as shown in the diagram. The historical on-chain data validity proof generation is hosted by Brevis Service. In this deployment model, the computation proof that is generated by the App Circuit will be sent to Brevis Service along with the raw blockchain data that this computation is dependent on. Brevis Service will then combine these two proofs into a single one that simultaneously asserts both the validity of the data and the computation results. In the context of the DEX example, the final proof can be used to convince a verifier that a certain user did make (say) 350 trades on the DEX and the total trading volume by adding all trades up is (say) $3M. Note that the proof generation of both the App Circuit and Brevis Service can be migrated to a decentralized prover network and <a href="https://blog.brevis.network/2024/01/18/introducing-brevis-cochain-the-fusion-of-crypto-economics-and-zk-proof-in-a-zk-coprocessor/">Brevis coChain</a> also. </p>
+<p>Finally, the computation results and the corresponding ZK proof will be verified on-chain in Brevis Contracts. Once the verification is successful, Brevis Contracts will call the callback function on the App Contract, which will handle the results by matching it with the original request. This will complete the entire asynchronous coprocessor computation flow. </p>
+<p>Next, we discuss each of the steps in more detail. </p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="data-access-module"><a class="header" href="#data-access-module">Data Access Module</a></h1>
+<p>First, let’s walk through the workflow for adding historical receipt/tx/storage data to your app via the <a href="https://github.com/brevis-network/brevis-sdk-typescript">Brevis TypeScript SDK</a> which offers a convenient way for NodeJS to interact with the <a href="#prover-service">prover service</a> and Brevis’ system.</p>
+<p><img src=".gitbook/assets/image (30).png" alt="" width="563"><figcaption>
+<p>High-level system diagram</p>
+</figcaption></p>
+<h3 id="install-the-dependency"><a class="header" href="#install-the-dependency">Install the Dependency</a></h3>
+<pre><code class="language-bash">npm install brevis-sdk-typescript
+</code></pre>
+<h3 id="adding-source-data"><a class="header" href="#adding-source-data">Adding Source Data</a></h3>
+<h4 id="initialize-a-proof-request-to-your-prover-service"><a class="header" href="#initialize-a-proof-request-to-your-prover-service">Initialize a Proof Request to Your Prover Service</a></h4>
+<pre><code class="language-typescript">import { ProofRequest, Prover } from 'brevis-sdk-typescript';
+// Assuming you started your prover service on port 33247, this is how you 
+// initialize a client in your NodeJS program to interact with it.
+const prover = new Prover('localhost:33247');
+
+const proofReq = new ProofRequest();
+</code></pre>
+<h4 id="add-the-data-to-the-proof-request"><a class="header" href="#add-the-data-to-the-proof-request">Add the Data to the Proof Request</a></h4>
+<p>Depending on your project, you may want to first query an indexer, such as Dune, an Ethereum node, or your own service, to acquire the raw data (such as transactions) according to your business logic. This part is <strong>not</strong> handled by the Brevis SDK.</p>
+<blockquote>
+<p><strong>Note:</strong>
+<strong>So why can’t we just use the indexer data directly on chain?</strong></p>
+</blockquote>
+<p>If you directly post the data from an indexer to your contract without any validity proofs, your users would be trusting the entity who posted this data to behave correctly. Brevis’s core role is to replace this trust of data validity on one party with a ZK proof so no one can fabricate data and computation results. </p>
+<p>After you acquire the raw data, you add the data to the <code>proofReq</code>. The data you add here is closely tied to how you <a href="#allocate">allocate</a> data slots for your circuit and is available in <code>CircuitInput</code> passed in to your <code>Define</code> function. <a href="#application-circuit">how to write an application circuit</a></p>
+<pre><code class="language-typescript">proofReq.addReceipt(
+    new ReceiptData({
+        tx_hash: '0x53b37ec7975d217295f4bdadf8043b261fc49dccc16da9b9fc8b9530845a5794',
+        fields: [
+            new Field({
+                log_index: 3,
+                is_topic: false,
+                field_index: 0,
+            }),
+            new Field({
+                log_index: 3,
+                is_topic: true,
+                field_index: 2,    
+            }),
+            new Field({
+                log_index: 2,
+                is_topic: true,
+                field_index: 1
+            }),
+        ],
+    }),
+);
+proofReq.addStorage(
+    new StorageData({
+        block_num: 18233760,
+        address: '0x5427FEFA711Eff984124bFBB1AB6fbf5E3DA1820',
+        slot: '0x0000000000000000000000000000000000000000000000000000000000000000',
+    }),
+);
+proofReq.addTransaction(
+    new TransactionData({
+        hash: '0x6dc75e61220cc775aafa17796c20e49ac08030020fce710e3e546aa4e003454c',
+    }),
+);
+</code></pre>
+<h4 id="add-custom-inputs"><a class="header" href="#add-custom-inputs">Add Custom Inputs</a></h4>
+<p>If you define <a href="#custom-inputs">custom inputs</a> for your circuit, you need to fully assign them here in <code>ProofRequest</code>.</p>
+<pre><code class="language-go">// circuit custom input definition
+type AppCircuit struct{
+    // example custom field `MerkleProof`
+    MerkleProof [8]sdk.Bytes32
+}
+</code></pre>
+<pre><code class="language-typescript">// assigning custom input in typescript
+proofReq.setCustomInput({
+    // key names match what we defined in AppCircuit
+    MerkleProof: [
+        // type of the field should also match what we define in AppCircuit
+        asBytes32('0x1111111111111111111111111111111111111111111111111111111111111111'),
+        asBytes32('0x2222222222222222222222222222222222222222222222222222222222222222'),
+        // ...
+    ],
+});
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong>
+The keys of the custom input object you add in typescript matches what you define in your app circuit. The first letter can also be lower cased, e.g. <code>merkleProof</code> in the above example</p>
+</blockquote>
+<h4 id="custom-input-types"><a class="header" href="#custom-input-types">Custom Input Types</a></h4>
+<p>The types of the custom input you assign in <code>ProofRequest</code> must match what you define in your app circuit. All <a href="#primitive-types">primitive circuit data types</a> are allowed here through the following functions.</p>
+<p>For example, if your AppCircuit is defined as </p>
+<pre><code class="language-go">type AppCircuit struct {
+    MyUint32Input sdk.Uint32
+    MyUint248Input1 sdk.Uint248
+    MyUint248Input2 sdk.Uint248
+    MyUint521Input1 sdk.Uint521
+    MyUint521Input2 sdk.Uint521
+    MyInt248Input sdk.Int248
+    MyBytes32Input sdk.bytes32
+}
+</code></pre>
+<p>In your Typescript program you would need to assign the custom input as</p>
+<pre><code class="language-typescript">proofReq.setCustomInput({
+    MyUint32Input1: asUint32('1'),
+    MyUint248Input1: asUint248('123'),
+    // 0x prefixed hex input is also allowed
+    MyUint248Input2: asUint248('0xabcdef'),
+    MyUint521Input1: asUint521('123'),
+    // 0x prefixed hex input is also allowed
+    MyUint521Input2: asUint521('0xabcdef'),
+    MyInt248Input: asInt248('-123'),
+    MyBytes32Input: asBytes32('0x3333333333333333333333333333333333333333333333333333333333333333'),
+});
+</code></pre>
+<p>The data you add here will be available for use in your<a href="#application-circuit"> Application Circuit.</a></p>
+<p>Read more about <a href="#source-data-types">Source Data Types</a>.</p>
+<blockquote>
+<p><strong>Note:</strong>
+For advanced developers, there is also a way to access the receipt/tx/storage data via the <a href="https://github.com/brevis-network/brevis-sdk">Go SDK</a>. See <a href="#go-workflow">Go Workflow</a> for details.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="application-circuit"><a class="header" href="#application-circuit">Application Circuit</a></h1>
+<p>The application circuit is a Go program and is the core part of your Brevis app. It is where you process the data you obtained in the data access step with your intended business logic. Even though you are indeed writing a ZK circuit, you don’t actually need to know anything about ZK. This is because Brevis’s SDK has abstracted away many low-level circuit framework details and only exposes easy-to-use APIs. When certain low-level details have to be exposed, we will explain what needs to be done clearly. </p>
+<h3 id="dependencies"><a class="header" href="#dependencies">Dependencies</a></h3>
+<pre><code class="language-sh">go get github.com/brevis-network/brevis-sdk
+</code></pre>
+<h3 id="how-to-build-a-circuit"><a class="header" href="#how-to-build-a-circuit">How to Build a Circuit</a></h3>
+<p>To implement an application circuit, you need to:</p>
+<ol>
+<li>Define a struct that houses your custom inputs (custom inputs are optional). This is where you specify things like user wallet addresses, trading pairs, time periods or other “variables” that are going to be different across each query to your App Service.</li>
+<li>Implement the <code>AppCircuit</code> interface that has two methods <code>Allocate</code> and <code>Define</code> .</li>
+<li>Build your computation logic in <code>Define</code> with the help of <code>sdk.CircuitAPI</code>and <code>sdk.DataStream</code></li>
+<li>Output the computation result using various output methods from <code>sdk.CircuitAPI</code></li>
+</ol>
+<p>The circuit must implement the sdk.AppCircuit Interface:</p>
+<pre><code class="language-go">type AppCircuit interface {
+	Define(api *CircuitAPI, input DataInput) error
+	Allocate() (maxReceipts, maxSlots, maxTransactions int)
+}
+</code></pre>
+<ul>
+<li><code>Define</code> is where you write your circuit logic. </li>
+<li><code>Allocate</code> defines the <strong>maximal</strong> number of receipts/storage slots/transactions your application is going to use. Note that the higher the upper bounds are, the slower the application circuit is going to run for the same number of actual inputs. Read <a href="#allocate">more on Allocate</a> to understand the best practices for writing your app circuit.</li>
+</ul>
+<p>Here is a demonstration of a custom app circuit in action:</p>
+<pre><code class="language-go">package app
+
+import "github.com/brevis-network/brevis-sdk/sdk"
+
+// Must be a struct
+type AppCircuit struct{
+    // Custom inputs. These fields must be exported (first letter capitalized)
+    // These are the inputs that can be different for each proof you generate
+    // using the same circuit
+    MyInputVar     sdk.Uint248
+    MyInputBytes32 sdk.Bytes32
+}
+
+// The struct AppCircuit must implement the sdk.AppCircuit interface
+var _ sdk.AppCircuit = &amp;AppCircuit{} 
+
+func (c *AppCircuit) Allocate() (maxReceipts, maxStorage, maxTransactions int) {
+    // When we return 32, 64, 0, it means that we are allowing our circuit to process 
+    // a maximum of 32 receipts, 64 storages, and 0 transactions
+    return 32, 64, 0
+}
+
+var ConstEventID = ParseEventID(/* 0x123456... */)
+
+func (c *AppCircuit) Define(api *sdk.CircuitAPI, input sdk.DataInput) error {
+    // You can access the data you added through app.AddReceipt etc.
+    receipts := sdk.NewDataStream(api, input.Receipts)
+    
+    // Checking some the receipts properties against some constants
+    // In this example, by checking these, you are proving to your 
+    // contract that you have checked that all events have a certain
+    // event ID
+    sdk.AssertEach(receipts, func(receipt sdk.Receipt) Variable {
+        return api.Equal(receipt.Fields[0].EventID, ConstEventID)
+    })
+
+    // You can then perform various data stream operations on the data. 
+    // You can find the usage of specific API later.
+    blockNums := sdk.Map(receipts, func(r sdk.Receipt) sdk.Uint248 {
+        return api.ToUint248(r.BlockNum)
+    })
+    minBlockNum := sdk.Min(blockNums)
+    
+    values := sdk.Map(receipts, func(r sdk.Receipt) sdk.Uint248 {
+        return api.ToUint248(r.Value)
+    })
+    sum := sdk.Sum(values)
+    
+    // sdk.Reduce(...)
+    // sdk.GroupBy(...)
+    // and more ...
+    
+    // You can output any number of computation results using sdk.OutputXXX APIs 
+    // These results will be available for use in your contract when the proof 
+    // is verified on-chain 
+    api.OutputUint(64, minBlockNum)
+    api.OutputUint(248, sum)
+    // more output...
+    
+    return nil
+}
+</code></pre>
+<h2 id="circuit-api"><a class="header" href="#circuit-api">Circuit API</a></h2>
+<p><code>sdk.CircuitAPI</code> is supplied to your circuit as a parameter of your <code>Define</code> function. It houses many  building blocks for circuit constructions. All control flows, logic operations, and math must go through circuit APIs.</p>
+<ul>
+<li>Global Checks: <code>AssertInputsAreUnique</code></li>
+<li>Hashing: <code>StorageKey</code>, <code>StorageKeyOfArrayElement</code>, <code>StorageKeyOfStructFieldInMapping</code></li>
+<li>Output: <code>OutputUint</code>, <code>OutputBytes32</code>, <code>OutputBool</code>, <code>OutputAddress</code></li>
+<li>Casting: <code>ToBytes32</code>, <code>ToUint521</code>, <code>ToUint248</code>, <code>ToInt248</code></li>
+</ul>
+<h3 id="type-specific-circuit-apis"><a class="header" href="#type-specific-circuit-apis">Type-Specific Circuit APIs</a></h3>
+<p>The sdk.CircuitAPI struct has several submodules for type specific operations: Uint32, Uint248, Uint521, Int248, Bytes32.</p>
+<p>Not every type’s API has the same set of operations. In general you will be looking to use the sdk.Uint248 type most of the time. The following is a list of operations supported for Uint248:</p>
+<ul>
+<li>Arithmetics:  <code>Add</code>, <code>Sub</code>, <code>Mul</code>, <code>Div</code>, <code>Sqrt</code></li>
+<li>Logic: <code>Select</code>, <code>And</code>, <code>Or</code>, <code>Not</code></li>
+<li>Comparison: <code>IsZero</code>, <code>IsEqual</code>, <code>IsLessThan</code>, IsGreaterThan</li>
+<li>Binary: <code>ToBinary</code>, <code>FromBinary</code></li>
+<li>Assertions: <code>AssertIsEqual</code>, <code>AssertIsDifferent</code>, <code>AssertIsLessThanOrEqual</code></li>
+</ul>
+<p>An exhaustive list of circuit functions can be found under Circuit SDK Reference &gt; <a href="#circuit-api-1">Circuit API</a>.</p>
+<h2 id="data-stream-api"><a class="header" href="#data-stream-api">Data Stream API</a></h2>
+<p>The data stream API allows you to perform data analysis computations over receipts/storages/transactions in a MapReduce style. To create a <code>DataStream</code>, simply wrap it around the data:</p>
+<pre><code class="language-go">txs := sdk.NewDataStream(api, input.Transactions)
+
+mapped := sdk.Map(txs, func(tx sdk.Transaction) sdk.Uint248 { /* ... */ })
+
+reduced := sdk.Reduce(
+    mapped, // data to reduce on
+    ConstUint248(0), // reducer base case
+    func(acc sdk.Uint248, current sdk.Uint248) (newAcc sdk.Uint248) { /* reducer */ },
+)
+</code></pre>
+<p>You can find a detailed listing of the data stream functions in <a href="#datastream-api">Data Stream API doc</a>.</p>
+<h2 id="circuit-inputs"><a class="header" href="#circuit-inputs">Circuit Inputs</a></h2>
+<p>The <code>input CircuitInput</code> parameter passed into your <code>Define</code> function is built from the <a href="#querying-the-data">data preparation</a> step. It contains the <code>Receipts</code>, <code>StorageSlots</code>, and <code>Transactions</code> that your circuit wants to process. Read <a href="#sdk.receipt-sdk.storageslot-sdk.transaction">more on these types</a>.</p>
+<h2 id="circuit-outputs"><a class="header" href="#circuit-outputs">Circuit Outputs</a></h2>
+<p>You can output your computation results and use them in your contract through the <a href="#output">output functions</a>. The values you output will be exposed to your app contract.</p>
+<pre><code class="language-go">api.OutputUint(64, someVariable)
+api.OutputAddress(someAddress)
+// and more ...
+</code></pre>
+<h2 id="circuit-testing"><a class="header" href="#circuit-testing">Circuit Testing</a></h2>
+<p>The <code>brevis-sdk/test</code> package contains some testing utilities.</p>
+<p>During development: use <code>test.IsSolved</code> to help in debugging circuit logic.</p>
+<p>Before deployment: use <code>test.ProverSucceeded</code> and <code>test.ProverFailed</code> to check that your proofs are complete and sound. </p>
+<p>Read more about these utilities in <a href="#circuit-testing-1">Circuit Testing</a>. </p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="compiling--proving"><a class="header" href="#compiling--proving">Compiling &amp; Proving</a></h1>
+<blockquote>
+<p><strong>Note:</strong>
+This section applies if your Brevis app uses the <a href="#brevis-cochain">“pure-ZK” model</a>. If you want to deploy your Brevis app under the <a href="#cochain-mode">coChain model</a>, you may skip this section.</p>
+</blockquote>
+<p>We recommend to host your circuit as a separate process as it can take up much more computing resource than typical web servers. </p>
+<h2 id="spin-up-a-prover-for-your-appcircuit"><a class="header" href="#spin-up-a-prover-for-your-appcircuit">Spin Up a Prover for Your AppCircuit</a></h2>
+<p>The fastest way to spin up a prover is to use the prover service module in the Go SDK. <code>prover.NewService</code> automatically compiles your circuit and sets up proving/verifying keys if your circuit changes or if it’s your first time compiling. Read more about <a href="#prover-service">Prover Service</a>.</p>
+<pre><code class="language-go">proverService, err := prover.NewService(&amp;AppCircuit{}, config)
+// listen to port 33247
+proverService.Serve(33247)
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong>
+You can also opt for <a href="#go-workflow">manually compile &amp; prove with Go</a></p>
+</blockquote>
+<h2 id="calling-the-prover-from-nodejs"><a class="header" href="#calling-the-prover-from-nodejs">Calling the Prover From Node.js</a></h2>
+<p><img src=".gitbook/assets/image (30).png" alt="" width="563"><figcaption>
+<p>High-level system diagram</p>
+</figcaption></p>
+<h3 id="sending-the-proof-request-to-your-prover"><a class="header" href="#sending-the-proof-request-to-your-prover">Sending the Proof Request to Your Prover</a></h3>
+<pre><code class="language-typescript">const proofRes = await prover.prove(proofReq);
+</code></pre>
+<h4 id="error-handling"><a class="header" href="#error-handling">Error handling</a></h4>
+<pre><code class="language-typescript">if (proofRes.has_err) {
+    const err = proofRes.err;
+    switch (err.code) {
+    case ErrCode.ERROR_INVALID_INPUT:
+        console.error('invalid receipt/storage/transaction input:', err.msg);
+        // handle invalid data input...
+        // this error means some of your input
+        // data (receipt/storage/transaction) is not found or not supported
+        // e.g. you added a transaction of type other than 0 or 2
+        break;
+
+    case ErrCode.ERROR_INVALID_CUSTOM_INPUT:
+        console.error('invalid custom input:', err.msg);
+        // handle invalid custom input assignment...
+        break;
+
+    case ErrCode.ERROR_FAILED_TO_PROVE:
+        console.error('failed to prove:', err.msg);
+        // handle failed to prove. usually marking some record as failed
+        break;
+    }
+}
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong>
+If you receive ERROR_INVALID_INPUT, check your data against <a href="#limits-and-performance">Limits and Performance</a> to see if any data exceeds the limits.</p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong></p>
+</blockquote>
+<h4 id="tip"><a class="header" href="#tip">Tip</a></h4>
+<p>If you want to reuse the proofs you can do serialize and deserialize <code>ProveResponse</code> by:</p>
+<pre><code class="language-typescript">import { ProveResponse } from 'brevis-sdk-typescript';
+const serialized = proofRes.serialize();
+const restored = ProveResponse.deserialize(serialized)
+</code></pre>
+<h3 id="sending-your-proof-to-brevis"><a class="header" href="#sending-your-proof-to-brevis">Sending Your Proof to Brevis</a></h3>
+<pre><code class="language-typescript">import { Brevis } from 'brevis-sdk-typescript';
+
+// A client for interacting with Brevis' systems
+const brevis = new Brevis('appsdkv3.brevis.network:443');
+// submit() takes 
+// the proof request
+// proof response
+// source chain ID where the data you want to use in your computation is from
+// destination chain ID where your want to post the proof to
+const brevisRes = await brevis.submit(proofReq, proofRes, 1, 11155111);
+
+const id = brevisRes.id;
+const fee = brevisRes.fee;
+console.log(id, fee)
+</code></pre>
+<h3 id="pay-for-your-request-on-the-data-source-chain"><a class="header" href="#pay-for-your-request-on-the-data-source-chain">Pay for Your Request on the Data Source Chain</a></h3>
+<p>Call <code>BrevisRequest.sendRequest()</code> with the id acquired from <code>brevisRes</code> and the fee (in native token). <a href="#contract-addresses">contract addresses</a></p>
+<p><em>Note that this step is not needed if your application is partnered with a Brevis prover that serves off-chain requests.</em></p>
+<h3 id="wait-for-your-app-contract-to-be-called"><a class="header" href="#wait-for-your-app-contract-to-be-called">Wait for Your App Contract to be Called</a></h3>
+<p>Since Brevis calls your app contract’s <a href="#handling-circuit-outputs-in-contract">callback function</a> when the final proof is submitted, you can listen to your app contract’s event. Or, you could use the built-in function to wait for the final transaction submission.</p>
+<pre><code class="language-typescript">// wait() takes the request id and a destination chain id
+brevis.wait(brevisRes.id, 11155111);
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="contract-integration"><a class="header" href="#contract-integration">Contract Integration</a></h1>
+<p>The final step is to write a smart contract that handles the ZK-attested results. To streamline this process, you can use the contract SDK and implement the <code>handleProofResult</code> function to process the circuit outputs.</p>
+<pre><code class="language-sh">npm install brevis-contracts
+</code></pre>
+<p>Here is an example of a typical app contract:</p>
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.18;
+
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@brevis-network/contract-sdk/lib/BrevisApp.sol";
+
+contract MyAppContract is BrevisApp, Ownable {
+    bytes32 public vkHash;
+
+    constructor(address brevisRequest) 
+        BrevisApp(brevisRequest) 
+        Ownable(msg.sender) {}
+
+    // BrevisQuery contract will call our callback once Brevis backend submits 
+    // the proof.
+    function handleProofResult(
+        bytes32 _vkHash,
+        bytes calldata _circuitOutput
+    ) internal override {
+        // We need to check if the verifying key that Brevis used to verify the 
+        // proof generated by our circuit is indeed the verifying key generated
+        // from compiling our app circuit. This ensures that the _circuitOutput 
+        // is authentic.
+        require(vkHash == _vkHash, "invalid vk");
+
+        (address minBlockNum, uint64 sum) = decodeOutput(_circuitOutput);
+        
+        // other logic that uses the proven data...
+    }
+
+    // Suppose in the app circuit you have:
+    // api.OutputUint(64, minBlockNum)
+    // api.OutputUint(248, sum)
+    // Then, we can decode the output the following way
+    function decodeOutput(
+        bytes calldata output
+    ) internal pure returns (uint64, uint248) {
+        uint64 minBlockNum = uint64(bytes8(output[0:8])); 
+        uint248 sum = uint248(bytes31(output[8:8+31])); 
+        return (minBlockNum, sum);
+    }
+
+    function setVkHash(bytes32 _vkHash) external onlyOwner {
+        vkHash = _vkHash;
+    }
+}
+</code></pre>
+<h3 id="handling-circuit-outputs-in-contract"><a class="header" href="#handling-circuit-outputs-in-contract">Handling Circuit Outputs in Contract</a></h3>
+<p>Your app contract needs to inherit the <code>BrevisApp</code> contract and call its constructor with the address of the <code>BrevisProof</code> contract (<a href="#contract-addresses">Deployment Addresses</a>). It also needs to override the abstract method <code>handleProofResult</code>.</p>
+<pre><code class="language-solidity">function handleProofResult(
+    bytes32 _requestId, 
+    bytes32 _vkHash, 
+    bytes calldata _appCircuitOutput
+) internal virtual {}
+</code></pre>
+<h3 id="checking-the-verifying-key"><a class="header" href="#checking-the-verifying-key">Checking the Verifying Key</a></h3>
+<p>The <strong>vk hash</strong> you get from the <a href="#compiling-and-setup">Compiling &amp; Setup</a> step uniquely identifies of your circuit. You should save the vk hash in your contract. When handling callbacks from the <code>BrevisRequest</code> contract, you <strong>must</strong> check that the vkHash matches your expected one.</p>
+<h3 id="reading-the-circuit-output"><a class="header" href="#reading-the-circuit-output">Reading the Circuit Output</a></h3>
+<p>The <a href="#circuit-outputs">output calls</a> in your circuit definition are packed in the form of <code>abi.encodePacked(...)</code>. The order of the variables is the same as the order you call the output APIs in the circuit.</p>
+<h2 id="pay-request-fee"><a class="header" href="#pay-request-fee">Pay Request Fee</a></h2>
+<p>If an application is partnered with the Brevis system to serve requests with a customized fee plan, it can <strong>skip this step and send off-chain requests directly to the Brevis gateway.</strong> </p>
+<p>Otherwise, for most applications, the user needs to send the request with fee in native tokens on-chain to the <code>BrevisRequest</code> contract.</p>
+<h3 id="paying-the-fee"><a class="header" href="#paying-the-fee">Paying the Fee</a></h3>
+<p>You need to call <code>BrevisRequest.sendRequest</code> with the <code>requestId</code> and the <code>feeValue</code> (as transaction value) you acquire from in the previous step when you call <code>app.PrepareRequest</code> in Go. The parameter <code>_callback</code> is where you specify your app contract address. </p>
+<pre><code class="language-solidity">function sendRequest(
+    bytes32 _proofId,
+    uint64 _nonce,
+    address _refundee,
+    Callback calldata _callback,
+    uint8 _option // bitmap 0: zk, 1: op bvn, 2: op avs, 3: op bvn and avs
+) external payable;
+
+struct Callback {
+    address target;
+    uint64 gas;
+}
+</code></pre>
+<p>Or, you can send a raw transaction using the <code>calldata</code> you acquire from <code>app.PrepareRequest</code> as the transaction call data and the <code>feeValue</code> as the transaction value.</p>
+<h3 id="refunding-a-fee-after-timeout"><a class="header" href="#refunding-a-fee-after-timeout">Refunding a Fee after Timeout</a></h3>
+<p><code>requestTimeout</code> a state variable in <code>BrevisRequest</code>. If there is no proof submitted within the <code>requestTimeout</code>, you can call <code>BrevisRequest.refund</code> to refund the fee back to the <code>_refundee</code> you initially specified when calling <code>sendRequest</code></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="cochain-mode"><a class="header" href="#cochain-mode">coChain Mode</a></h1>
+<p>A Brevis app can be deployed in the “pure-ZK” and “OP” (aka coChain) models. <a href="#brevis-cochain">This section</a> provides a detailed introduction to the two deployment models. </p>
+<p>The aforementioned sections have introduced the workflow for the “pure-ZK” model. In this section, we describe how to deploy your Brevis app under the coChain model to enable use cases like “proof-of-completeness” and achieve fine-grained tradeoffs between trust assumptions and costs/latency.</p>
+<p>To deploy in the coChain model, the developer should first follow the same steps as in the “pure-ZK” model to define <a href="#data-access-module">data access</a>, write an <a href="#application-circuit">application circuit</a>, and integrate with the <a href="#contract-integration">smart contract</a> (the “<a href="#compiling--proving">Compiling &amp; Proving</a>” part can be skipped for the coChain Model since no actual proving is needed if no challenge occurs).</p>
+<p>Then, the developer needs to contact the Brevis team and send their application circuit source code offline to the Brevis team. The Brevis team will wrap the circuit as a Go plugin and dynamically deploy the plugin in our coChain PoS network. Once it’s done, the validators in our coChain network will be able to dry run the circuit and verify the circuit outputs are indeed calculated with the on-chain data as defined in the data access module (the coChain network will also verify the on-chain data). Then, the coChain-verified computation result can be used in the developers’ app smart contract.</p>
+<p>There are some differences when using the Brevis SDK in the coChain model as compared to the “pure-ZK” model:</p>
+<ol>
+<li>In the coChain model, the app service is not required to actually run the circuit proving. The dry run result is enough for submission to Brevis with an option parameter set with OP-related values.</li>
+<li>In the coChain model, the option parameter in <code>BrevisRequest.sendRequest</code> should be set with OP-related values.</li>
+<li>In the coChain model, the <code>handelOpProofResult</code> interface should be implemented by the developer’s custom app smart contract instead of the <code>handelProofResult</code> interface as in the “pure-ZK” model.</li>
+<li>In the coChain model, <code>challengeWindow</code> should be set in the developer’s custom app smart contract. Note that each request won’t be fulfilled on-chain until the corresponding challenge window has passed.</li>
+</ol>
+<h2 id="contract-integration-in-the-cochain-model"><a class="header" href="#contract-integration-in-the-cochain-model">Contract Integration in the coChain Model</a></h2>
+<p>As described above, a few additional things should be implemented in the contract to develop a contract that integrates with the coChain mode.</p>
+<p>Below is an example that extends the MyAppContract in the <a href="#contract-integration">previous section</a> to make it usable for the coChain mode.</p>
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.18;
+
+contract MyCoChainAppContract is MyAppContract {
+    
+    // Handle optimistic proof result. 
+    // This example handles optimistic results in the same way as handling zk results,
+    // your app can choose to do differently.
+    function handleOpProofResult(
+        bytes32 _vkHash,
+        bytes calldata _circuitOutput
+    ) internal override {
+        handleProofResult(_vkHash, _circuitOutput);
+    }
+
+   /**
+     * @notice config params to handle the optimistic proof result
+     * @param _challengeWindow The challenge window to accept optimistic results. 
+     *                         0: POS, maxInt: disable optimistic result
+     * @param _sigOption bitmap to express expected sigs. bit 0 is bvn, bit 1 is avs
+     */
+    function setBrevisOpConfig(
+        uint64 _challengeWindow, 
+        uint8 _sigOption
+    ) external onlyOwner {
+        brevisOpConfig = BrevisOpConfig(_challengeWindow, _sigOption);
+    }
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="tutorial"><a class="header" href="#tutorial">Tutorial</a></h1>
+<p>This tutorial will walk you through a minimal example of the aforementioned workflow for developing a Brevis app. Check out <a href="https://github.com/brevis-network/brevis-sdk/tree/main/examples">this repo</a> for some more advanced examples, such as trading volume proof on Uniswap, TWAP, etc. You can also check out <a href="https://x.com/brevis_zk/status/1789868342544834823">this helpful video tutorial</a> on building a trading volume-based fee discount feature in Uniswap v4. </p>
+<p>The example in this tutorial only supports pure ZK mode. Please follow <a href="#cochain-mode">this previous section</a> to support coChain mode</p>
+<h2 id="the-app-proving-token-transfer"><a class="header" href="#the-app-proving-token-transfer">The App: Proving Token Transfer</a></h2>
+<p>Our app’s goal is to allow anyone to prove to our on-chain contract that an Ethereum address has made a USDC token transfer whose amount is more than 500 USDC. </p>
+<p>We will implement this app step by step. The finished version is also available in this <a href="https://github.com/brevis-network/brevis-quickstart-ts">repo</a>.</p>
+<h3 id="how-can-an-erc-20-transfer-be-proven"><a class="header" href="#how-can-an-erc-20-transfer-be-proven">How can an ERC-20 Transfer be proven?</a></h3>
+<p>When an ERC-20 token transfer is made, a <a href="https://etherscan.io/tx/0x9ae76abb67f76f1a896e4655ba33cbcefdb4e5b587de028bd9c3cd1ee29df9b5#eventlog"><em><strong>Transfer</strong></em><strong> event</strong></a> will be emitted in the transaction receipt. By reading this log, we can find <em>From</em> in topics and <em>Value</em> in data. </p>
+<p>In the tutorial application, we are going to write an Brevis app checking that the value more than is 500000000 (500 with decimal 6) for a transaction receipt. </p>
+<h2 id="contents"><a class="header" href="#contents">Contents</a></h2>
+<p><a href="#building-the-app-circuit">Link</a>
+<a href="#building-the-app-circuit">building-the-app-circuit.md</a></p>
+<p><a href="#writing-the-app-contract">Link</a>
+<a href="#writing-the-app-contract">writing-the-app-contract.md</a></p>
+<p><a href="#putting-everything-together">Link</a>
+<a href="#putting-everything-together">putting-everything-together.md</a></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="building-the-app-circuit"><a class="header" href="#building-the-app-circuit">Building the App Circuit</a></h1>
+<p>Our app’s goal is to allow anyone to prove to an on-chain smart contract that an address made a USDC transfer with volume more than 500 USDC. We are going to implement this app step by step. You can find the finished version in this <a href="https://github.com/brevis-network/brevis-quickstart-ts">Github repo</a>. </p>
+<h2 id="writing-the-circuit"><a class="header" href="#writing-the-circuit">Writing the Circuit</a></h2>
+<p>Edit <a href="https://github.com/brevis-network/brevis-quickstart-ts/blob/main/prover/circuits/circuit.go">circuit.go</a> and write our circuit</p>
+<pre><code class="language-go">package circuits
+
+import (
+	"github.com/brevis-network/brevis-sdk/sdk"
+)
+
+type AppCircuit struct{}
+
+var USDCTokenAddr = sdk.ConstUint248("0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48")
+var minimumVolume = sdk.ConstUint248(500000000) // minimum 500 USDC
+var _ sdk.AppCircuit = &amp;AppCircuit{}
+
+func (c *AppCircuit) Allocate() (maxReceipts, maxStorage, maxTransactions int) {
+	// Our app is only ever going to use one storage data at a time so
+	// we can simply limit the max number of data for storage to 1 and
+	// 0 for all others
+	return 32, 0, 0
+}
+
+func (c *AppCircuit) Define(api *sdk.CircuitAPI, in sdk.DataInput) error {
+	receipts := sdk.NewDataStream(api, in.Receipts)
+	receipt := sdk.GetUnderlying(receipts, 0)
+
+	// Check logic
+	// The first field exports `from` parameter from Transfer Event
+	// It should use the second topic in Transfer Event log
+	api.Uint248.AssertIsEqual(receipt.Fields[0].Contract, USDCTokenAddr)
+	api.Uint248.AssertIsEqual(receipt.Fields[0].IsTopic, sdk.ConstUint248(1))
+	api.Uint248.AssertIsEqual(receipt.Fields[0].Index, sdk.ConstUint248(1))
+
+	// Make sure two fields uses the same log to make sure account address linking with correct volume
+	api.Uint32.AssertIsEqual(receipt.Fields[0].LogPos, receipt.Fields[1].LogPos)
+
+	// The second field exports `Volume` parameter from Transfer Event
+	// It should use Data in Transfer Event log
+	api.Uint248.AssertIsEqual(receipt.Fields[1].IsTopic, sdk.ConstUint248(0))
+	api.Uint248.AssertIsEqual(receipt.Fields[1].Index, sdk.ConstUint248(0))
+
+	// Make sure this transfer has minimum 500 USDC volume
+	api.Uint248.AssertIsLessOrEqual(minimumVolume, api.ToUint248(receipt.Fields[1].Value))
+
+	api.OutputUint(64, api.ToUint248(receipt.BlockNum))
+	api.OutputAddress(api.ToUint248(receipt.Fields[0].Value))
+	api.OutputBytes32(receipt.Fields[1].Value)
+	return nil
+}
+</code></pre>
+<h2 id="testing-the-circuit"><a class="header" href="#testing-the-circuit">Testing the Circuit</a></h2>
+<p>Edit <a href="https://github.com/brevis-network/brevis-quickstart-ts/blob/main/prover/circuits/circuit_test.go">circuit_test.go</a> for circuit testing. First, we assign correct values to the circuit input. Then, we use <code>test.ProverSucceeded</code> to test if our circuit can successfully generate a proof using the correct input.</p>
+<p><a href="#circuit-testing">Read more on testing here</a></p>
+<pre><code class="language-go">// ...
+
+func TestCircuit(t *testing.T) {
+	rpc := "RPC_URL"
+	localDir := "$HOME/circuitOut/myBrevisApp"
+	app, err := sdk.NewBrevisApp(1, rpc, localDir)
+	check(err)
+
+	txHash := common.HexToHash(
+		"0x8a7fc50330533cd0adbf71e1cfb51b1b6bbe2170b4ce65c02678cf08c8b17737")
+
+	app.AddReceipt(sdk.ReceiptData{
+		TxHash: txHash,
+		Fields: []sdk.LogFieldData{
+			{
+				IsTopic:    true,
+				LogPos:     0,
+				FieldIndex: 1,
+			},
+			{
+				IsTopic:    false,
+				LogPos:     0,
+				FieldIndex: 0,
+			},
+		},
+	})
+
+	appCircuit := &amp;AppCircuit{}
+	appCircuitAssignment := &amp;AppCircuit{}
+
+	circuitInput, err := app.BuildCircuitInput(appCircuit)
+	check(err)
+
+	///////////////////////////////////////////////////////////////////////////////
+	// Testing
+	///////////////////////////////////////////////////////////////////////////////
+
+	test.ProverSucceeded(t, appCircuit, appCircuitAssignment, circuitInput)
+} 
+</code></pre>
+<h2 id="spin-up-a-prover-for-your-appcircuit-1"><a class="header" href="#spin-up-a-prover-for-your-appcircuit-1">Spin Up a Prover for Your AppCircuit</a></h2>
+<pre><code class="language-go">proverService, err := prover.NewService(&amp;AppCircuit{}, config)
+// ...
+err = proverService.Serve(33247)
+// ...
+</code></pre>
+<p>Then, we run the main program to start up the prover</p>
+<pre><code>go run main.go
+</code></pre>
+<details>
+<summary>Console Output</summary>
+<pre><code>&gt;&gt; compiling circuit
+10:34:52 INF compiling circuit
+ignoring uninitialized slice: Input_StorageSlots_Toggles []frontend.Variable
+ignoring uninitialized slice: Input_Transactions_Toggles []frontend.Variable
+10:34:52 INF parsed circuit inputs nbPublic=6 nbSecret=1089
+ignoring uninitialized slice: Input_StorageSlots_Toggles []frontend.Variable
+ignoring uninitialized slice: Input_Transactions_Toggles []frontend.Variable
+ignoring uninitialized slice: Input_StorageSlots_Toggles []frontend.Variable
+ignoring uninitialized slice: Input_Transactions_Toggles []frontend.Variable
+commit output: rounds 1, data len 480, padded len 1088
+10:34:52 INF building constraint builder nbConstraints=608462
+circuit compiled in 408.001292ms, number constraints 608462
+circuit digest 0x1dfdcf1616c15230b5bcd7555570e324647743ca9111e968a6519e33136b036e
+trying to read setup from cache...
+no setup matching circuit digest 0x0e299aa204fde71d5da9b94e7b905857ba1ce912ec37ad00f54f1bb2fdea0705 is found in /Users/xxx/circuitOut
+&gt;&gt; setup
+size system 608468
+size lagrange 1048576
+init SRS disk cache dir /Users/xxx/kzgsrs
+fetching srs ignition from file
+srs ignition not found in file
+downloading file https://kzg-srs.s3.us-west-2.amazonaws.com/kzg_srs_100800000_bn254_MAIN_IGNITION
+writing srs ignition file
+srs iginition ready
+setup done in 2.392068s
+///////////////////////////////////////////////////////////////////////////////
+// vk hash: 0x25d2751bfc09b1222b834f3043762dad7e1591671f8c03456996cabe53a95c71
+///////////////////////////////////////////////////////////////////////////////
+
+67143336 bytes written to /Users/xxx/circuitOut/0x1dfdcf1616c15230b5bcd7555570e324647743ca9111e968a6519e33136b036e/pk
+34368 bytes written to /Users/xxx/circuitOut/0x1dfdcf1616c15230b5bcd7555570e324647743ca9111e968a6519e33136b036e/vk
+&gt;&gt; scan local storage: /Users/xxx/circuitOut/input/input/data.json
+&gt;&gt; finish scan local storage: /Users/xxx/circuitOut/input/input/data.json
+&gt;&gt; serving prover REST API at port 33257
+&gt;&gt; serving prover GRPC at port 33247
+</code></pre>
+</details>
+<blockquote>
+<p><strong>Note:</strong>
+command line tool <a href="https://everything.curl.dev/index.html"><em><strong>curl</strong></em></a> is required for downloading srs ignition file. </p>
+</blockquote>
+<p>At the same time, you may download it through browser directly and put it into your srs file folder. Brevis sdk will use $HOME/kzgsrs/kzg_srs_100800000_bn254_MAIN_IGNITI as <em><mark style="color:red;"><strong>file path</strong></mark></em> if srsDir configuration is $HOME/kzgsrs.</p>
+<h4 id="the-vk-hash"><a class="header" href="#the-vk-hash"> The VK Hash</a></h4>
+<p>Notice the highlighted log that look like this</p>
+<pre><code>///////////////////////////////////////////////////////////////////////////////
+// vk hash: 0x25d2751bfc09b1222b834f3043762dad7e1591671f8c03456996cabe53a95c71
+///////////////////////////////////////////////////////////////////////////////
+</code></pre>
+<p>This is the hash of your circuit’s verifying key. You must store this hash in your contract and check it when handling contract callbacks. More on this in later steps.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="writing-the-app-contract"><a class="header" href="#writing-the-app-contract">Writing the App Contract</a></h1>
+<p>Your app contract needs to inherit the <code>BrevisApp</code> abstract contract. You can manually copy the required contracts from the <a href="https://github.com/brevis-network/brevis-quickstart-ts/tree/main/contracts/contracts/lib">quickstart repo</a>, or install Brevis contracts via</p>
+<pre><code class="language-sh">yarn add brevis-contracts
+</code></pre>
+<pre><code class="language-solidity">```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.18;
+
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+import "./lib/BrevisApp.sol";
+
+// Accept both ZK- and OP-attested results.
+contract TokenTransfer is BrevisApp, Ownable {
+    event TransferAmountAttested(uint64 blockNum, address account, uint256 volume);
+
+    bytes32 public vkHash;
+
+    constructor(address _brevisRequest) BrevisApp(_brevisRequest) Ownable(msg.sender) {}
+
+    // BrevisQuery contract will call our callback once Brevis backend submits the proof.
+    // This method is called with once the proof is verified.
+    function handleProofResult(bytes32 _vkHash, bytes calldata _circuitOutput) internal override {
+        // We need to check if the verifying key that Brevis used to verify the proof
+        // generated by our circuit is indeed our designated verifying key. This proves
+        // that the _circuitOutput is authentic
+        require(vkHash == _vkHash, "invalid vk");
+        (address accountAddr, uint64 blockNum, uint256 volume) = decodeOutput(_circuitOutput);
+        emit TransferAmountAttested(blockNum, accountAddr, volume);
+    }
+
+    function decodeOutput(bytes calldata o) internal pure returns (address, uint64, uint256) {
+        uint64 blockNum = uint64(bytes8(o[0:8]));
+        address userAddr = address(bytes20(o[8:28]));
+        uint256 volume = uint256(bytes32(o[28:60]));
+        return (userAddr, blockNum, volume);
+    }
+
+    // vkHash represents the unique circuit app logic
+    function setVkHash(bytes32 _vkHash) external onlyOwner {
+        vkHash = _vkHash;
+    }
+
+}
+</code></pre>
+<h3 id="checking-the-verifying-key-hash"><a class="header" href="#checking-the-verifying-key-hash">Checking the Verifying Key Hash</a></h3>
+<p>Notice that we have a vkHash storage variable in the contract:</p>
+<pre><code class="language-solidity">bytes32 public vkHash;
+</code></pre>
+<p>By setting this variable to our <a href="#spin-up-a-prover-for-your-appcircuit-1">previously computed vkhash</a>, when Brevis calls our app contract, we can check the proof, that Brevis has verified before calling our contract, is indeed generated by our circuit.</p>
+<h3 id="handling-proof-result"><a class="header" href="#handling-proof-result">Handling Proof Result</a></h3>
+<p><code>handleProofResult</code> is where you process the computation result output from your circuit. There are two steps we must do before we use the proven data:</p>
+<ol>
+<li>Check if the param <code>_vkHash</code> matches our stored vkHash. This verifies the identity of the circuit which produced the computation result.</li>
+<li>Decode the param <code>_circuitOutput</code>.</li>
+</ol>
+<p>The output values in your circuit definition are packed in the form of <code>abi.encodePacked(...)</code>. The order of the variables is the same as the order you call the <a href="#output">output APIs</a> in the circuit. </p>
+<p>We know in our circuit we did:</p>
+<pre><code class="language-go">api.OutputUint(64, api.ToUint248(receipt.BlockNum))
+api.OutputAddress(api.ToUint248(receipt.Fields[0].Value))
+api.OutputBytes32(receipt.Fields[1].Value)
+</code></pre>
+<p>Therefore, this is how we decode <code>_circuitOutput</code> in the contract:</p>
+<pre><code class="language-solidity">uint64 blockNum = uint64(bytes8(o[0:8]));
+address userAddr = address(bytes20(o[8:28]));
+uint256 volume = uint256(bytes32(o[28:60]));
+</code></pre>
+<p>If you are following this example to build the project, you can deploy this contract. If you are just doing research and would like to see a deployed version, see the <a href="https://sepolia.etherscan.io/address/0x9fc16c4918a4d69d885f2ea792048f13782a522d">deployed contract</a> on Sepolia.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="putting-everything-together"><a class="header" href="#putting-everything-together">Putting Everything Together</a></h1>
+<p>Finally, we will see how we can call our prover to generate an app proof, submit to Brevis, and have Brevis contracts calling our app contract with our circuit output.</p>
+<h3 id="call-our-prover-to-generate-a-proof"><a class="header" href="#call-our-prover-to-generate-a-proof">Call Our Prover to Generate a Proof</a></h3>
+<p>Edit <a href="https://github.com/brevis-network/brevis-quickstart-ts/blob/main/app/src/index.ts">index.ts</a>. Initialize two clients: one for talking to our <a href="#spin-up-a-prover-for-your-appcircuit-1">prover</a>, one for talking to Brevis.</p>
+<pre><code class="language-typescript">const prover = new Prover('localhost:33247');
+const brevis = new Brevis('appsdkv3.brevis.network:443');
+</code></pre>
+<h4 id="adding-data-to-prove"><a class="header" href="#adding-data-to-prove">Adding Data to Prove</a></h4>
+<p>To prove token transfer, we only need to add a receipt which emits the USDC <code>Transfer</code> event. In the below sample transaction receipt. We will use the first log in this receipt(<strong>LogPos 0</strong>). The second topic(<strong>FieldIndex 1</strong>) is “<em>From</em>” address. The first 32-byte data value(<strong>FieldIndex 0</strong>) is “<em>TransferAmount</em>”. By adding these two Fields in receiptData, the prover service is able to check amount and generate corresponding application circuit output. </p>
+<p><img src=".gitbook/assets/image (31).png" alt=""><figcaption></figcaption></p>
+<pre><code class="language-typescript">// initialize a proof request to our prover
+const proofReq = new ProofRequest();
+
+// adding the USDC transfer tx receipt
+proofReq.addReceipt(
+    new ReceiptData({
+        tx_hash: '0x8a7fc50330533cd0adbf71e1cfb51b1b6bbe2170b4ce65c02678cf08c8b17737',
+        fields: [
+            // `From` value
+            new Field({
+                log_pos: 0,
+                is_topic: true,
+                field_index: 1, 
+            }),
+            // `Transfer Amount` value
+            new Field({
+                log_pos: 0,
+                is_topic: false,
+                field_index: 0,
+            }),
+        ],
+    }),
+);
+</code></pre>
+<h4 id="calling-our-prover"><a class="header" href="#calling-our-prover">Calling Our Prover</a></h4>
+<pre><code class="language-typescript">const proofRes = await prover.prove(proofReq);
+</code></pre>
+<blockquote>
+<p><a href="https://github.com/brevis-network/brevis-quickstart-ts/blob/8c9082fde7d8d6eb50b53dda5e024808f5f5fc5e/app/src/index.ts#L63-L82">index.ts#L63-L82</a> handles submitting proof request to our prover</p>
+</blockquote>
+<h3 id="submitting-your-proof-to-brevis"><a class="header" href="#submitting-your-proof-to-brevis">Submitting Your Proof to Brevis</a></h3>
+<p>There are still several items left unproven in our custom circuit. They are:</p>
+<ul>
+<li>How do we know if the transaction receipt is valid at all?</li>
+<li>How do we know that the transaction is certainly on Ethereum?</li>
+<li>How do we know the the transaction happened in block 21146236? </li>
+</ul>
+<p>When you submit the proof generated by your circuit, Brevis’s provers will wrap a proof around yours to further prove that the transaction is valid on the specified source chain and is certainly from the block we say it’s from.</p>
+<pre><code class="language-typescript">const brevisRes = await brevis.submit(
+    proofReq, 
+    proofRes, 
+    1, 
+    11155111, 
+    QueryOption.ZK_MODE, 
+    'BREVIS_PARTNER_KEY', // empty string if there is no partner key
+    'CALLBACK_ADDRESS' // used for brevis partner flow only, empty string if there is no partner key
+    );
+await brevis.wait(brevisRes.queryKey, 1);
+</code></pre>
+<blockquote>
+<p>The arguments 1 and 11155111 are the chain ids of the data source chain and the “destination chain” that we want to post the final proof to, respectively</p>
+</blockquote>
+<p>Now, run the program</p>
+<pre><code class="language-bash">ts-node index.ts 
+    0x8a7fc50330533cd0adbf71e1cfb51b1b6bbe2170b4ce65c02678cf08c8b17737 
+    TestVolume // brevis partner key: could be empty string
+    0x9fc16c4918a4d69d885f2ea792048f13782a522d // callback address: could be empty string
+</code></pre>
+<details>
+<summary>Click to see console output</summary>
+<pre><code>Send prove request for 0x8a7fc50330533cd0adbf71e1cfb51b1b6bbe2170b4ce65c02678cf08c8b17737
+proof: 0x......
+query: proofId 0x6f478f47319620692acf0d59241c9cbecdb9596f6f185309a11c6c4d75e83df2 nonce 1731300782 waiting for payment. call BrevisRequest.sendRequest to initiate the payment
+</code></pre>
+</details>
+<blockquote>
+<p><strong>Note:</strong>
+If there is a partnership between the developer’s project and Brevis, the developer can hand over the corresponding <mark style="color:purple;">BREVIS_PARTNER_KEY</mark> and <mark style="color:purple;">CALLBACK_ADDRESS</mark>  to Brevis gateway when using <mark style="color:red;"><code>submit</code></mark> provided by Brevis SDK. Then you can <em><mark style="color:red;"><strong>skip</strong></mark></em> the subsequent sendRequest on-chain transaction</p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong>
+<mark style="color:purple;">BREVIS_PARTNER_KEY</mark> and <mark style="color:purple;">CALLBACK_ADDRESS</mark> are <em><mark style="color:red;"><strong>NOT</strong></mark></em> required to send requests to the Brevis gateway. Developers can leave them as <em>empty</em> <em>string</em></p>
+</blockquote>
+<p>As we can see, our request is assigned a request id and the fee we are going to pay is 0 (this is only zero for the testnet). Our program is currently waiting for us to pay the fee.</p>
+<p>Now,  you can call <code>BrevisRequest.sendRequest</code> on the destination chain to pay for the proof. For demo purposes, we will just send the transaction through the Sepolia explorer. You can find the address of BrevisRequest under <a href="#contract-addresses--rpc-endpoints">Contract Addresses</a>.  You may also find the sample contract <a href="https://sepolia.etherscan.io/address/0x9fc16c4918a4d69d885f2ea792048f13782a522d">here</a>.</p>
+<p><img src=".gitbook/assets/1234141.png" alt=""><figcaption></figcaption></p>
+<p>After the transaction is sent, it takes around two minutes for the transaction to be confirmed and Brevis’s final proof to be generated. We should see the console outputs keep updating.</p>
+<pre><code>...
+query proofId 0x6f478f47319620692acf0d59241c9cbecdb9596f6f185309a11c6c4d75e83df2 nonce 1731300782 waiting for final tx
+query proofId 0x6f478f47319620692acf0d59241c9cbecdb9596f6f185309a11c6c4d75e83df2 nonce 1731300782 success, tx 0x893098c7748d5d801e54bf64edb96383e26726ebdf9e25f54f56be7c532a7f8d
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="circuit-sdk-reference"><a class="header" href="#circuit-sdk-reference">Circuit SDK Reference</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="brevis-app"><a class="header" href="#brevis-app">Brevis App</a></h1>
+<p><code>sdk.BrevisApp</code> is the framework around your custom circuit. It handles the conversion of your data to circuit inputs and interacting with Brevis’s system. To create a <code>BrevisApp</code>, use:</p>
+<pre><code class="language-go">import "github.com/brevis-network/brevis-sdk/sdk"
+</code></pre>
+<pre><code class="language-go">app := sdk.NewBrevisApp(
+    1, // data source chain id
+    "RPC_URL", // corresponding chain RPC URL, you can find many here: https://chainlist.org/chain/1
+    "OUTPUT_DIR", // brevis sdk will save source data into OUTPUT_DIR/input/data.json for future reference
+)
+</code></pre>
+<h2 id="adding-source-data-1"><a class="header" href="#adding-source-data-1">Adding Source Data</a></h2>
+<h3 id="source-data-types"><a class="header" href="#source-data-types">Source Data Types</a></h3>
+<p>The Brevis application circuit supports proving receipt,  storage value, and transaction by adding TransactionData, ReceiptData, and StorageData. Developers only need to set up the <mark style="color:red;">*required</mark> values and the Brevis app will prepare the rest automatically.</p>
+<h4 id="receiptdata"><a class="header" href="#receiptdata">ReceiptData</a></h4>
+<table>
+<thead>
+<tr><th width="163">Name</th><th width="152">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>TxHash</td><td><a href="https://github.com/ethereum/go-ethereum/blob/25bc07749ce21376e1023a6e16ec173fa3fc4e43/common/types.go#L56">common.Hash</a></td><td>Receipt's transaction hash (<mark style="color:red;"><strong>*required</strong></mark>)</td></tr>
+<tr><td>BlockNum</td><td><a href="https://pkg.go.dev/math/big">big.Int</a></td><td>Receipt's block number</td></tr>
+<tr><td>BlockBaseFee</td><td><a href="https://pkg.go.dev/math/big">big.Int</a></td><td><a href="https://ethereum.org/en/developers/docs/gas/#base-fee">Block base fee</a></td></tr>
+<tr><td>MptKeyPath</td><td><a href="https://pkg.go.dev/math/big">big.Int</a></td><td>Rlp encoded receipt index using <a href="https://github.com/ethereum/go-ethereum/blob/25bc07749ce21376e1023a6e16ec173fa3fc4e43/rlp/raw.go#L228">this</a></td></tr>
+<tr><td>Fields</td><td>[<a href="#logfielddata">LogFieldData</a>]</td><td>Array of field information will be used in receipt (Usp to 4 fields in each receipt)</td></tr>
+</tbody>
+</table>
+
+<h4 id="logfielddata"><a class="header" href="#logfielddata">LogFieldData</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>LogPos</td><td>uint</td><td>the log’s position in the receipt (<mark style="color:red;"><strong>*required</strong></mark>)</td></tr>
+<tr><td>IsTopic</td><td>bool</td><td>Whether the field is a topic  (<mark style="color:red;"><strong>*required</strong></mark>)</td></tr>
+<tr><td>FieldIndex</td><td>uint</td><td>The index of the field in either a log’s topics or data. (<mark style="color:red;"><strong>*required</strong></mark>)</td></tr>
+<tr><td>Contract</td><td><a href="https://github.com/ethereum/go-ethereum/blob/25bc07749ce21376e1023a6e16ec173fa3fc4e43/common/types.go#L213">common.Address</a></td><td>The contract from which the event is emitted</td></tr>
+<tr><td>EventID</td><td><a href="https://github.com/ethereum/go-ethereum/blob/25bc07749ce21376e1023a6e16ec173fa3fc4e43/common/types.go#L56">common.Hash</a></td><td>The event ID of the event to which the field belong (aka topics[0])</td></tr>
+<tr><td>Value</td><td><a href="https://github.com/ethereum/go-ethereum/blob/25bc07749ce21376e1023a6e16ec173fa3fc4e43/common/types.go#L56">common.Hash</a></td><td>The value of the field in event, aka the actual thing we care about, only 32-byte fixed length values are supported.</td></tr>
+</tbody>
+</table>
+</div>
+<h4 id="storagedata"><a class="header" href="#storagedata">StorageData</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>BlockNum</td><td><a href="https://pkg.go.dev/math/big">big.Int</a></td><td>Block number used for storage value (<mark style="color:red;"><strong>*required</strong></mark>)</td></tr>
+<tr><td>BlockBaseFee</td><td><a href="https://pkg.go.dev/math/big">big.Int</a></td><td><a href="https://ethereum.org/en/developers/docs/gas/#base-fee">Block base fee</a></td></tr>
+<tr><td>Address</td><td><a href="https://github.com/ethereum/go-ethereum/blob/25bc07749ce21376e1023a6e16ec173fa3fc4e43/common/types.go#L213">common.Address</a></td><td>Address used for storage value (<mark style="color:red;"><strong>*required</strong></mark>)</td></tr>
+<tr><td>Slot</td><td><a href="https://github.com/ethereum/go-ethereum/blob/25bc07749ce21376e1023a6e16ec173fa3fc4e43/common/types.go#L56">common.Hash</a></td><td>Storage slot (<mark style="color:red;"><strong>*required</strong></mark>)</td></tr>
+<tr><td>Value</td><td><a href="https://github.com/ethereum/go-ethereum/blob/25bc07749ce21376e1023a6e16ec173fa3fc4e43/common/types.go#L56">common.Hash</a></td><td>Storage value</td></tr>
+</tbody>
+</table>
+</div>
+<h4 id="transactiondata"><a class="header" href="#transactiondata">TransactionData</a></h4>
+<table>
+<thead>
+<tr><th width="163">Name</th><th width="152">Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>Hash</td><td><a href="https://github.com/ethereum/go-ethereum/blob/25bc07749ce21376e1023a6e16ec173fa3fc4e43/common/types.go#L56">common.Hash</a></td><td>Transaction hash (<mark style="color:red;"><strong>*required</strong></mark>)</td></tr>
+<tr><td>BlockNum</td><td><a href="https://pkg.go.dev/math/big">big.Int</a></td><td>Receipt's block number</td></tr>
+<tr><td>BlockBaseFee</td><td><a href="https://pkg.go.dev/math/big">big.Int</a></td><td><a href="https://ethereum.org/en/developers/docs/gas/#base-fee">Block base fee</a></td></tr>
+<tr><td>MptKeyPath</td><td><a href="https://pkg.go.dev/math/big">big.Int</a></td><td>Rlp encoded receipt index using <a href="https://github.com/ethereum/go-ethereum/blob/25bc07749ce21376e1023a6e16ec173fa3fc4e43/rlp/raw.go#L228">this</a></td></tr>
+<tr><td>LeafHash</td><td><a href="https://github.com/ethereum/go-ethereum/blob/25bc07749ce21376e1023a6e16ec173fa3fc4e43/common/types.go#L56">common.Hash</a></td><td>
+<p>Hash of transaction raw data </p>
+<p>with rlp prefix. </p>
+</td></tr>
+</tbody>
+</table>
+
+<blockquote>
+<p><strong>Note:</strong>
+As of now, brevis will only prove the <em><strong>existence of a transaction</strong></em>, stay tuned for more tx information is usable</p>
+</blockquote>
+<h3 id="adding-source-data-1-1"><a class="header" href="#adding-source-data-1-1">Adding Source Data</a></h3>
+<p>The data you add here will be available to process in your app circuit.</p>
+<pre><code class="language-go">app.AddReceipt(sdk.ReceiptData{...})
+app.AddStorage(sdk.StorageData{...})
+app.AddTransaction(sdk.TransactionData{...})
+</code></pre>
+<p>The maximum amount of Receipt/Storage/Transaction data you can add to each type is restricted by the maximum amount you define in your circuit’s <code>Allocate</code> function. <a href="#allocate">read more</a></p>
+<p>Each of the three types of data has an index within its type. For example, if you call AddStorage twice:</p>
+<pre><code class="language-go">app.AddStorage(sdk.StorageData{/* StorageA */})
+app.AddStorage(sdk.StorageData{/* StorageB */})
+</code></pre>
+<p>Then StorageA will be at index 0, and StorageB will be at index 1.</p>
+<h4 id="pin-an-index"><a class="header" href="#pin-an-index">Pin an Index</a></h4>
+<p>You can also pin a piece of data to a specific index. For example, this will pin TransactionA at index 2.</p>
+<pre><code class="language-go">app.AddTransaction(sdk.TransactionData{/* TransactionA */}, 2)
+</code></pre>
+<p>Let’s see pinning in a more complete example. Let’s say  you defined your <code>Allocate</code> function to allocate 32 data for Receipt, 32 for Storage, and 64 for Transaction. </p>
+<pre><code class="language-go">func (c *AppCircuit) Allocate() (maxReceipts, maxStorage, maxTransaction) {
+    return 32, 32, 32
+}
+</code></pre>
+<p>Then, you added data queries to your <code>BrevisApp</code> instance:</p>
+<pre><code class="language-go">app.AddReceipt(sdk.ReceiptData{/* ReceiptA */})
+
+app.AddStorage(sdk.StorageData{/* StorageA */})
+app.AddStorage(sdk.StorageData{/* StorageB */})
+
+app.AddTransaction(sdk.TransactionData{/* TransactionA */})
+// this one is fixed at index 2
+const MyFixedSpot = 2
+app.AddTransaction(sdk.TransactionData{/* TransactionB */}, MyFixedSpot)
+</code></pre>
+<p>The mental model of this would be:</p>
+<p><img src=".gitbook/assets/img1 (1).png" alt=""><figcaption></figcaption></p>
+<p>Notice how there is an empty slot in transactions because we allocated 64 slots for transactions, but only added two. We also fixated TransactionB at index 2, so the slot index 1 remains empty. TransactionB will always be at index 2. </p>
+<h4 id="accessing-data-by-index-in-circuit"><a class="header" href="#accessing-data-by-index-in-circuit">Accessing Data by Index in Circuit</a></h4>
+<p>Accessing data by index is closely related to how you allocate data slots. <a href="#allocate">read more about Allocate</a></p>
+<pre><code class="language-go">func (c *AppCircuit) Define(api *sdk.CircuitAPI, input sdk.CircuitInput) {
+    transactions := sdk.NewDataStream(input.Transaction)
+    // access transactionB directly
+    transactionB := transactions.Get(MyFixedSpot)
+}
+</code></pre>
+<h2 id="building-the-circuitinput"><a class="header" href="#building-the-circuitinput">Building the <code>CircuitInput</code></a></h2>
+<p><code>sdk.CircutiInput</code> is the packaged data obtained from executing your data queries and converting them into circuit types. This is used in testing, compiling, and proving.</p>
+<p>After you have added queries to your <code>BrevisApp</code>, call <code>app.BuildCircuitInput</code> with your circuit definition to build.</p>
+<pre><code class="language-go">// if your circuit has custom inputs, you'll need to supply a correct assignment 
+// of those custom inputs
+appCircuit := &amp;AppCircuit{MyCustomInput: someCorrectValue}
+circuitInput, err := app.BuildCircuitInput(appCircuit)
+</code></pre>
+<h2 id="submitting-the-proof-to-brevis"><a class="header" href="#submitting-the-proof-to-brevis">Submitting the Proof to Brevis</a></h2>
+<blockquote>
+<p><strong>Note:</strong>
+<a href="#proving-and-verifying">Proof generation</a> relies on a separate set of functions, but once you have a proof, your <code>BrevisApp</code> instance can handle submitting it to Brevis.</p>
+</blockquote>
+<p>To submit your proof to Brevis, you need to first query Brevis RPC for the fee amount and acquire a <code>requestId</code>. </p>
+<h4 id="preparerequest-input"><a class="header" href="#preparerequest-input">PrepareRequest Input</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>vk</td><td>VerifyingKey</td><td>application circuit verifying key</td></tr>
+<tr><td>witness</td><td>witness.Witness</td><td>application circuit witness</td></tr>
+<tr><td>srcChainId</td><td>uint64</td><td>the id of data source chain</td></tr>
+<tr><td>dstChainId</td><td>uint64</td><td>the chain where the proven data is used</td></tr>
+<tr><td>appContract</td><td>common.Address</td><td>developer’s contract callback address</td></tr>
+<tr><td>callbackGasLimit</td><td>uint64</td><td>Gas limit for contract callback</td></tr>
+<tr><td>queryOption</td><td><a href="https://github.com/brevis-network/brevis-proto/blob/83520cce5a55c8a29057db2854dffed63b168b2b/brevis/gateway.proto#L64-L67">queryOption</a></td><td>ZK_MODE: pure zk flow. <mark style="color:red;">recommended</mark> for developers. OP_MODE: supported by BVN. wip</td></tr>
+<tr><td>brevisPartnerKey</td><td>string</td><td><mark style="color:red;">not required</mark>. Developer can use empty string to skip this flow.</td></tr>
+</tbody>
+</table>
+</div>
+<pre><code class="language-go">calldata, requestId, nonce, feeValue, err := app.PrepareRequest(
+    vk, 
+    witness,
+    srcChainId, 
+    dstChainId, 
+    refundee, 
+    appContract,
+    callbackGasLimit,
+    gwproto.QueryOption_ZK_MODE.Enum(),
+    "")
+</code></pre>
+<h4 id="preparerequest-output"><a class="header" href="#preparerequest-output">PrepareRequest Output</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>calldata</td><td>[]byte</td><td>transaction calldata</td></tr>
+<tr><td>requestId</td><td><a href="https://github.com/ethereum/go-ethereum/blob/25bc07749ce21376e1023a6e16ec173fa3fc4e43/common/types.go#L56">common.Hash</a></td><td>query key for future reference</td></tr>
+<tr><td>nonce</td><td>uint64</td><td>transaction parameter</td></tr>
+<tr><td>feeValue</td><td>big.int</td><td>proving fee</td></tr>
+</tbody>
+</table>
+</div>
+<h4 id="submitting-the-proof"><a class="header" href="#submitting-the-proof">Submitting the Proof</a></h4>
+<pre><code class="language-go">err := app.SubmitProof(proof)
+</code></pre>
+<p>You can optionally supply success and error callbacks. Note that the option <code>sdk.WithFinalProofSubmittedCallback</code> makes SubmitProof non-blocking. If you want a blocking way to wait for final proof submission, use <code>app.WaitFinalProofSubmitted</code>.</p>
+<pre><code class="language-go">// Choose one:
+
+err := app.SubmitProof(proof, sdk.WithFinalProofSubmittedCallback(...)) // async
+// Or
+err := app.SubmitProof(proof)
+tx, err := app.WaitFinalProofSubmitted(context.Background()) // blocks the routine
+</code></pre>
+<h4 id="paying-the-fee-1"><a class="header" href="#paying-the-fee-1">Paying the Fee</a></h4>
+<p>The provers in the Brevis network only start working after you pay the fee. To pay, call the <code>sendRequest</code> function on the <code>BrevisRequest</code> contract (<a href="#contract-addresses">address</a>) with the <code>feeValue</code> you got from <code>PrepareRequest</code>.</p>
+<blockquote>
+<p><strong>Note:</strong>
+You can pay the fee any time after you acquire the <code>requestId</code> and <code>feeValue</code> from <code>PrepareRequest</code>. This process done in parallel with <code>SubmitProof</code> and <code>WaitFinalProofSubmitted</code>.</p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong></p>
+</blockquote>
+<h4 id="tip-reducing-end-to-end-proof-generation-time"><a class="header" href="#tip-reducing-end-to-end-proof-generation-time">Tip: Reducing End-to-end Proof Generation Time</a></h4>
+<p>Once PrepareRequest is called <strong>AND</strong> Brevis receives the fee, Brevis starts proving the proofs that are independent from your proof. If your circuit is big and wants to minimize the proof generation time, you can call PrepareRequest first, then pay the fee. This allows your proof and Brevis’s proofs to be generated in parallel.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="app-circuit-interface"><a class="header" href="#app-circuit-interface">App Circuit Interface</a></h1>
+<p>Your circuit needs to implement the <code>AppCircuit</code> interface to be used with the Brevis SDK.</p>
+<pre><code class="language-go">type AppCircuit interface {
+	Define(api *CircuitAPI, input CircuitInput) error
+	Allocate() (maxReceipts, maxStorage, maxTransactions int)
+}
+</code></pre>
+<h3 id="define"><a class="header" href="#define"><code>Define</code></a></h3>
+<p>Define defines your app circuit logic. The code you write in Define is a set of instructions that tells the framework “how to build the circuit”. You could use if statements and loops for constructing the circuit, but as soon as the circuit is compiled, meaning the ifs and loops are run to build the circuit, the wiring is set in stone and there is no more concept of ifs and loops. </p>
+<p>The first parameter <code>api *CircuitAPI</code> contains a set circuit building blocks. <a href="#circuit-api-1">Read more</a></p>
+<p>The second parameter <code>input CircuitInput</code> contains the data you want to process in the circuit. You should only need to access <code>input.Receipts</code>, <code>input.StorageSlots</code>, and <code>input.Transactions</code>. <a href="#sdk.receipt-sdk.storageslot-sdk.transaction">more on these data types</a></p>
+<h3 id="allocate"><a class="header" href="#allocate"><code>Allocate</code></a></h3>
+<p>You need to declare your data “slot” allocations because circuit inputs cannot be dynamic like data structures in normal programs.</p>
+<p>The only thing you need to worry about is that when you add data into BrevisApp using <code>AddReceipt</code>, <code>AddStorageSlot</code>, and <code>AddTransaction</code>, the number of items you add to each type cannot exceed (but can be less than) the number you declare for that type.</p>
+<p>For example, if this is your <code>Allocate</code> function:</p>
+<pre><code class="language-go">func (c *AppCircuit) Allocate() (maxReceipts, maxStorage, maxTransactions int) {
+    return 32, 0, 0
+}
+</code></pre>
+<p>Then you can have a maximum of 1 receipt, 2 storage, and 3 transactions as data points. The sum of these values cannot exceed <code>NumMaxDataPoints</code>.</p>
+<blockquote>
+<p><strong>Note:</strong>
+The less slots you allocate, the better your circuit will perform. You should always aim for allocating the least amount of slots possible. If you intend to build multiple circuits for your use case, the slot allocations for these circuits don’t need to be the same.</p>
+</blockquote>
+<blockquote>
+<p><strong>Note:</strong>
+ For performance optimization, allocate maxReceipts/maxStorage/maxTransaction as an <em><mark style="color:orange;"><strong>integral multiple of 32.</strong></mark></em> <mark style="color:red;">0 is allowed</mark><em><mark style="color:orange;"><strong>.</strong></mark></em> Brevis app will use NextPowerOf2(maxReceipts+maxStorage+maxTransaction) as NumMaxDataPoints</p>
+</blockquote>
+<p>Here is a visualization that may help you develop a mental model:</p>
+<p><img src=".gitbook/assets/img2.png" alt=""><figcaption></figcaption></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="custom-inputs"><a class="header" href="#custom-inputs">Custom Inputs</a></h1>
+<p>Custom inputs, or more canonically, private inputs are what makes our proofs zero-knowledge and succinct. Consider the following use case:</p>
+<p>We want to send some users gifts if they can prove to our gift sender contract that their addresses are included in the merkle root recorded in some other contract’s storage. This requires checking merkle proofs. But we don’t actually need to let our gift sender contract know about these merkle proofs as long as we generate ZK proofs that proves the statement “there exists merkle proofs from these leaves to this storage value (a merkle root) of the contract”. Such merkle proofs can be supplied as custom inputs.</p>
+<pre><code class="language-go">type AppCircuit struct{
+    MerkleProof [8]sdk.Bytes32
+}
+// func (c *AppCircuit) Allocate() ...
+// func (c *AppCircuit) Define() ...
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="circuit-data-types"><a class="header" href="#circuit-data-types">Circuit Data Types</a></h1>
+<h2 id="datainput"><a class="header" href="#datainput"><code>DataInput</code></a></h2>
+<p><code>CircuitInput</code> is a parameter of your circuit definition function <code>Define</code>.  The only thing you care about are the three lists of receipts/storages/transactions. You can treat the data in these three <code>DataPoints</code> lists as proven to be valid. This is because when you submit your proof to Brevis, the provers there will check this data for you.</p>
+<pre><code class="language-go">type DataInput struct {
+	Receipts     DataPoints[Receipt]
+	StorageSlots DataPoints[StorageSlot]
+	Transactions DataPoints[Transaction]
+}
+</code></pre>
+<p>You can create a <code>sdk.DataStream</code> around the list you want to process or you can directly access them.</p>
+<blockquote>
+<p><strong>Note:</strong>
+Not every data point in the lists is necessarily valid. For example, if you allocate 3 slots for receipts but add only two receipts through <code>app.AddReceipt</code>, then the last receipt item would remain empty. When using DataStream methods, e.g.<code>sdk.NewDataStream(input.Receipts).Mean(...)</code>,  empty checks are done for you so that when you do aggregation operations such as <code>Mean</code>, you won’t account for data located at those empty slots. If you access <code>DataPoints</code> directly (e.g. inputs.Receipts[3]), you are forgoing this automatic empty check.</p>
+</blockquote>
+<h2 id="circuitvariable-data-types"><a class="header" href="#circuitvariable-data-types"><code>CircuitVariable</code> Data Types</a></h2>
+<p>You must use the data types specifically defined for circuit use. You can still use custom Go types for non-circuit operations, but anything that goes into <code>CircuitAPI</code> and <code>DataStream</code> functions are circuit data types. These variables can be casted to each other through <a href="#type-casting-functions">casting</a> (some are not convertible to others yet, please pay attention to the documentation of each casting function). The following pre-defined types all implement the <code>CircuitVariable</code> interface.</p>
+<h3 id="primitive-types"><a class="header" href="#primitive-types">Primitive Types</a></h3>
+<h4 id="sdkuint32"><a class="header" href="#sdkuint32"><code>sdk.Uint32</code></a></h4>
+<p>This type is the lowest cost type to use in circuit. It represents an unsigned integer up to 32 bits. You can perform arithmetics, comparisons, binary conversion, selection, and logic operations on it. This type could be useful in representing data like block number. If there are many comparisons, we recommend using Uint32 if you can ensure the value will not overflow. </p>
+<h4 id="sdkuint248"><a class="header" href="#sdkuint248"><code>sdk.Uint248</code></a></h4>
+<p>This type is the default type to use in circuit because it’s “native” to the underlying elliptic curve’s scalar field. It represents an unsigned integer up to 248 bits. It is the return type of other type’s operations (e.g. <code>Bytes32</code>’s <code>ToBinary</code> operation returns a list of <code>Uint248</code>). It is also used where boolean values are appropriate (e.g. the return type of <code>IsEqual</code> should be boolean but is represented using a <code>Uint248</code> 0 or 1). You can perform arithmetics, comparisons, binary conversion, selection, and logic operations on it. You should always prefer using Uint248 to represent data if possible.</p>
+<h4 id="sdkint248"><a class="header" href="#sdkint248"><code>sdk.Int248</code></a></h4>
+<p>This type supports representing negative numbers. Uses 1 bit as the sign bit, so the absolute value can only be up to 247 bits.</p>
+<h4 id="sdkuint521"><a class="header" href="#sdkuint521"><code>sdk.Uint521</code></a></h4>
+<p>This type supports arithmetics up to 521 bits. If you need to multiply two <code>Uint248</code>s and know that they can overflow, cast them to this type before doing the calculation. Note that this type internally uses field emulation and has much higher cost than Uint248 arithmetics. You should only use this whenever necessary.</p>
+<h4 id="sdkbytes32"><a class="header" href="#sdkbytes32"><code>sdk.Bytes32</code></a></h4>
+<p>This type is equivalent to solidity’s bytes32, and in turn, is also used where uint256 needs to be represented. The <code>Value</code> fields in <code>Receipt.LogField</code>, <code>Transaction</code>, and <code>Storage</code> are all this type. You can only perform comparison and selection over variables of this type. <code>Bytes32</code> are used in many places instead of <code>Uint521</code> for performance reasons because most of the time a <code>Bytes32</code> can be down casted to <code>Uint248</code> (e.g. when you know that <code>Value</code> field in <code>StorageSlot</code> that is actually a <code>uint64</code> in a Solidity contract). Other times, we only use <code>Bytes32</code> for equality checks (hashes, keys, etc…). You can always cast to <code>Uint521</code> if you really need it.</p>
+<h3 id="composite-types"><a class="header" href="#composite-types">Composite Types</a></h3>
+<h4 id="sdklist"><a class="header" href="#sdklist"><code>sdk.List</code></a></h4>
+<p>Lists can hold <code>CircuitVariable</code>s of a homogeneous type (e.g. <code>sdk.List[sdk.Uint248]</code>). List itself also implements the CircuitVariable interface. List is simply a Go slice under the hood, so you can use <code>append()</code> to add elements and <code>list[i]</code> to access elements.</p>
+<h4 id="sdktuple2--sdktuple8"><a class="header" href="#sdktuple2--sdktuple8"><code>sdk.Tuple2 ... sdk.Tuple8</code></a></h4>
+<p>There are 7 pre-defined Tuple types from size 2 to 8. This is your go-to method of defining your custom data structures. You can use any type that implements <code>CircuitVariable</code> in Tuple fields. Nested Tuples are also possible.</p>
+<blockquote>
+<p><strong>Note:</strong></p>
+</blockquote>
+<h4 id="tip-1"><a class="header" href="#tip-1">Tip:</a></h4>
+<p>If your Tuple gets too long, you can create a Go type alias for it to make your code more readable.</p>
+<pre><code class="language-go">type MySchema = sdk.Tuple8[
+    sdk.Transaction, 
+    sdk.Tuple2[Uint521, Uint521], 
+    sdk.Int248, 
+    sdk.Uint248, 
+    sdk.Bytes32, 
+    sdk.List[sdk.Uint248], 
+    sdk.Uint248, 
+    sdk.Receipt,
+]
+</code></pre>
+<h4 id="sdkreceiptsdkstorageslotsdktransaction"><a class="header" href="#sdkreceiptsdkstorageslotsdktransaction"><code>sdk.Receipt</code>/<code>sdk.StorageSlot</code>/<code>sdk.Transaction</code></a></h4>
+<p>These are the types of the input data of your app circuit.</p>
+<pre><code class="language-go">// Receipt is a collection of LogField.
+type Receipt struct {
+	BlockNum     Uint32
+	// Block base fee
+	BlockBaseFee Uint248  
+	// Receipt index indicator
+	MptKeyPath   Uint32
+	Fields       [NumMaxLogFields]LogField
+}
+
+// LogField represents a single field of an event.
+type LogField struct {
+	// The contract from which the event is emitted
+	Contract Uint248
+	// The log position in receipt
+	LogPos Uint32
+	// The event ID of the event to which the field belong (aka topics[0])
+	EventID Uint248
+	// Whether the field is a topic (aka "indexed" as in solidity events)
+	IsTopic Uint248
+	// The index of the field. For example, if a field is the second topic of a log, then Index is 1; if a field is the
+	// third field in the RLP decoded data, then Index is 2.
+	Index Uint248
+	// The value of the field in event, aka the actual thing we care about, only 32-byte fixed length values are supported.
+	Value Bytes32
+}
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong>
+For each transaction receipt, you can choose to use up to <code>NumMaxLogFields</code> fields. Currently this limit is set to 3.</p>
+</blockquote>
+<pre><code class="language-go">type StorageSlot struct {
+	BlockNum     Uint32
+	// Block base fee
+	BlockBaseFee Uint248
+	// The contract to which the storage slot belong
+	Contract Uint248
+	// The storage slot
+	Slot Bytes32
+	// The storage slot value
+	Value Bytes32
+}
+</code></pre>
+<pre><code class="language-go">type Transaction struct {
+	BlockNum     Uint32
+	// Block base fee
+	BlockBaseFee Uint248
+	// Transaction index indicator
+	MptKeyPath   Uint32
+	// Hash of rlpPrefix and transaction raw data 
+	LeafHash Bytes32
+}
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong>
+Currently, only transactions of type 0 (legacy) and 2 (dynamic fee) are supported.</p>
+</blockquote>
+<h2 id="defining-constant-variables"><a class="header" href="#defining-constant-variables">Defining Constant Variables</a></h2>
+<p>You may declare constant variables in your circuit. Consider those the “hardwires” of your circuit. The <code>sdk</code> package contains some utility functions for this purpose. These functions are not a part of the Circuit API and should only be used outside of the circuit to initialize constant circuit variables.</p>
+<pre><code class="language-go">// ConstUint248 initializes a constant Uint248. This function does not generate
+// circuit wires and should only be used outside of circuit. Supports all int and
+// uint variants, bool, []byte (big-endian), *big.Int, and string inputs. If
+// input is string, this function uses *big.Int SetString function to interpret
+// the string
+ConstUint248(data interface{}) Uint248
+
+// ConstUint521 initializes a constant Uint521. This function does not generate
+// circuit wires and should only be used outside of circuit. Supports all int and
+// uint variants, bool, []byte (big-endian), *big.Int, and string inputs. If
+// input is string, this function uses *big.Int SetString function to interpret
+// the string
+ConstUint521(data interface{}) Uint521
+
+// ConstInt248 initializes a constant Int248. This function does not generate
+// circuit wires and should only be used outside of circuit. The input big int
+// can be negativ
+ConstInt248(data *big.Int) Int248
+
+// ConstBytes32 initializes a constant Bytes32 circuit variable. Panics if the
+// length of the supplied data bytes is larger than 32
+ConstBytes32(data []byte) Bytes32
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="circuit-api-1"><a class="header" href="#circuit-api-1">Circuit API</a></h1>
+<h2 id="circuitapi"><a class="header" href="#circuitapi">CircuitAPI</a></h2>
+<p><code>sdk.CircuitAPI</code> is the top-level API that is passed to the user’s <code>Define</code> function. It houses many building-block functions that aim to speed up the circuit building process.</p>
+<h4 id="global-checks"><a class="header" href="#global-checks">Global Checks</a></h4>
+<pre><code class="language-go">// AssertInputsAreUnique Asserts that all input data (Transaction, Receipt,
+// StorageSlot) are different from each other
+AssertInputsAreUnique()
+</code></pre>
+<h4 id="output-functions"><a class="header" href="#output-functions">Output Functions</a></h4>
+<p>Data output from the output functions are eventually exposed in your on-chain contracts.</p>
+<pre><code class="language-go">// OutputBytes32 adds an output of solidity bytes32/uint256 type
+OutputBytes32(v Bytes32)
+
+// OutputBool adds an output of solidity bool type
+OutputBool(v Uint248)
+
+// OutputUint adds an output of solidity uint_bitSize type where N is in range
+// [8, 248] with a step size 8. e.g. uint8, uint16, ..., uint248. Panics if a
+// bitSize of non-multiple of 8 is used. Panics if the bitSize exceeds 248. For
+// outputting uint256, use OutputBytes32 instead
+OutputUint(bitSize int, v Uint248)
+
+// OutputAddress adds an output of solidity address type.
+OutputAddress(v Uint248)
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong>
+You can output as many variables as you want, but since all circuits have a limited size, the actual amount of outputs you can have is bound by the upper limit of the circuit size.</p>
+</blockquote>
+<h4 id="type-casting-functions"><a class="header" href="#type-casting-functions">Type Casting Functions</a></h4>
+<pre><code class="language-go">// ToBytes32 casts the input to a Bytes32 type. Supports Bytes32, Int248,
+// Uint521, and Uint248.
+ToBytes32(i interface{}) Bytes32
+
+// ToUint521 casts the input to a Uint521 type. Supports Uint521, Bytes32,
+// Uint248
+ToUint521(i interface{}) Uint521
+
+// ToUint248 casts the input to a Uint248 type. Supports Uint248, Int248,
+// Bytes32, and Uint521
+ToUint248(i interface{}) Uint248
+
+// ToInt248 casts the input to a Int248 type. Supports Int248, Uint248,
+// and Bytes32
+ToInt248(i interface{}) Int248
+</code></pre>
+<h4 id="dynamic-storage-key-functions"><a class="header" href="#dynamic-storage-key-functions">Dynamic Storage Key Functions</a></h4>
+<p>You should use these function if you find the storage key you want to compute can only be deteremined at runtime. If you know the storage you are interested in is fixed, you should compute these keys outside of the circuit and initialize them with <code>sdk.ConstBytes32()</code></p>
+<pre><code class="language-go">// StorageKey computes the storage key for an element in a solidity state variable
+func (api *CircuitAPI) StorageKey(slot Bytes32) Bytes32
+
+// StorageKeyOfArrayElement computes the storage key for an element in a solidity
+// array state variable. arrStorageKey is the storage key for the plain slot of
+// the array variable. index determines the array index. offset determines the
+// offset (in terms of bytes32) within each array element.
+func (api *CircuitAPI) StorageKeyOfArrayElement(
+    arrStorageKey Bytes32, elementSize int, index, offset Uint248) Bytes32
+
+// StorageKeyOfStructFieldInMapping computes the storage key for a struct field
+// stored in a solidity mapping. Implements keccak256(h(k) | p) for computing
+// mapping or nested mapping's storage key where the value is a struct The
+// mapping keys are of the order which you would access the solidity mapping. For
+// example, to access nested mapping at slot 1 value with m[a][b] and
+// subsequently the 4th index of the struct value, use
+// StorageKeyOfStructFieldInMapping(1, 4, a, b). If your a and b are not of
+// Bytes32 type, cast them to Bytes32 first using api.ToBytes32.
+//
+// https://docs.soliditylang.org/en/v0.8.24/internals/layout_in_storage.html#mappings-and-dynamic-arrays
+//
+// IMPORTANT NOTE: the result hash is actually the MPT key of the storage, which is
+// keccak256(storageKey). So the final formula is keccak256(keccak256(h(k) | p)).
+func (api *CircuitAPI) StorageKeyOfStructFieldInMapping(
+	slot, offset int, mappingKey Bytes32, nestedMappingKeys ...Bytes32) Bytes32
+</code></pre>
+<h2 id="data-type-specific-apis"><a class="header" href="#data-type-specific-apis">Data Type Specific APIs</a></h2>
+<h3 id="uint248-api"><a class="header" href="#uint248-api">Uint248 API</a></h3>
+<pre><code class="language-go">// ToBinary decomposes the input v to a list (size n) of little-endian binary
+// digits
+ToBinary(v Uint248, n int) List[Uint248]
+
+// FromBinary interprets the input vs as a list of little-endian binary digits
+// and recomposes it to a Uint248
+FromBinary(vs ...Uint248) Uint248
+
+// Add returns a + b. Overflow can happen if a + b &gt; 2^248
+Add(a, b Uint248, other ...Uint248) Uint248
+
+// Sub returns a - b. Underflow can happen if b &gt; a
+Sub(a, b Uint248) Uint248
+
+// Mul returns a * b. Overflow can happen if a * b &gt; 2^248
+Mul(a, b Uint248) Uint248
+
+// Div computes the standard unsigned integer division (like Go) and returns the
+// quotient and remainder
+Div(a, b Uint248)) (quotient, remainder Uint248)
+
+// Sqrt returns √a
+Sqrt(a Uint248) Uint248
+
+// IsZero returns 1 if a == 0, and 0 otherwise
+IsZero(a Uint248) Uint248
+
+// IsEqual returns 1 if a == b, and 0 otherwise
+IsEqual(a, b Uint248) Uint248
+
+// IsLessThan returns 1 if a &lt; b, and 0 otherwise
+IsLessThan(a, b Uint248) Uint24
+
+// IsGreaterThan returns 1 if a &gt; b, and 0 otherwise
+IsGreaterThan(a, b Uint248) Uint248
+
+// And returns 1 if a &amp;&amp; b [&amp;&amp; other[0] [&amp;&amp; other[1]...]] is true, and 0 otherwise
+And(a, b Uint248, other ...Uint248) Uint248
+
+// Or returns 1 if a || b [|| other[0] [|| other[1]...]] is true, and 0 otherwise
+Or(a, b Uint248, other ...Uint248) Uint248
+
+// Not returns 1 if a is 0, and 0 if a is 1. The user must make sure a is either
+// 0 or 1
+Not(a Uint248) Uint248
+
+// Select returns a if s == 1, and b if s == 0
+Select(s Uint248, a, b Uint248) Uint248
+
+// AssertIsEqual asserts a == b
+AssertIsEqual(a, b Uint248)
+
+// AssertIsLessOrEqual asserts a &lt;= b
+AssertIsLessOrEqual(a, b Uint248)
+
+// AssertIsDifferent asserts a != b
+AssertIsDifferent(a, b Uint248)
+</code></pre>
+<h3 id="uint521-api"><a class="header" href="#uint521-api">Uint521 API</a></h3>
+<pre><code class="language-go">// ToBinary decomposes the input v to a list (size n) of little-endian binary digits
+ToBinary(v Uint521, n int) List[Uint248
+
+// FromBinary interprets the input vs as a list of little-endian binary digits
+// and recomposes it to a Uint521
+FromBinary(vs ...Uint248) Uint521
+
+// Add returns a + b. Overflow can happen if a + b &gt; 2^521
+Add(a, b Uint521) Uint521
+
+// Sub returns a - b. Underflow can happen if b &gt; a
+Sub(a, b Uint521) Uint521
+
+// Mul returns a * b. Overflow can happen if a * b &gt; 2^521
+Mul(a, b Uint521) Uint521
+
+// Div computes the standard unsigned integer division (like Go) and returns the
+// quotient and remainder. Uses QuoRemHint
+Div(a, b Uint521) (quotient, remainder Uint521)
+
+// Select returns a if s == 1, and b if s == 0
+Select(s Uint248, a, b Uint521) Uint521
+
+// IsEqual returns 1 if a == b, and 0 otherwise
+IsEqual(a, b Uint521) Uint248
+
+// AssertIsEqual asserts a == b
+AssertIsEqual(a, b Uint521)
+
+// AssertIsLessOrEqual asserts a &lt;= b
+AssertIsLessOrEqual(a, b Uint521)
+</code></pre>
+<h3 id="int248-api"><a class="header" href="#int248-api">Int248 API</a></h3>
+<pre><code class="language-go">// ToBinary decomposes the input v to a list (size n) of little-endian binary digits
+ToBinary(v Int248) List[Uint248]
+
+// FromBinary interprets the input vs as a list of little-endian binary digits
+// and recomposes it to an Int248. The MSB (most significant bit) of the input is
+// interpreted as the sign bit
+FromBinary(vs ...Uint248) Int248
+
+// IsEqual returns 1 if a == b, and 0 otherwise
+IsEqual(a, b Int248) Uint248
+
+// IsLessThan returns 1 if a &lt; b, and 0 otherwise
+IsLessThan(a, b Int248) Uint248
+
+// IsGreaterThan returns 1 if a &gt; b, and 0 otherwise
+IsGreaterThan(a, b Int248) Uint248
+
+// IsZero returns 1 if a == 0, and 0 otherwise
+IsZero(a Int248) Uint248
+
+// ABS returns the absolute value of a
+ABS(a Int248) Uint248
+
+// Select returns a if s == 1, and b if s == 0
+Select(s Uint248, a, b Int248) Int248
+
+// AssertIsEqual asserts a == b
+AssertIsEqual(a, b Int248)
+
+// AssertIsDifferent asserts a != b
+AssertIsDifferent(a, b Int248)
+</code></pre>
+<h3 id="bytes32-api"><a class="header" href="#bytes32-api">Bytes32 API</a></h3>
+<pre><code class="language-go">// ToBinary decomposes the input v to a list (size 256) of little-endian binary digits
+ToBinary(v Bytes32) List[Uint248]
+
+// FromBinary interprets the input vs as a list of little-endian binary digits
+// and recomposes it to a Bytes32. Input size can be less than 256 bits, the
+// input is padded on the MSB end with 0s.
+FromBinary(vs ...Uint248) Bytes32
+
+// IsEqual returns 1 if a == b, and 0 otherwise
+IsEqual(a, b Bytes32) Uint248
+
+// Select returns a if s == 1, and b if s == 0
+Select(s Uint248, a, b Bytes32) Bytes32
+
+// IsZero returns 1 if a == 0, and 0 otherwise
+IsZero(a Bytes32) Uint248
+
+// AssertIsEqual asserts a == b
+AssertIsEqual(a, b Bytes32)
+
+// AssertIsDifferent asserts a != b
+AssertIsDifferent(a, b Bytes32)
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="datastream-api"><a class="header" href="#datastream-api">DataStream API</a></h1>
+<p>The data streams is an abstraction around the <code>sdk.CircuitVariable</code> interface. This abstraction aims to enable the developer to quickly process the data series in the familiar MapReduce style and not worry about the underlying circuitry (most of the time).</p>
+<h3 id="the-sdkcircuitvariable-interface"><a class="header" href="#the-sdkcircuitvariable-interface">The <code>sdk.CircuitVariable</code> Interface</a></h3>
+<p>Any type that satisfy this interface can be used in DataStreams. That means all pre-defined <a href="#circuit-data-types">circuit data types</a> can be used in data streams. </p>
+<blockquote>
+<p><strong>Note:</strong>
+It might be tempting to define your own struct that conforms to this interface and use them in data streams, but it can be error prone. Most of the time, you should find the TupleN types good enough for your needs.</p>
+</blockquote>
+<h2 id="data-stream-functions"><a class="header" href="#data-stream-functions">Data Stream Functions</a></h2>
+<pre><code class="language-go">// GetUnderlying gets an element from the DataStream. Performed on the underlying data
+// directly. It also requires the underlying data slot is valid
+GetUnderlying[T CircuitVariable](ds *DataStream[T], index int) T
+
+// RangeUnderlying selects a range of the data stream. Performed on the underlying data directly.
+RangeUnderlying[T CircuitVariable](ds *DataStream[T], start, end int) *DataStream[T]
+
+// WindowUnderlying splits a DataStream into many equal sized List. Performed on the
+// underlying data directly. Panics if `size` does not divide the length of the
+// underlying list. Use Range to cut the list length into a multiple of `size`
+// first
+WindowUnderlying[T CircuitVariable](ds *DataStream[T], size int, step ...int) *DataStream[List[T]]
+
+// Map maps each valid element in the data stream by calling the user defined mapFunc
+type MapFunc[T, R CircuitVariable] func(current T) R
+Map[T, R CircuitVariable](ds *DataStream[T], mapFunc MapFunc[T, R]) *DataStream[R]
+
+// Reduce reduces the data stream to another CircuitVariable
+type ReduceFunc[T, R CircuitVariable] func(accumulator R, current T) (newAccumulator R)
+Reduce[T, R CircuitVariable](ds *DataStream[T], initial R, reduceFunc ReduceFunc[T, R]) R
+
+// FilterFunc must return 1/0 to include/exclude `current` in the filter result
+type FilterFunc[T CircuitVariable] func(current T) Uint248
+Filter[T CircuitVariable](ds *DataStream[T], filterFunc FilterFunc[T]) *DataStream[T]
+
+// AssertFunc returns 1 if the assertion passes, and 0 otherwise
+type AssertFunc[T CircuitVariable] func(current T) Uint248
+// AssertEach asserts on each valid element in the data stream
+AssertEach[T CircuitVariable](ds *DataStream[T], assertFunc AssertFunc[T])
+
+// SortFunc returns 1 if a, b are sorted, 0 if not.
+type SortFunc[T CircuitVariable] func(a, b T) Uint248
+// IsSorted returns 1 if the data stream is sorted to the criteria of sortFunc, 0 if not.
+IsSorted[T CircuitVariable](ds *DataStream[T], sortFunc SortFunc[T]) Uint248
+
+// AssertSorted Performs the sortFunc on each valid pair of data points and assert the result to be 1.
+AssertSorted[T CircuitVariable](ds *DataStream[T], sortFunc SortFunc[T])
+
+// Count returns the number of valid elements (i.e. toggled on) in the data stream.
+Count[T CircuitVariable](ds *DataStream[T]) Uint248 
+
+type ZipMap2Func[T0, T1, R CircuitVariable] func(a T0, b T1) R
+// ZipMap2 zips a data stream with a list and apply the map function over the
+// zipped data. The underlying toggles of the result data stream depends on the
+// toggles from the source data stream. Panics if the underlying data lengths
+// mismatch
+// Example: ZipMap2([1,2,3], [4,5,6], mySumFunc) -&gt; [5,7,9]
+ZipMap2[T0, T1, R CircuitVariable](a *DataStream[T0], b List[T1], zipFunc ZipMap2Func[T0, T1, R]) *DataStream[R]
+
+type ZipMap3Func[T0, T1, T2, R CircuitVariable] func(a T0, b T1, c T2) R
+// ZipMap3 zips a data stream with two other lists and apply the map function
+// over the zipped data. The underlying toggles of the result data stream depends
+// on the toggles from the source data stream.
+// Example: ZipMap3([1,2,3], [4,5,6], [7,8,9], mySumFunc) -&gt; [12,15,18]
+ZipMap3[T0, T1, T2, R CircuitVariable](a *DataStream[T0], b List[T1], c List[T2], zipFunc ZipMap3Func[T0, T1, T2, R]) *DataStream[R]
+
+type GetValueFunc[T any] func(current T) Uint248
+// GroupBy a given field (identified through the field func), call reducer on
+// each group, and returns a data stream in which each element is an aggregation
+// result of the group. The optional param maxUniqueGroupValuesOptional can be
+// supplied to optimize performance. It assumes the worst case (all values in the
+// data stream are unique) if no maxUniqueGroupValuesOptional is configured.
+GroupBy[T, R CircuitVariable](
+	ds *DataStream[T],
+	reducer ReduceFunc[T, R],
+	reducerInit R,
+	field GetValueFunc[T],
+	maxUniqueGroupValuesOptional ...int,
+) (*DataStream[R], error)
+
+// MinGeneric finds out the minimum value from the data stream with the user
+// defined sort function. Uses Reduce under the hood. Note if the data stream is
+// empty (all data points are toggled off), this function returns MaxUint248.
+MinGeneric[T CircuitVariable](ds *DataStream[T], initialMin T, lt SortFunc[T]) T
+
+// MaxGeneric finds out the maximum value from the data stream with the user
+// defined sort function. Uses Reduce under the hood. Note if the data stream is
+// empty (all data points are toggled off), this function returns 0.
+MaxGeneric[T CircuitVariable](ds *DataStream[T], initialMax T, gt SortFunc[T]) T
+
+// Min finds out the minimum value from the data stream. Uses MinGeneric. Note if
+// the data stream is empty (all data points are toggled off), this function
+// returns MaxUint248.
+Min(ds *DataStream[Uint248]) Uint248
+
+// Max finds out the maximum value from the data stream. Uses MaxGeneric. Note if
+// the data stream is empty (all data points are toggled off), this function
+// returns 0.
+Max(ds *DataStream[Uint248]) Uint248
+
+// Sum sums values of the selected field in the data stream. Uses Reduce
+Sum(ds *DataStream[Uint248]) Uint248
+
+// Mean calculates the arithmetic mean over the selected fields of the data stream. Uses Sum.
+Mean(ds *DataStream[Uint248]) Uint248
+
+// Show pretty prints the data stream. Useful for debugging. 
+Show()
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="prover-service"><a class="header" href="#prover-service">Prover Service</a></h1>
+<p>The prover service is the most convenient way to quickly spin up a service from your circuit. </p>
+<h3 id="setting-up-the-prover-service"><a class="header" href="#setting-up-the-prover-service">Setting up the Prover Service</a></h3>
+<pre><code class="language-go">// Config for automatic management of compilation outputs
+config := prover.ServiceConfig{
+    // SetupDir saves the circuit compilation outputs (proving key, verifying key,
+    // verifying key hash)
+    SetupDir: "$HOME/circuitOut",
+    // SrsDir saves the SRS files that will be automatically downloaded. These files
+    // can be shared across different circuits. So the best practice is to have them
+    // in a shared directory for all projects. Default to use the same dir as
+    // SetupDir if not specified
+    SrsDir:   "$HOME/kzgsrs",
+    // RpcURL will be used to query on-chain data by sending rpc call.
+    RpcURL string
+    // Source chain id.
+    ChainId int
+}
+// Spin up a new prover service for appCircuit. This automatically compiles your
+// circuit and sets up proving/verifying keys if your circuit changes or if it's
+// your first time compiling
+proverService, err := prover.NewService(appCircuit, config)
+// listen to port 33247
+err = proverService.Serve(33247)
+</code></pre>
+<h3 id="automatic-compilation-management"><a class="header" href="#automatic-compilation-management">Automatic Compilation Management</a></h3>
+<p>The compilation and setup steps of your application circuit is automatically taken care of. You are only providing two directory paths that tells the prover service where to save the output files on your disk.</p>
+<h3 id="interacting-with-the-prover-service"><a class="header" href="#interacting-with-the-prover-service">Interacting with the Prover Service</a></h3>
+<p>The prover service is designed to integrate tightly with the Typescript SDK, but you can also access its API directly if you are familiar with gRPC and protobuf.</p>
+<h4 id="using-the-typescript-sdk"><a class="header" href="#using-the-typescript-sdk">Using the Typescript SDK</a></h4>
+<p>Please refer to the docs for <a href="https://github.com/brevis-network/brevis-sdk-typescript">Typescript SDK</a>.</p>
+<h4 id="using-grpc"><a class="header" href="#using-grpc">Using gRPC</a></h4>
+<p>You can find the protobuf definitions in <a href="https://github.com/brevis-network/brevis-proto/blob/d9a9843fc4562e9a3fdcbf16ec831d0e85bba08b/sdk/prover.proto#L9">this repo</a>.</p>
+<blockquote>
+<p><strong>Note:</strong>
+If you are using Go, you can simply import <code>github.com/brevis-network/brevis-sdk/sdk/proto/sdkproto</code></p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="peripheral-apis"><a class="header" href="#peripheral-apis">Peripheral APIs</a></h1>
+<p>Other than the APIs for building the circuit logic, the SDK also provides various other functions for:</p>
+<ul>
+<li>Compiling your circuit and setting up keys</li>
+<li>Generating/verifying proofs</li>
+<li>Testing you app circuit</li>
+</ul>
+<h2 id="manually-compiling-the-circuit"><a class="header" href="#manually-compiling-the-circuit">Manually Compiling the Circuit</a></h2>
+<p>You circuit needs to be compiled before you can generate a proof with it.</p>
+<pre><code class="language-go">appCircuit := &amp;MyAppCircuit{ 
+    // If you use any custom inputs, you MUST supply values for the input. The 
+    // values you set don't matter but the number of values must be consistent 
+    // between compiling time and proving time. This is because your input size 
+    // determines circuit layout. And when the circuit is compiled, the layout of
+    // your compiledCircuit is fixed.
+    MyCustomInputSlice: []sdk.Uint248{
+        ConstUint248(0), ConstUint248(0), ConstUint248(0)},
+}
+compiledCircuit, pk, vk, err := sdk.Compile(appCircuit, compileOutDir, srsDir)
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong></p>
+</blockquote>
+<h3 id="pitfall-warning"><a class="header" href="#pitfall-warning">Pitfall Warning</a></h3>
+<p>When giving your custom inputs default values, the following won’t work</p>
+<pre><code class="language-go">zero := ConstUint248(0)
+appCircuit := &amp;MyAppCircuit{
+    MyCustomInputSlice: []sdk.Uint248{zero, zero, zero}, // won't work
+}
+</code></pre>
+<p>The underlying circuit framework sees the three zeros as one input signal instead of three separate inputs because they are all one instances</p>
+<h4 id="compileoutdir"><a class="header" href="#compileoutdir"><code>compileOutDir</code></a></h4>
+<p>This is the output directory to save your compilation outputs (compiledCircuit, pk, and vk). A recommended practice is to have one directory for each circuit. The outputs will be saved under the configured <code>compileOutDir</code> as files names <code>compiledCircuit</code>, <code>pk</code>, and <code>vk</code>.</p>
+<h4 id="srsdir"><a class="header" href="#srsdir"><code>srsDir</code></a></h4>
+<p>Compiling requires downloading a structured reference string (SRS) provided by Brevis. You don’t need to configure anything other than a cache directory <code>srsDir</code> to save the downloaded file as the downloading step is automatically handled. </p>
+<blockquote>
+<p><strong>Note:</strong>
+ Brevis generates the SRS file with Aztec Ignition Ceremony Data. The file size is more than 3G.  A good practice is to save them in a separate directory from your <code>compileOutDir</code>, and use the same <code>srsDir</code> for all your apps. Please <a href="https://developers.greenwayhealth.com/developer-platform/docs/installing-curl"><mark style="color:red;">install curl</mark></a> as a command line tool to speed up the download process.</p>
+</blockquote>
+<h4 id="constraint-count"><a class="header" href="#constraint-count">Constraint Count</a></h4>
+<p>When you compile you will see output like this:</p>
+<pre><code>circuit compiled in 193.3395ms, number constraints 290546
+</code></pre>
+<p>Pay attention to “number constraints”. This number is an important metric that basically tells you how big your circuit is. The bigger your circuit, the more memory you need and the slower a proof is generated. A rough benchmark is that a constraint count of 10 million can generate one proof in under a minute on the 32G M2 MacBook Pro. Your actual mileage may vary.</p>
+<h4 id="vk-hash"><a class="header" href="#vk-hash">VK hash</a></h4>
+<p>You will also see the console prints out something that looks like this:</p>
+<pre><code>///////////////////////////////////////////////////////////////////////////////
+// vk hash: 0x1d7f35f3a9b09f723857802db081adfa627b5cb389539ac04eedf6d422a52ed2
+///////////////////////////////////////////////////////////////////////////////
+</code></pre>
+<p>This is the hashed value of your verifying key. You should record this value and store it in your app contract.</p>
+<h2 id="proving"><a class="header" href="#proving">Proving</a></h2>
+<p>Proving is straight-forward. It uses the previously acquired <code>circuitInput</code>, <code>compiledCircuit</code>, <code>pk</code>, and your circuit definition.</p>
+<pre><code class="language-go">witness, publicWitness, err := sdk.NewFullWitness(appCircuitAssignment, circuitInput)
+proof, err := sdk.Prove(compiledCircuit, pk, witness)
+</code></pre>
+<h3 id="verifying"><a class="header" href="#verifying">Verifying</a></h3>
+<p>Verifying is a cheap operation and is completely optional. You can choose to test verifying the proofs you generate before sending them to Brevis to make sure the proof and vk are correct.</p>
+<pre><code class="language-go">err := sdk.Verify(vk, publicWitness, proof)
+</code></pre>
+<h2 id="circuit-testing-1"><a class="header" href="#circuit-testing-1">Circuit Testing</a></h2>
+<p>Testing utilities are located in the <code>github.com/brevis-network/brevis-sdk/test</code> package.</p>
+<pre><code class="language-go">// ProverSucceeded checks:
+// - a proof can be generated with the application circuit/assignment and the 
+//   sdk generated circuit inputs.
+// - the generated proof can be verified.
+ProverSucceeded(t *testing.T, app, assign sdk.AppCircuit, in sdk.CircuitInput)
+
+// ProverFailed checks:
+// - a proof cannot be generated with the application circuit &amp; invalid 
+//   assignment and the sdk generated circuit inputs.
+ProverFailed(t *testing.T, app, assign sdk.AppCircuit, in sdk.CircuitInput)
+
+// IsSolved checks if the given application circuit/assignment and the input 
+// can be solved
+IsSolved(t *testing.T, app, assign sdk.AppCircuit, in sdk.CircuitInput)
+</code></pre>
+<h3 id="issolved"><a class="header" href="#issolved"><code>IsSolved</code></a></h3>
+<p>This function is useful during development when you want to quickly debug and iterate on your circuit. It is a quick way to check if your circuit can be solved using the given inputs. This utility doesn’t invoke the actual prover, so it’s very fast.</p>
+<h3 id="proversucceededproverfailed"><a class="header" href="#proversucceededproverfailed"><code>ProverSucceeded</code>/<code>ProverFailed</code></a></h3>
+<p>These utilities are like <code>IsSolved</code>, but they internally go through the entire proving/verifying cycle. You should use <code>ProverSucceeded</code> to check if a proof can be generated and verified with the valid data (completeness), and use <code>ProverFailed</code> to check that invalid data cannot produce valid proofs (soundness). This function is favored for testing before you go to deployment.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="go-workflow"><a class="header" href="#go-workflow">Go Workflow</a></h1>
+<p>First, we need to install the Brevis Go SDK. To install, initialize a Go module project and run:</p>
+<pre><code>go get github.com/brevis-network/brevis-sdk
+</code></pre>
+<h3 id="creating-a-brevisapp"><a class="header" href="#creating-a-brevisapp">Creating a <code>BrevisApp</code></a></h3>
+<p>Your Integration with Brevis always starts with an <code>sdk.BrevisApp</code> instance that handles data access and interaction with Brevis’s backend systems.</p>
+<pre><code class="language-go">import "github.com/brevis-network/brevis-sdk/sdk"
+// ...
+app := sdk.NewBrevisApp(1, "RPC_URL", "OUTPUT_DIR")
+</code></pre>
+<h3 id="adding-source-data-2"><a class="header" href="#adding-source-data-2">Adding Source Data</a></h3>
+<p>Depending on your project, you may want to first query an indexer, such as Dune, an Ethereum node, or your own service, to acquire the raw data (such as transactions) according to your business logic. This part is <strong>not</strong> handled by the Brevis SDK.</p>
+<blockquote>
+<p><strong>Note:</strong>
+<strong>So why can’t we just use the indexer data directly on chain?</strong></p>
+</blockquote>
+<p>If you directly post the data from an indexer to your contract without any validity proofs, your users would be trusting the entity who posted this data to behave correctly. Brevis’s core role is to replace this trust of data validity on one party with a ZK proof so no one can fabricate data and computation results. </p>
+<p>After you acquire the raw data, feed the data into the <code>app</code> instance as Receipt/Storage/Transaction data through: </p>
+<pre><code class="language-go">// The AddXXX methods can be called multiple times and in a for loop to add more
+app.AddReceipt(sdk.ReceiptData{...})
+app.AddStorage(sdk.StorageData{...})
+app.AddTransaction(sdk.TransactionData{...})
+</code></pre>
+<p>The data you add here will be available for use in your<a href="#application-circuit"> Application Circuit.</a></p>
+<p>Read more about <a href="#query-types">Source Data Types</a>.</p>
+<h3 id="manually-compile--prove"><a class="header" href="#manually-compile--prove">Manually Compile &amp; Prove <a href="#manually-compile-and-prove" id="manually-compile-and-prove"></a></a></h3>
+<h4 id="compiling"><a class="header" href="#compiling-1">Compiling <a href="#compiling-1" id="compiling-1"></a></a></h4>
+<p>Your circuit needs to be compiled before you can generate a proof with it. <code>sdk.Compile</code> automatically downloads the SRS for your circuit size and saves a <code>kzgsrs-bls12_377-xx</code> file to the provided <code>srsDir</code>, then it compiles the circuit and saves the compiled circuit, poving key, and verifying key to <code>outDir</code>. </p>
+<pre><code class="language-go">compiledCircuit, pk, vk, err := sdk.Compile(appCircuit, outDir, srsDir)
+</code></pre>
+<p>The returned <code>compiledCircuit</code> object will be used in both setup and proving phases.</p>
+<p>If your circuit has some custom inputs, you’ll need to provide default values to them. <a href="https://docs.brevis.network/developer-resources/circuit-sdk-reference/peripheral-apis#compiling-and-setup">read more</a></p>
+<p>The generated proving/verifying keys (pk and vk) uniquely identify your circuit with two properties:</p>
+<ul>
+<li>The proofs generated by your pk and circuit can be verified using your vk.</li>
+<li>Proofs not generated by your pk and circuit will fail to pass the verification using your vk.</li>
+</ul>
+<h4 id="proof-generation"><a class="header" href="#proof-generation-1">Proof Generation <a href="#proof-generation-1" id="proof-generation-1"></a></a></h4>
+<p>Proof generation is straight-forward. It uses the previously acquired <code>circuitInput</code>, <code>compiledCircuit</code>, <code>pk</code>, and your circuit definition.</p>
+<pre><code class="language-go">witness, _, err := sdk.NewFullWitness(appCircuitAssignment, circuitInput)
+proof, err := sdk.Prove(compiledCircuit, pk, witness)
+</code></pre>
+<h4 id="submitting-your-proof-to-brevis-1"><a class="header" href="#submitting-your-proof-to-brevis-2">Submitting your Proof to Brevis <a href="#submitting-your-proof-to-brevis-2" id="submitting-your-proof-to-brevis-2"></a></a></h4>
+<p>To submit your proof to Brevis, you first need to acquire a requestId and the fee amount from Brevis using <code>app.PrepareRequest</code>, then submit the proof using <code>app.SubmitProof</code>.</p>
+<pre><code class="language-go">calldata, requestId, feeValue, err := app.PrepareRequest(
+    vk, witness, srcChainId, dstChainId, refundee, appContract, 0, gwproto.QueryOption_ZK_MODE.Enum(), "")
+err = app.SubmitProof(proof)
+</code></pre>
+<p>PrepareRequest() must be called before SubmitProof()</p>
+<p>Note that the above proof is not a “complete” proof in the sense that it doesn’t prove the validity of the data source. When you submit your proof to Brevis, Brevis’s provers will also generate additional data validity proofs that bridges this gap. Your application circuit proof will be aggregated together with these data validity proofs as a final proof which is submitted to the on-chain contract for verification. The data validity proof generation and the proof aggregation process are all handled internally by Brevis.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="brevis-sdk-typescript-reference"><a class="header" href="#brevis-sdk-typescript-reference">Brevis SDK Typescript Reference</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="brevis-client"><a class="header" href="#brevis-client">Brevis Client</a></h1>
+<h2 id="submit"><a class="header" href="#submit">Submit</a></h2>
+<p>By calling the <code>submit</code> function, Brevis client will wrap circuit inputs and send them to Brevis Gateway to finish the rest of the proving process. </p>
+<p>The <em><mark style="color:blue;"><strong>submit</strong></mark></em> is a wrapper of two fundamental calls to the Brevis gateway. The<a href="#preparequery"> first one </a>is used to initialize the proving process on the Brevis gateway. The <a href="#submitproof">second one</a> will upload application circuit proof to the Brevis gateway for future proof aggregation. </p>
+<p>We highly recommend developers use this to kick off Brevis SDK integration for simple testing. <em><mark style="color:orange;"><strong>For best practice, we recommend using subsequent APIs to reduce proving latency.</strong></mark></em> Generally, it takes some time to prove the application circuit, from seconds to minutes. At the same time, Brevis Gateway can operate the parallel proving. It will save lots of time </p>
+<p><a href="https://github.com/brevis-network/brevis-sdk-typescript/blob/9071f89277b5c0a95e69066037eacf19cd763add/src/brevis-client.ts#L51-L74">View Content</a></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>proveRequest</td><td><a href="https://github.com/brevis-network/brevis-proto/blob/b7d1e8abff8c3ce29d0fa2106b991d259875c78f/sdk/prover.proto#L32-L37">ProveRequest</a></td><td>Brevis prover service will use it to prove circuit computation validity. It contains receipts, list of storage information and transactions used in application circuit</td></tr>
+<tr><td>proof</td><td><a href="https://github.com/brevis-network/brevis-proto/blob/b7d1e8abff8c3ce29d0fa2106b991d259875c78f/sdk/prover.proto#L39C1-L43C2">ProveResponse</a></td><td>Proving response given by Brevis prover service</td></tr>
+<tr><td>srcChainId</td><td>number</td><td>Circuit input data original chain</td></tr>
+<tr><td>dstChainId</td><td>number</td><td>Which chain the final proof will be posted on</td></tr>
+<tr><td>option</td><td><a href="https://github.com/brevis-network/brevis-proto/blob/b7d1e8abff8c3ce29d0fa2106b991d259875c78f/brevis/gateway.proto#L64-L67">QueryOption</a></td><td></td></tr>
+<tr><td>apiKey</td><td>string</td><td>Identification which is used for Brevis partner flow</td></tr>
+<tr><td>callbackAddress</td><td>string</td><td>Developer’s application contract address. Used for Brevis partner flow only</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="preparequery"><a class="header" href="#preparequery">PrepareQuery</a></h2>
+<p>PrepareQuery will trigger Brevis gateway proving initialization. After that, Brevis gateway will return <a href="https://github.com/brevis-network/brevis-proto/blob/b7d1e8abff8c3ce29d0fa2106b991d259875c78f/brevis/gateway.proto#L182-L185">QueryKey</a> and fee for this proving. Then developers can guide users to submit on-transaction <mark style="color:purple;">SendRequest</mark> tx. Please note that it is <em><strong>not required</strong></em> for application circuit proof. In this way, parallel proving can be achieved. </p>
+<blockquote>
+<p><strong>Note:</strong>
+On-chain tx is not required if there is a partnership between the developer’s project and Brevis. </p>
+</blockquote>
+<p><a href="https://github.com/brevis-network/brevis-sdk-typescript/blob/9071f89277b5c0a95e69066037eacf19cd763add/src/brevis-client.ts#L76-L86">View Content</a></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>proveRequest</td><td><a href="https://github.com/brevis-network/brevis-proto/blob/b7d1e8abff8c3ce29d0fa2106b991d259875c78f/sdk/prover.proto#L32-L37">ProveRequest</a></td><td>see above</td></tr>
+<tr><td>appCircuitInfo</td><td><a href="https://github.com/brevis-network/brevis-proto/blob/b7d1e8abff8c3ce29d0fa2106b991d259875c78f/common/circuit_data.proto#L4-L13">AppCircuitInfo</a></td><td>Brevis prover service will generate it automatically</td></tr>
+<tr><td>srcChainId</td><td>number</td><td>see above</td></tr>
+<tr><td>dstChainId</td><td>number</td><td>see above</td></tr>
+<tr><td>option</td><td><a href="https://github.com/brevis-network/brevis-proto/blob/b7d1e8abff8c3ce29d0fa2106b991d259875c78f/brevis/gateway.proto#L64-L67">QueryOption</a></td><td></td></tr>
+<tr><td>apiKey</td><td>string</td><td>see above</td></tr>
+<tr><td>callbackAddress</td><td>string</td><td>see above</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="submitproof"><a class="header" href="#submitproof">SubmitProof</a></h2>
+<p>After proof is generated by the Brevis Prover Service,  it should be uploaded to the Brevis gateway for proof aggregation.</p>
+<p><a href="https://github.com/brevis-network/brevis-sdk-typescript/blob/9071f89277b5c0a95e69066037eacf19cd763add/src/brevis-client.ts#L88-L90">View Content</a></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>queryKey</td><td><a href="https://github.com/brevis-network/brevis-proto/blob/b7d1e8abff8c3ce29d0fa2106b991d259875c78f/brevis/gateway.proto#L182-L185">QueryKey</a></td><td>Query identification  returned by Brevis gateway</td></tr>
+<tr><td>dstChainId</td><td>number</td><td>see above</td></tr>
+<tr><td>proof</td><td>String</td><td>Provided by Brevis Prover Service</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="wait"><a class="header" href="#wait">Wait</a></h2>
+<p>Developers can use wait() to check query status. It will get query status from the Brevis gateway periodically. You can find all possible query status <a href="https://github.com/brevis-network/brevis-proto/blob/b7d1e8abff8c3ce29d0fa2106b991d259875c78f/brevis/gateway.proto#L101-L120">here</a>.</p>
+<p><a href="https://github.com/brevis-network/brevis-sdk-typescript/blob/9071f89277b5c0a95e69066037eacf19cd763add/src/brevis-client.ts#L93-L118">View Content</a></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="prover-client"><a class="header" href="#prover-client">Prover Client</a></h1>
+<h2 id="prove"><a class="header" href="#prove">Prove</a></h2>
+<p>The developer can use prove() to notify the Brevis Prover Service proving application circuit with inputs. The response will return AppCircuitInfo and Proof. Because of time consumption in proving, we recommend it be used for <mark style="color:red;">circuits with small amount of constraints only</mark>. Otherwise, proving parallelism will be broken.</p>
+<p><a href="https://github.com/brevis-network/brevis-sdk-typescript/blob/9071f89277b5c0a95e69066037eacf19cd763add/src/prover-client.ts#L19-L22">View Content</a></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>proveRequest</td><td><a href="https://github.com/brevis-network/brevis-proto/blob/b7d1e8abff8c3ce29d0fa2106b991d259875c78f/sdk/prover.proto#L32-L37">ProveRequest</a></td><td>Brevis prover service will use it to prove circuit computation validity. It contains receipts, list of storage information and transactions used in application circuit</td></tr>
+<tr><td>proveResponse</td><td><a href="https://github.com/brevis-network/brevis-proto/blob/b7d1e8abff8c3ce29d0fa2106b991d259875c78f/sdk/prover.proto#L39-L43">ProveResponse</a></td><td>It contains application circuit info and circuit proof</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="proveasync"><a class="header" href="#proveasync">ProveAsync</a></h2>
+<p>Unlike prove(), proveAysnc will not wait for application circuit proof. It returns a <em><mark style="color:orange;">proof_id</mark></em> instead. Developers can retrieve proof from Brevis Prover Service later with this proof_id.</p>
+<p><a href="https://github.com/brevis-network/brevis-sdk-typescript/blob/9071f89277b5c0a95e69066037eacf19cd763add/src/prover-client.ts#L24-L27">View Content</a></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>proveRequest</td><td><a href="https://github.com/brevis-network/brevis-proto/blob/b7d1e8abff8c3ce29d0fa2106b991d259875c78f/sdk/prover.proto#L32-L37">ProveRequest</a></td><td>Brevis prover service will use it to prove circuit computation validity. It contains receipts, list of storage information and transactions used in application circuit</td></tr>
+<tr><td>proveAsyncResponse</td><td><a href="https://github.com/brevis-network/brevis-proto/blob/b7d1e8abff8c3ce29d0fa2106b991d259875c78f/sdk/prover.proto#L45-L49">ProveAsyncResponse</a></td><td>It contains application circuit info and proof_id</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="getproof"><a class="header" href="#getproof">GetProof</a></h2>
+<p>GetProof is used to retrieve proof from the Brevis Prover Service. Brevis Prover Service uses memory to persist the application circuit proof. When receiving a GetProof request, Brevis Prover Service will check whether the proof is ready. If it is ready, Brevis Prover Service will return proof and <mark style="color:purple;">release it from memory</mark>. Hence, <em><mark style="color:red;"><strong>developers have to store the proof somewhere</strong></mark></em> if there is an intention of proof data persistence.</p>
+<p><a href="https://github.com/brevis-network/brevis-sdk-typescript/blob/9071f89277b5c0a95e69066037eacf19cd763add/src/prover-client.ts#L29-L32">View Content</a></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Name</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>proveRequest</td><td><a href="https://github.com/brevis-network/brevis-proto/blob/b7d1e8abff8c3ce29d0fa2106b991d259875c78f/sdk/prover.proto#L51-L53">GetProofRequest</a></td><td></td></tr>
+<tr><td>proveAsyncResponse</td><td><a href="https://github.com/brevis-network/brevis-proto/blob/b7d1e8abff8c3ce29d0fa2106b991d259875c78f/sdk/prover.proto#L55-L60">GetProofResponse</a></td><td>application circuit proof</td></tr>
+</tbody>
+</table>
+</div>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="more-examples-and-ideas"><a class="header" href="#more-examples-and-ideas">More Examples and Ideas</a></h1>
+<p>We will continuously update more ideas and <a href="https://github.com/brevis-network/brevis-sdk/tree/main/examples">advanced examples in this repo</a> as a reference for our developers. </p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="limits-and-performance"><a class="header" href="#limits-and-performance">Limits and Performance</a></h1>
+<p>Brevis is built as a highly performant and highly scalable ZK Coprocessor. As Brevis is currently running in Alpha mainnet with a low-capacity prover infrastructure, there are some limits in the public version worth mentioning here. However, note that our developer partners have implemented use cases handling more than 100X more scale than the public version. Therefore, we suggest developers to use the public version as a testbed for now and talk to us about your production launch. </p>
+<p>We also provide a brief overview of some performance benchmarks. </p>
+<h2 id="data-access-limits-in-public-alpha"><a class="header" href="#data-access-limits-in-public-alpha">Data Access Limits in Public Alpha</a></h2>
+<blockquote>
+<p><strong>Note:</strong>
+<em>The limits below are set up in a data-driven way according to Ethereum historical trace, which should cover &gt;99% use cases.</em></p>
+</blockquote>
+<p><em>If your project requests higher limits, please</em> <a href="https://form.typeform.com/to/lduiliob?typeform-source=brevis.network"><em>reach out to us</em></a><em>. Brevis can support <strong>much higher data limits</strong> on a partner-request basis.</em> </p>
+<h3 id="transaction"><a class="header" href="#transaction">Transaction</a></h3>
+<p>Only transactions of <em>type 0 (legacy)</em> and type <em>2 (dynamic fee)</em> are supported.</p>
+<h3 id="storage"><a class="header" href="#storage">Storage</a></h3>
+<p>The maximum length of a storage value is <strong>32 bytes</strong>.</p>
+<h2 id="application-circuit-size-limit"><a class="header" href="#application-circuit-size-limit">Application Circuit Size Limit</a></h2>
+<p>Circuit size is described by a metric called “constraints”. The constraints number is printed to console whenever you <a href="#compile">compile your circuit</a>. Your circuits will have a constraints upper limit of <strong>2^26</strong>.</p>
+<h2 id="application-circuit-output-limit"><a class="header" href="#application-circuit-output-limit">Application Circuit Output Limit</a></h2>
+<p>There is no artificially imposed upper limit for the amount of <a href="#output">circuit outputs</a> you can have, but the more outputs you have, the bigger your circuit will be. The amount of outputs will be bound by the circuit size limit described above.</p>
+<h2 id="performance-benchmarks"><a class="header" href="#performance-benchmarks">Performance Benchmarks</a></h2>
+<p>Brevis will give you the lowest operation overhead, cost and the best user experience for your dApps. Brevis is highly horizontally scalable and can easily support much higher scalability than the current publicly available version. Please contact us if you have large-scale use cases.</p>
+<p>The current public deployment is supported by a tiny cluster of 2 AWS servers with low-cost commodity hardware. In this deployment, Brevis achieves 5-10X faster proving performance than other solutions with comparable configuration of limits. See below benchmarks to get an idea. </p>
+<table>
+<thead>
+<tr><th width="200">Data Type</th><th width="212">Number of Data Points</th><th>End-to-end Coprocessing Time*</th></tr>
+</thead>
+<tbody>
+<tr><td>Transaction Receipt</td><td>64</td><td>58s</td></tr>
+<tr><td>Transaction Receipt</td><td>256</td><td>68s</td></tr>
+<tr><td>Transaction Receipt</td><td>1024</td><td>127s</td></tr>
+<tr><td>Transaction Receipt</td><td>4096</td><td>344s</td></tr>
+<tr><td>Storage Slot</td><td>64</td><td>69s</td></tr>
+<tr><td>Storage Slot</td><td>256</td><td>81s</td></tr>
+<tr><td>Storage Slot</td><td>1024</td><td>142s</td></tr>
+<tr><td>Storage Slot</td><td>4096</td><td>350s</td></tr>
+<tr><td>Transaction</td><td>64</td><td>65s</td></tr>
+<tr><td>Transaction</td><td>256</td><td>77s</td></tr>
+<tr><td>Transaction</td><td>1024</td><td>144s</td></tr>
+<tr><td>Transaction</td><td>4096</td><td>323s</td></tr>
+</tbody>
+</table>
+
+<p> *End-to-end time here account for the time from the query to the App Service to the completion of aggregated application and data access proof generation. </p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="contract-addresses--rpc-endpoints"><a class="header" href="#contract-addresses--rpc-endpoints">Contract Addresses &amp; RPC Endpoints</a></h1>
+<h2 id="sdk"><a class="header" href="#sdk">SDK </a></h2>
+<p>Repo: <a href="https://github.com/brevis-network/brevis-sdk">https://github.com/brevis-network/brevis-sdk</a></p>
+<blockquote>
+<p><strong>Note:</strong>
+Please make sure SDK version is <em><mark style="color:red;"><strong>no less than</strong></mark></em> 0.3.17. It is not backward-compatible.</p>
+</blockquote>
+<p>To update SDK version, go to the file folder  which contains go.mod file in terminal and run the following command</p>
+<p><code>go get github.com/brevis-network/brevis-sdk@latest</code></p>
+<h2 id="brevis-rpc"><a class="header" href="#brevis-rpc">Brevis RPC</a></h2>
+<p><mark style="color:blue;"><strong>https://appsdkv3.brevis.network</strong></mark> </p>
+<h2 id="source-chain-and-destination-chain-pair"><a class="header" href="#source-chain-and-destination-chain-pair">Source Chain and Destination Chain Pair</a></h2>
+<p>Brevis system supports proving source chain data on destination chain. The following is the pairs of source chain and destination chain. More pairs are underway</p>
+<table>
+<thead>
+<tr><th>Source Chain</th><th>Destination Chain</th><th data-hidden=""></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Ethereum Mainnet</strong>(1)</td><td><strong>Sepolia</strong>(11155111)</td><td></td></tr>
+<tr><td><strong>Sepolia</strong>(11155111)</td><td><strong>Sepolia</strong>(11155111)</td><td></td></tr>
+<tr><td><strong>Ethereum Mainnet</strong>(1)</td><td><strong>Arbitrum Sepolia</strong>(421614)</td><td></td></tr>
+<tr><td><strong>Base Sepolia</strong>(84532)</td><td><strong>Base Sepolia</strong>(84532)</td><td></td></tr>
+</tbody>
+</table>
+
+<h2 id="contract-addresses"><a class="header" href="#contract-addresses">Contract Addresses</a></h2>
+<table>
+<thead>
+<tr><th width="171">Contract</th><th>Address</th></tr>
+</thead>
+<tbody>
+<tr><td>BrevisRequest</td><td><a href="https://sepolia.etherscan.io/address/0xa082f86d9d1660c29cf3f962a31d7d20e367154f">0xa082F86d9d1660C29cf3f962A31d7D20E367154F</a></td></tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr><th width="171">Contract</th><th>Address</th></tr>
+</thead>
+<tbody>
+<tr><td>BrevisRequest</td><td><a href="https://sepolia.basescan.org/address/0x4a97B63b27576d774b6BD288Fa6aAe24F086B84c">0x4a97B63b27576d774b6BD288Fa6aAe24F086B84c</a></td></tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr><th width="171">Contract</th><th>Address</th></tr>
+</thead>
+<tbody>
+<tr><td>BrevisRequest</td><td><a href="https://sepolia.arbiscan.io/address/0x1CD3530F69a85B826b952033365adC4A008F3654">0x1CD3530F69a85B826b952033365adC4A008F3654</a></td></tr>
+</tbody>
+</table>
+
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="legacy-deployments"><a class="header" href="#legacy-deployments">Legacy Deployments</a></h1>
+<blockquote>
+<p><strong>Note:</strong>
+(<em><strong>Attention!</strong></em>) This page specifies our legacy deployments which will be <strong>deprecated</strong> in the future. </p>
+</blockquote>
+<p>This page is for reference only. If you want to integrate with Brevis, please use our <a href="#contract-addresses--rpc-endpoints">up-to-date deployments</a>.</p>
+<h2 id="brevis-sdk-v01"><a class="header" href="#brevis-sdk-v01">Brevis SDK v0.1</a></h2>
+<p><strong>SDK version</strong>: <a href="https://github.com/brevis-network/brevis-sdk/tree/release/v0.1">https://github.com/brevis-network/brevis-sdk/tree/release/v0.1</a></p>
+<p>Brevis SDK V1 only supports same chain proving. Developer can choose <strong>Optimism</strong> or <strong>Base Mainnet</strong> to prove on-chain information</p>
+<p><mark style="color:blue;"><strong>https://brvgw.brevis.network</strong></mark></p>
+<table>
+<thead>
+<tr><th width="171">Contract</th><th>Address</th></tr>
+</thead>
+<tbody>
+<tr><td>BrevisRequest</td><td><a href="https://optimistic.etherscan.io/address/0x9f5b558c95292f13fa9e0328ac4d3f129c2d9562">0x9f5b558c95292f13fa9e0328ac4d3f129c2d9562</a></td></tr>
+<tr><td>BrevisProof</td><td><a href="https://optimistic.etherscan.io/address/0x6CD95817F275bDf5C9cC401CbCcbFfd99c7f186A">0x6CD95817F275bDf5C9cC401CbCcbFfd99c7f186A</a></td></tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr><th width="171">Contract</th><th>Address</th></tr>
+</thead>
+<tbody>
+<tr><td>BrevisRequest</td><td><a href="https://basescan.org/address/0x3463b37908cc3034c635f17f5a8012577cfc2663">0x3463b37908cc3034c635f17f5a8012577cfc2663</a></td></tr>
+<tr><td>BrevisProof</td><td><a href="https://basescan.org/address/0x2294E22000dEFe09A307363f7aCD8aAa1fBc1983">0x2294E22000dEFe09A307363f7aCD8aAa1fBc1983</a></td></tr>
+</tbody>
+</table>
+
+<h2 id="brevis-sdk-v02"><a class="header" href="#brevis-sdk-v02">Brevis SDK v0.2</a></h2>
+<p><strong>SDK version</strong>: <a href="https://github.com/brevis-network/brevis-sdk/tree/release/v0.2">https://github.com/brevis-network/brevis-sdk/tree/release/v0.2</a></p>
+<p>Brevis system supports proving data on the same chain including <strong>Sepolia, Holesky,</strong> and <strong>BSC testnet</strong>. You can choose proof request and the contract callback happens on the above chains. Meanwhile,  data from <strong>Ethereum Mainnet</strong> is available for developers on <strong>Sepolia</strong> and <strong>Holesky</strong>, by configuring the chainID in the <a href="#submit">BrevisClient</a> section with the correct gateway endpoint.</p>
+<p><mark style="color:blue;"><strong>https://appsdkv2.brevis.network</strong></mark></p>
+<table>
+<thead>
+<tr><th width="171">Contract</th><th>Address</th></tr>
+</thead>
+<tbody>
+<tr><td>BrevisRequest</td><td><a href="https://sepolia.etherscan.io/address/0x841ce48F9446C8E281D3F1444cB859b4A6D0738C">0x841ce48F9446C8E281D3F1444cB859b4A6D0738C</a></td></tr>
+<tr><td>BrevisProof</td><td><a href="https://sepolia.etherscan.io/address/0xea80589a5f3A45554555634525deFF2EcB6CC4FF">0xea80589a5f3A45554555634525deFF2EcB6CC4FF</a></td></tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr><th width="171">Contract</th><th>Address</th></tr>
+</thead>
+<tbody>
+<tr><td>BrevisRequest</td><td><a href="https://holesky.etherscan.io/address/0xce17b03d7901173cbfa017b1ae3a9b8632f42c18">0xce17b03d7901173cbfa017b1ae3a9b8632f42c18</a></td></tr>
+<tr><td>BrevisProof</td><td><a href="https://holesky.etherscan.io/address/0x728b3c4c8b88ad54b8118d4c6a65fac35e4cab6b">0x728b3c4c8b88ad54b8118d4c6a65fac35e4cab6b</a></td></tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr><th width="171">Contract</th><th>Address</th></tr>
+</thead>
+<tbody>
+<tr><td>BrevisRequest</td><td><a href="https://testnet.bscscan.com/address/0xf7e9cb6b7a157c14bcb6e6bcf63c1c7c92e952f5">0xF7E9CB6b7A157c14BCB6E6bcf63c1C7c92E952f5</a></td></tr>
+<tr><td>BrevisProof</td><td><a href="https://testnet.bscscan.com/address/0x2241C52472862038dFFdAb38b88410CAC2685D15">0x2241C52472862038dFFdAb38b88410CAC2685D15</a></td></tr>
+</tbody>
+</table>
+
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="faqtroubleshooting"><a class="header" href="#faqtroubleshooting">FAQ/Troubleshooting</a></h1>
+<h2 id="faq"><a class="header" href="#faq">FAQ</a></h2>
+<details>
+<summary>How do I know what "storage key" value to provide?</summary>
+<p><a href="https://evm.storage">evm.storage</a> is a good tool for this. Just type in a contract address and the storage layout will be shown. The slot of a specific state variable looks like <code>0x0000...0002</code> in the “Storage” tab. The storage key of that slot is simply <code>keccak256(slot)</code> for a single storage variable. But it can get much more complicated than that if the variable doesn’t take up 32 bytes and is grouped with another one, or if it’s an array or mapping. You can read more about storage layout in general on the <a href="https://docs.soliditylang.org/en/v0.8.24/internals/layout_in_storage.html">solidity doc</a> website.</p>
+</details>
+<h2 id="troubleshooting-common-errors"><a class="header" href="#troubleshooting-common-errors">Troubleshooting Common Errors</a></h2>
+<details>
+<summary><code>"invalid witness size" / "witness length is invalid"</code></summary>
+<p>If you are seeing witness size related errors, try cleaning your circuit output directory and recompile/setup your circuit.</p>
+</details>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="arithmetic-circuit-primer"><a class="header" href="#arithmetic-circuit-primer">Arithmetic Circuit Primer</a></h1>
+<p>An arithmetic circuit (or just “circuit”) is a core piece in ZK proofs. The circuit takes some inputs and it allows us to express “how the computation is done” in a verifiable way. If you have no prior experience with arithmetic circuits, it is recommended to read Vitalik’s <a href="https://medium.com/@VitalikButerin/quadratic-arithmetic-programs-from-zero-to-hero-f6d558cea649">intro to arithmetic programs</a>. Though one can go very deep into this topic, surprisingly, there aren’t many concepts you need to know before you can write circuit applications. Here are some key points to remember:</p>
+<h4 id="circuits-are-fixtures"><a class="header" href="#circuits-are-fixtures">Circuits are “Fixtures”</a></h4>
+<p>When you compile and setup a circuit, you get a proving key (PK) and a verifying key (VK). These keys are unique per circuit. It means if you change any circuit logic and recompile, these won’t be the same. Normally in the blockchain space, you want your contract to hold the verifying key. </p>
+<blockquote>
+<p>Just like how you can be sure that an Ethereum transaction is signed correctly by someone using their private key if you can recover their public key (address) from it, if you can verify a set of inputs against a proof using your VK, it means the proof is for sure generated by someone using the set of inputs in the circuit that corresponds to your VK. </p>
+</blockquote>
+<p>By using the PK and the circuit, it allows us to prove that because a set of inputs satisfy a fixed circuit, the inputs are correct in terms of that circuit.</p>
+<h4 id="variables-have-an-upper-limit"><a class="header" href="#variables-have-an-upper-limit">Variables Have an “Upper Limit”</a></h4>
+<p>Much like how you can only use up to 2^64 - 1 for uint64 in normal programming languages, in circuits, we also have a limit for <strong>circuit variables</strong>. This upper limit is dependent on which elliptic curve the underlying proving system uses, but in our framework it’s always the max scalar field number of <a href="https://pkg.go.dev/github.com/consensys/gnark-crypto/ecc/bls12-377">BLS12_377</a>. It is ok to not know what this is as long as we keep in mind the max limit is 2^252 (or 248 bits if we round down to the nearest byte, which is 31 bytes). Because actual integer values on Ethereum rarely reach their type limit (uint256), this means for most cases, we can represent Solidity uint256 numbers as <strong>circuit variables</strong>. But hashes (bytes32) are often truly 32 bytes, and cannot be fit into 31 bytes (our upper limit), how do we represent them in circuit? The Brevis SDK simply “chops off” the bytes32 at a certain point and puts them into two circuit variables. That’s it.</p>
+<h4 id="all-operations-are-arithmetic"><a class="header" href="#all-operations-are-arithmetic">All Operations are Arithmetic</a></h4>
+<p>This might be the most counter-intuitive part. The circuits we write are not the same as the programs we use to do the writing. The biggest difference comes from that any meaningful “logic” is implemented through arithmetic gates. For example, there is no comparison operator (a == b), instead, such checks can be done through subtracting b from a and checking whether the result is 0. </p>
+<h4 id="there-are-no-dynamic-circuits"><a class="header" href="#there-are-no-dynamic-circuits">There are No “Dynamic” Circuits</a></h4>
+<p>Just like what you would expect when you solder a physical circuit, you wouldn’t expect the wires to magically desolder themselves and jump around at runtime. Our arithmetic circuits are the same. If you wire some variables together through some arithmetic gates, the wires are soldered once you compile, and your if statements will not make them desolder themselves and jump around at runtime.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="security-and-transparency"><a class="header" href="#security-and-transparency">Security and Transparency</a></h1>
+<h2 id="trusted-setup"><a class="header" href="#trusted-setup">Trusted Setup</a></h2>
+<p><a href="#trusted-setup-1">Link</a>
+<a href="#trusted-setup-1">trusted-setup.md</a></p>
+<h2 id="audit-reports"><a class="header" href="#audit-reports">Audit Reports</a></h2>
+<p><a href="#audit-reports-1">Link</a>
+<a href="#audit-reports-1">audit-reports.md</a></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="trusted-setup-1"><a class="header" href="#trusted-setup-1">Trusted Setup</a></h1>
+<p>Brevis SDK is built upon the PLONK proving backend, which requires a KZG trusted setup. The setup process of Brevis SDK circuits is based on Bn254 KZG SRS from the AZTEC Ignition MPC ceremony.</p>
+<p>AZTEC ran Ignition, an MPC ceremony to generate a CRS for privacy network and other zero-knowledge systems like PLONK from October 25th 2019 to the January 2nd 2020.</p>
+<p><strong>Generate SRS steps:</strong></p>
+<ul>
+<li>Get the ignition transcript files on Mainnet: <a href="https://aztec-ignition.s3.eu-west-2.amazonaws.com/index.html#MAIN%20IGNITION/">https://aztec-ignition.s3.eu-west-2.amazonaws.com/index.html#MAIN%20IGNITION</a></li>
+<li>Verify that each participant signed the SHA256 digest of each transcript file they generated. the verifier tool is provided by Gnark team: <a href="https://github.com/Consensys/gnark-ignition-verifier">https://github.com/Consensys/gnark-ignition-verifier</a></li>
+<li>Generate SRS file via <a href="https://github.com/Consensys/gnark-ignition-verifier">gnark-ignition-verifier</a> main script, the participants generated 100.8 million BN254 points, Approximately corresponding to the constraints gates K = 26.</li>
+</ul>
+<p><strong>Pubilc SRS resource:</strong></p>
+<p>Link:   <a href="https://kzg-srs.s3.us-west-2.amazonaws.com/kzg_srs_100800000_bn254_MAIN_IGNITION">https://kzg-srs.s3.us-west-2.amazonaws.com/kzg_srs_100800000_bn254_MAIN_IGNITION</a> </p>
+<p>MD5 checksum: <strong>0x2abd249241a7fe883379db93530365f8</strong></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="audit-reports-1"><a class="header" href="#audit-reports-1">Audit Reports</a></h1>
+<h3 id="circuit-audits"><a class="header" href="#circuit-audits">Circuit Audits</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Content</th><th>Audit Report</th></tr>
+</thead>
+<tbody>
+<tr><td>brevis-sdk</td><td><a href="https://github.com/brevis-network/brevis-sdk/blob/913864cb7f58e2427bbb64bb52ad5b6e47e11e60/audit/Brevis%20-%20Zellic%20Audit%20Report.pdf">Zellic Audit Report</a></td></tr>
+<tr><td>zk-hash</td><td><a href="https://github.com/brevis-network/zk-hash/blob/0873592430518ff92562ae09425734b4f1598a81/audit/Brevis%20-%20Zellic%20Audit%20Report.pdf">Zellic Audit Report</a></td></tr>
+<tr><td>brevis-core</td><td><a href="https://github.com/brevis-network/brevis-sdk/blob/ab144820672d16962c0c4a7c6e074fa4e5ae68c2/audit/brevis-core-audit-report-sherlock.pdf">Sherlock Audit Report</a></td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="contract-audits"><a class="header" href="#contract-audits">Contract Audits</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Content</th><th>Audit Report</th></tr>
+</thead>
+<tbody>
+<tr><td>brevis-contract</td><td><a href="https://github.com/brevis-network/brevis-contracts/blob/43c5837bbdf84b20197bd5b775f92280703d59f6/audits/Brevis%20Contracts%20-%20SlowMist%20Audit%20Report.pdf">SlowMist Audit Report</a></td></tr>
+</tbody>
+</table>
+</div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+
+    </div>
+    </body>
+</html>
