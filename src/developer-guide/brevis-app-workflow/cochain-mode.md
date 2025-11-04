@@ -1,6 +1,3 @@
----
-description: Alternative optimistic model with Brevis coChain network.
----
 
 # coChain Mode
 

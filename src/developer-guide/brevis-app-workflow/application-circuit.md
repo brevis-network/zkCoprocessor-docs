@@ -1,6 +1,3 @@
----
-description: Write custom computation circuit for your application.
----
 
 # Application Circuit
 

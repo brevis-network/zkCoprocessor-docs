@@ -11,7 +11,7 @@ These limitations, if left unaddressed, render ZK Coprocessors impractical for n
 
 This is why we are introducing Brevis coChain (OP Model).
 
-<figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<img src="../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption>
 
 Brevis coChain is a Proof-of-Stake (PoS) blockchain featuring on-Ethereum staking and slashing functionalities. It accepts coprocessing requests from smart contracts and “**optimistically”** generates coprocessing results through PoS consensus. These PoS-generated results are submitted to blockchains as “proposals” that are subject to be “challenged” via Zero-Knowledge (ZK) proofs. Successful ZK-proof challenges will trigger the slashing of the corresponding validators’ stakes directly on Ethereum. If no challenge is initiated, the results can be used by dApps directly without incurring ZK proof generation costs. Additionally, Brevis coChain is set to integrate with EigenLayer, empowering developers to dynamically adjust the level of crypto-economics security used in the proposal stage. This fusion of crypto-economics and ZK proofs not only ensures the secure and trustless nature of Brevis but also provides developers with a versatile tradeoff space to explore so they can design according to their specific use case.
 

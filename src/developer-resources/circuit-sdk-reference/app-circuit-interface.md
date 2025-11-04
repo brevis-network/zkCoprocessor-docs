@@ -43,4 +43,4 @@ The less slots you allocate, the better your circuit will perform. You should al
 
 Here is a visualization that may help you develop a mental model:
 
-<figure><img src="../../.gitbook/assets/img2.png" alt=""><figcaption></figcaption></figure>
+<img src="../../.gitbook/assets/img2.png" alt=""><figcaption></figcaption>

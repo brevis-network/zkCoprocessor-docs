@@ -1,7 +1,5 @@
 # Trusted Setup
 
-
-
 Brevis SDK is built upon the PLONK proving backend, which requires a KZG trusted setup. The setup process of Brevis SDK circuits is based on Bn254 KZG SRS from the AZTEC Ignition MPC ceremony.
 
 AZTEC ran Ignition, an MPC ceremony to generate a CRS for privacy network and other zero-knowledge systems like PLONK from October 25th 2019 to the January 2nd 2020.

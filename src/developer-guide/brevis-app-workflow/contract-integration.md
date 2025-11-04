@@ -1,6 +1,3 @@
----
-description: Write the custom app contract that integrates with Brevis SDK.
----
 
 # Contract Integration
 

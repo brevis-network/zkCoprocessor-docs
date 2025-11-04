@@ -15,7 +15,7 @@ const brevis = new Brevis('appsdkv3.brevis.network:443');
 
 To prove token transfer, we only need to add a receipt which emits the USDC `Transfer` event. In the below sample transaction receipt. We will use the first log in this receipt(**LogPos 0**). The second topic(**FieldIndex 1**) is "_From_" address. The first 32-byte data value(**FieldIndex 0**) is "_TransferAmount_". By adding these two Fields in receiptData, the prover service is able to check amount and generate corresponding application circuit output.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<img src="../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption>
 
 ```typescript
 // initialize a proof request to our prover
@@ -109,7 +109,7 @@ As we can see, our request is assigned a request id and the fee we are going to 
 
 Now,  you can call `BrevisRequest.sendRequest` on the destination chain to pay for the proof. For demo purposes, we will just send the transaction through the Sepolia explorer. You can find the address of BrevisRequest under [Contract Addresses](../../developer-resources/contract-addresses-and-rpc-endpoints.md).  You may also find the sample contract [here](https://sepolia.etherscan.io/address/0x9fc16c4918a4d69d885f2ea792048f13782a522d).
 
-<figure><img src="../../.gitbook/assets/1234141.png" alt=""><figcaption></figcaption></figure>
+<img src="../../.gitbook/assets/1234141.png" alt=""><figcaption></figcaption>
 
 After the transaction is sent, it takes around two minutes for the transaction to be confirmed and Brevis's final proof to be generated. We should see the console outputs keep updating.
 

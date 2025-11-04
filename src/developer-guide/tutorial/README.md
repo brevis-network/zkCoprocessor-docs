@@ -1,6 +1,3 @@
----
-description: How to build a Brevis app that proves a token transfer
----
 
 # Tutorial
 

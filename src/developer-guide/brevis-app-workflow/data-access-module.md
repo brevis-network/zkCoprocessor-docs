@@ -1,12 +1,9 @@
----
-description: Query onchain data from Brevis SDK.
----
 
 # Data Access Module
 
 First, let's walk through the workflow for adding historical receipt/tx/storage data to your app via the [Brevis TypeScript SDK](https://github.com/brevis-network/brevis-sdk-typescript) which offers a convenient way for NodeJS to interact with the [prover service](../../developer-resources/circuit-sdk-reference/prover-service.md) and Brevis' system.
 
-<figure><img src="../../.gitbook/assets/image (30).png" alt="" width="563"><figcaption><p>High-level system diagram</p></figcaption></figure>
+<img src="../../.gitbook/assets/image (30).png" alt="" width="563"><figcaption><p>High-level system diagram</p></figcaption>
 
 ### Install the Dependency
 

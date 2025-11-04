@@ -6,8 +6,6 @@
 [trusted-setup.md](trusted-setup.md)
 {% endcontent-ref %}
 
-
-
 ## Audit Reports
 
 {% content-ref url="audit-reports.md" %}

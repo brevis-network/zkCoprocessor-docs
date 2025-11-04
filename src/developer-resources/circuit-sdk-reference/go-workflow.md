@@ -1,6 +1,3 @@
----
-description: Brevis app building flow using Go SDK.
----
 
 # Go Workflow
 

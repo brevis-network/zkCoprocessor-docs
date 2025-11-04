@@ -1,6 +1,3 @@
----
-description: Interact with the proving service for your Brevis app.
----
 
 # Compiling & Proving
 
@@ -28,7 +25,7 @@ You can also opt for [manually compile & prove with Go](../../developer-resource
 
 ## Calling the Prover From Node.js
 
-<figure><img src="../../.gitbook/assets/image (30).png" alt="" width="563"><figcaption><p>High-level system diagram</p></figcaption></figure>
+<img src="../../.gitbook/assets/image (30).png" alt="" width="563"><figcaption><p>High-level system diagram</p></figcaption>
 
 ### Sending the Proof Request to Your Prover
 

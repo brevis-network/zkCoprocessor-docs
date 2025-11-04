@@ -1,8 +1,3 @@
----
-description: >-
-  After setting up the Brevis Prover Service, developers can use the prover
-  client to communicate with Brevis Prover Service.
----
 
 # Prover Client
 

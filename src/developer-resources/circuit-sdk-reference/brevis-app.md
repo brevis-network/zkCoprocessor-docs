@@ -106,9 +106,7 @@ app.AddTransaction(sdk.TransactionData{/* TransactionB */}, MyFixedSpot)
 
 The mental model of this would be:
 
-
-
-<figure><img src="../../.gitbook/assets/img1 (1).png" alt=""><figcaption></figcaption></figure>
+<img src="../../.gitbook/assets/img1 (1).png" alt=""><figcaption></figcaption>
 
 Notice how there is an empty slot in transactions because we allocated 64 slots for transactions, but only added two. We also fixated TransactionB at index 2, so the slot index 1 remains empty. TransactionB will always be at index 2.&#x20;
 

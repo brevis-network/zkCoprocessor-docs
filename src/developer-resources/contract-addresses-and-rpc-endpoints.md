@@ -42,5 +42,3 @@ Brevis system supports proving source chain data on destination chain. The follo
 {% endtab %}
 {% endtabs %}
 
-
-

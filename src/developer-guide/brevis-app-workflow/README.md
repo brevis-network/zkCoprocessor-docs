@@ -8,7 +8,7 @@ To build a Brevis-powered dApp, developers need to implement the following three
 
 These three implemented modules are highlighted in Blue in the following workflow diagram:&#x20;
 
-<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption>
 
 The diagram illustrates how these modules interact with Brevis. In this section we'll only give a high-level walkthrough of the application flow with a more detailed explanation provided in the following sections.&#x20;
 

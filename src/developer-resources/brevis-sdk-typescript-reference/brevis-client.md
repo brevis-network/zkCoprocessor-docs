@@ -1,8 +1,3 @@
----
-description: >-
-  Brevis-sdk-typescript provides useful client for developers to focus on
-  application circuit design with convinient interaction with Brevis gateway
----
 
 # Brevis Client
 

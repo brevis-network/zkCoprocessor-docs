@@ -1,6 +1,6 @@
 # Table of contents
 
-## Developer Guide
+# Developer Guide
 
 * [Introduction](README.md)
   * [Brevis coChain](developer-guide/introduction/brevis-cochain.md)
@@ -15,7 +15,7 @@
   * [Writing the App Contract](developer-guide/tutorial/writing-the-app-contract.md)
   * [Putting Everything Together](developer-guide/tutorial/putting-everything-together.md)
 
-## Developer Resources
+# Developer Resources
 
 * [Circuit SDK Reference](developer-resources/circuit-sdk-reference/README.md)
   * [Brevis App](developer-resources/circuit-sdk-reference/brevis-app.md)

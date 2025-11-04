@@ -34,8 +34,6 @@ Brevis will give you the lowest operation overhead, cost and the best user exper
 
 The current public deployment is supported by a tiny cluster of 2 AWS servers with low-cost commodity hardware. In this deployment, Brevis achieves 5-10X faster proving performance than other solutions with comparable configuration of limits. See below benchmarks to get an idea.&#x20;
 
-
-
 <table><thead><tr><th width="200">Data Type</th><th width="212">Number of Data Points</th><th>End-to-end Coprocessing Time*</th></tr></thead><tbody><tr><td>Transaction Receipt</td><td>64</td><td>58s</td></tr><tr><td>Transaction Receipt</td><td>256</td><td>68s</td></tr><tr><td>Transaction Receipt</td><td>1024</td><td>127s</td></tr><tr><td>Transaction Receipt</td><td>4096</td><td>344s</td></tr><tr><td>Storage Slot</td><td>64</td><td>69s</td></tr><tr><td>Storage Slot</td><td>256</td><td>81s</td></tr><tr><td>Storage Slot</td><td>1024</td><td>142s</td></tr><tr><td>Storage Slot</td><td>4096</td><td>350s</td></tr><tr><td>Transaction</td><td>64</td><td>65s</td></tr><tr><td>Transaction</td><td>256</td><td>77s</td></tr><tr><td>Transaction</td><td>1024</td><td>144s</td></tr><tr><td>Transaction</td><td>4096</td><td>323s</td></tr></tbody></table>
 
 &#x20;\*End-to-end time here account for the time from the query to the App Service to the completion of aggregated application and data access proof generation.&#x20;
