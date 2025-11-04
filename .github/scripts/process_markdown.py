@@ -6,6 +6,7 @@ This script:
 1. Removes YAML frontmatter description sections from MD files
 2. Converts level 2 titles to level 1 titles in SUMMARY.md
 3. Removes <figure></figure> HTML elements but keeps content inside
+4. Converts all GitBook {% %} tags to standard markdown format
 """
 
 import os
@@ -41,6 +42,66 @@ def remove_figure_tags(content):
     return content
 
 
+def convert_gitbook_tags(content):
+    """Convert all GitBook {% %} tags to standard markdown format."""
+    
+    # Pattern to match {% embed url="..." %} tags
+    embed_pattern = r'{%\s*embed\s+url="([^"]+)"\s*%}'
+    
+    # Pattern to match any other {% ... %} tags (like code blocks, hints, etc.)
+    general_tag_pattern = r'{%\s*([^%]+)\s*%}'
+    
+    def convert_embed(match):
+        url = match.group(1)
+        
+        # Check if it's a YouTube URL and convert to proper markdown
+        if 'youtube.com' in url or 'youtu.be' in url:
+            # Extract video ID for YouTube URLs
+            video_id = None
+            if 'youtube.com/watch?v=' in url:
+                video_id = url.split('v=')[1].split('&')[0]
+            elif 'youtube.com/embed/' in url:
+                video_id = url.split('/embed/')[1].split('?')[0]
+            elif 'youtu.be/' in url:
+                video_id = url.split('youtu.be/')[1].split('?')[0]
+            
+            if video_id:
+                # Return markdown format with thumbnail and link
+                return f"[![YouTube Video](https://img.youtube.com/vi/{video_id}/maxresdefault.jpg)]({url})\n\n[Watch on YouTube]({url})"
+            else:
+                return f"[YouTube Video]({url})"
+        else:
+            # For non-YouTube URLs, just create a regular link
+            return f"[View Content]({url})"
+    
+    def convert_general_tag(match):
+        tag_content = match.group(1).strip()
+        
+        # Handle specific GitBook tags
+        if tag_content.startswith('hint'):
+            return "> **Note:** "
+        elif tag_content.startswith('code'):
+            return ""  # Remove code block tags, keep the actual code
+        elif tag_content.startswith('endcode'):
+            return ""  # Remove end code block tags
+        elif 'url=' in tag_content and 'embed' not in tag_content:
+            # Handle other URL-containing tags
+            url_match = re.search(r'url="([^"]+)"', tag_content)
+            if url_match:
+                return f"[Link]({url_match.group(1)})"
+        
+        # For unrecognized tags, just remove them
+        return ""
+    
+    # First handle embed tags specifically
+    content = re.sub(embed_pattern, convert_embed, content)
+    
+    # Then handle remaining {% %} tags
+    content = re.sub(general_tag_pattern, convert_general_tag, content)
+    
+    return content
+
+
 def process_markdown_file(file_path):
     """Process a single markdown file."""
     try:
@@ -52,6 +113,7 @@ def process_markdown_file(file_path):
         # Apply all transformations
         content = remove_yaml_frontmatter(content)
         content = remove_figure_tags(content)
+        content = convert_gitbook_tags(content)
         
         # Special processing for SUMMARY.md
         if file_path.name == 'SUMMARY.md':
