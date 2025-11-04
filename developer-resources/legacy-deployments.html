@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Legacy Deployments</title>
+        <title>Legacy Deployments - Incentra</title>
 
 
         <!-- Custom HTML head -->
@@ -28,6 +28,7 @@
         <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-56612340.css">
 
         <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../theme/custom-fc75f45e.css">
 
 
         <!-- Provide site root and default themes to javascript -->
@@ -35,7 +36,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-76ed63fc.js";
+            window.path_to_searchindex_js = "../searchindex-6170d1ee.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-d0a39c87.js"></script>
@@ -137,7 +138,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title"></h1>
+                    <h1 class="menu-title">Incentra</h1>
 
                     <div class="right-buttons">
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
@@ -183,10 +184,10 @@
 <h2 id="brevis-sdk-v01"><a class="header" href="#brevis-sdk-v01">Brevis SDK v0.1</a></h2>
 <p><strong>SDK version</strong>: <a href="https://github.com/brevis-network/brevis-sdk/tree/release/v0.1">https://github.com/brevis-network/brevis-sdk/tree/release/v0.1</a></p>
 <p>Brevis SDK V1 only supports same chain proving. Developer can choose <strong>Optimism</strong> or <strong>Base Mainnet</strong> to prove on-chain information</p>
-<p><strong>RPC Endpoint:</strong></p>
+<p><strong>RPC Endpoint</strong></p>
 <p><mark style="color:blue;"><strong>https://brvgw.brevis.network</strong></mark></p>
-<p><strong>Optimism Deployment</strong></p>
-<table>
+<p><strong>Optimism</strong></p>
+<table data-full-width="false">
 <thead>
 <tr><th width="171">Contract</th><th>Address</th></tr>
 </thead>
@@ -196,8 +197,8 @@
 </tbody>
 </table>
 
-<p><strong>Base Deployment</strong></p>
-<table>
+<p><strong>Base</strong> </p>
+<table data-full-width="false">
 <thead>
 <tr><th width="171">Contract</th><th>Address</th></tr>
 </thead>
@@ -210,10 +211,12 @@
 <h2 id="brevis-sdk-v02"><a class="header" href="#brevis-sdk-v02">Brevis SDK v0.2</a></h2>
 <p><strong>SDK version</strong>: <a href="https://github.com/brevis-network/brevis-sdk/tree/release/v0.2">https://github.com/brevis-network/brevis-sdk/tree/release/v0.2</a></p>
 <p>Brevis system supports proving data on the same chain including <strong>Sepolia, Holesky,</strong> and <strong>BSC testnet</strong>. You can choose proof request and the contract callback happens on the above chains. Meanwhile,  data from <strong>Ethereum Mainnet</strong> is available for developers on <strong>Sepolia</strong> and <strong>Holesky</strong>, by configuring the chainID in the <a href="brevis-sdk-typescript-reference/brevis-client.html#submit">BrevisClient</a> section with the correct gateway endpoint.</p>
+<p><strong>RPC Endpoint</strong></p>
 <p><mark style="color:blue;"><strong>https://appsdkv2.brevis.network</strong></mark></p>
+<p><strong>Sepolia</strong></p>
 <table>
 <thead>
-<tr><th width="171">Contract</th><th>Address</th></tr>
+<tr><th width="141.8515625">Contract</th><th>Addre</th></tr>
 </thead>
 <tbody>
 <tr><td>BrevisRequest</td><td><a href="https://sepolia.etherscan.io/address/0x841ce48F9446C8E281D3F1444cB859b4A6D0738C">0x841ce48F9446C8E281D3F1444cB859b4A6D0738C</a></td></tr>
@@ -221,19 +224,21 @@
 </tbody>
 </table>
 
+<p><strong>Holesky</strong></p>
 <table>
 <thead>
-<tr><th width="171">Contract</th><th>Address</th></tr>
+<tr><th width="141.8515625">Contract</th><th>Addre</th></tr>
 </thead>
 <tbody>
 <tr><td>BrevisRequest</td><td><a href="https://holesky.etherscan.io/address/0xce17b03d7901173cbfa017b1ae3a9b8632f42c18">0xce17b03d7901173cbfa017b1ae3a9b8632f42c18</a></td></tr>
-<tr><td>BrevisProof</td><td><a href="https://holesky.etherscan.io/address/0x728b3c4c8b88ad54b8118d4c6a65fac35e4cab6b">0x728b3c4c8b88ad54b8118d4c6a65fac35e4cab6b</a></td></tr>
+<tr><td>BrevisProof</td><td><a href="https://holesky.etherscan.io/address/0x728b3c4c8b88ad54b8118d4c6a65fac35e4cab6b">0x728b3c4c8b88ad54b8118d4c6a65fac35e4</a></td></tr>
 </tbody>
 </table>
 
+<p><strong>BSC Testnet</strong></p>
 <table>
 <thead>
-<tr><th width="171">Contract</th><th>Address</th></tr>
+<tr><th width="141.8515625">Contract</th><th>Addre</th></tr>
 </thead>
 <tbody>
 <tr><td>BrevisRequest</td><td><a href="https://testnet.bscscan.com/address/0xf7e9cb6b7a157c14bcb6e6bcf63c1c7c92e952f5">0xF7E9CB6b7A157c14BCB6E6bcf63c1C7c92E952f5</a></td></tr>
