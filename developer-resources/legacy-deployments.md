@@ -14,7 +14,7 @@ Brevis SDK V1 only supports same chain proving. Developer can choose **Optimism*
 
 #### RPC Endpoint
 
-<mark style="color:blue;">**https://brvgw.brevis.network**</mark>
+<mark style="color:blue;">https://brvgw.brevis.network</mark>
 
 #### **Optimism**
 
@@ -32,7 +32,7 @@ Brevis system supports proving data on the same chain including **Sepolia, Holes
 
 #### **RPC Endpoint**
 
-<mark style="color:blue;">**https://appsdkv2.brevis.network**</mark>
+<mark style="color:blue;">https://appsdkv2.brevis.network</mark>
 
 #### **Sepolia**
 
