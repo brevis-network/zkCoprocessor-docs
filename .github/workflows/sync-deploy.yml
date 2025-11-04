@@ -75,6 +75,7 @@ jobs:
         git checkout main
         
         # Revert any changes made by the process_markdown.py script
-        git checkout -- src
+        # In main branch, files are in root directory
+        git checkout -- README.md SUMMARY.md developer-guide/ developer-resources/
         
         echo "Reverted processing changes on main branch"

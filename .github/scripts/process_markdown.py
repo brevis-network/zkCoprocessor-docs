@@ -88,14 +88,21 @@ def main():
     # Get the repository root directory
     script_dir = Path(__file__).parent
     repo_root = script_dir.parent.parent
-    src_dir = repo_root / 'src'
     
     print(f"Repository root: {repo_root}")
-    print(f"Source directory: {src_dir}")
+    
+    # In main branch, files are in root directory, not src
+    # In deploy branch, files are in src directory
+    # Check which structure we're dealing with
+    src_dir = repo_root / 'src'
+    if src_dir.exists():
+        print(f"Found src directory: {src_dir}")
+        markdown_files = find_markdown_files(src_dir)
+    else:
+        print(f"Using root directory: {repo_root}")
+        markdown_files = find_markdown_files(repo_root)
     
     # Find all markdown files
-    markdown_files = find_markdown_files(src_dir)
-    
     if not markdown_files:
         print("No markdown files found to process")
         return 0
