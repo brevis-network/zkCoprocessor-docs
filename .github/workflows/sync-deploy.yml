@@ -58,13 +58,13 @@ jobs:
         # Fetch the latest deploy branch
         git fetch origin deploy || echo "Deploy branch doesn't exist yet, will be created"
         
-        # Create or reset deploy branch to ensure clean state
+        # Switch to deploy branch (preserve existing content)
         if git show-ref --verify --quiet refs/remotes/origin/deploy; then
           # Deploy branch exists remotely, check it out
-          git checkout -B deploy origin/deploy
-          echo "Reset to latest deploy branch"
+          git checkout deploy
+          echo "Switched to existing deploy branch"
         else
-          # Deploy branch doesn't exist, create it
+          # Deploy branch doesn't exist, create it as orphan
           git checkout --orphan deploy
           git rm -rf . 2>/dev/null || true
           echo "Created new orphan deploy branch"
@@ -72,25 +72,26 @@ jobs:
 
     - name: Sync processed files to deploy branch
       run: |
-        # Clear everything except .git
-        find . -maxdepth 1 -not -name '.' -not -name '.git' -exec rm -rf {} \; 2>/dev/null || true
+        # Only update the src folder, preserve everything else on deploy branch
+        # Remove existing src folder if it exists
+        if [ -d "src" ]; then
+          rm -rf src
+          echo "Removed existing src folder"
+        fi
         
-        # Copy processed files from backup
-        cp -r /tmp/processed_src/* .
-        
-        # Also copy hidden files like .gitbook
-        cp -r /tmp/processed_src/.* . 2>/dev/null || true
-        
-        # Create src directory and move everything there
+        # Create new src directory and copy processed files
         mkdir -p src
-        find . -maxdepth 1 -not -name '.' -not -name '.git' -not -name 'src' -exec mv {} src/ \; 2>/dev/null || true
+        cp -r /tmp/processed_src/* src/ 2>/dev/null || true
         
-        echo "Synced processed files to deploy branch"
+        # Also copy hidden files like .gitbook to src
+        cp -r /tmp/processed_src/.* src/ 2>/dev/null || true
         
-        # Add and commit changes
-        git add .
+        echo "Updated src folder with processed files from main branch"
+        
+        # Add and commit only src folder changes
+        git add src
         if ! git diff --staged --quiet; then
-          git commit -m "Sync from main: $(git log main -1 --format='%h %s')"
+          git commit -m "Sync src from main: $(git log main -1 --format='%h %s')"
           git push origin deploy
         else
           echo "No changes to commit"
