@@ -37,7 +37,13 @@ jobs:
     - name: Backup processed files
       run: |
         # Create backup of processed files before switching branches
-        cp -r src /tmp/processed_src
+        # Copy all files and folders from root (excluding .git and .github)
+        mkdir -p /tmp/processed_src
+        
+        # Copy all files and directories, including hidden ones like .gitbook
+        # But exclude .git and .github directories
+        find . -maxdepth 1 -not -name '.' -not -name '.git' -not -name '.github' -exec cp -r {} /tmp/processed_src/ \;
+        
         echo "Backed up processed files"
 
     - name: Switch to deploy branch
@@ -75,7 +81,7 @@ jobs:
         git checkout main
         
         # Revert any changes made by the process_markdown.py script
-        # In main branch, files are in root directory
-        git checkout -- README.md SUMMARY.md developer-guide/ developer-resources/
+        # Revert all tracked files except .github directory
+        git status --porcelain | grep -E '^.M' | grep -v '.github/' | cut -c4- | xargs -r git checkout --
         
         echo "Reverted processing changes on main branch"
