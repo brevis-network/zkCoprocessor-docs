@@ -18,11 +18,11 @@ Brevis SDK V1 only supports same chain proving. Developer can choose **Optimism*
 
 **Optimism**
 
-<table data-full-width="true"><thead><tr><th width="171">Contract</th><th>Address</th></tr></thead><tbody><tr><td>BrevisRequest</td><td><a href="https://optimistic.etherscan.io/address/0x9f5b558c95292f13fa9e0328ac4d3f129c2d9562">0x9f5b558c95292f13fa9e0328ac4d3f129c2d9562</a></td></tr><tr><td>BrevisProof</td><td><a href="https://optimistic.etherscan.io/address/0x6CD95817F275bDf5C9cC401CbCcbFfd99c7f186A">0x6CD95817F275bDf5C9cC401CbCcbFfd99c7f186A</a></td></tr></tbody></table>
+<table data-full-width="false"><thead><tr><th width="171">Contract</th><th>Address</th></tr></thead><tbody><tr><td>BrevisRequest</td><td><a href="https://optimistic.etherscan.io/address/0x9f5b558c95292f13fa9e0328ac4d3f129c2d9562">0x9f5b558c95292f13fa9e0328ac4d3f129c2d9562</a></td></tr><tr><td>BrevisProof</td><td><a href="https://optimistic.etherscan.io/address/0x6CD95817F275bDf5C9cC401CbCcbFfd99c7f186A">0x6CD95817F275bDf5C9cC401CbCcbFfd99c7f186A</a></td></tr></tbody></table>
 
 **Base**&#x20;
 
-<table data-full-width="true"><thead><tr><th width="171">Contract</th><th>Address</th></tr></thead><tbody><tr><td>BrevisRequest</td><td><a href="https://basescan.org/address/0x3463b37908cc3034c635f17f5a8012577cfc2663">0x3463b37908cc3034c635f17f5a8012577cfc2663</a></td></tr><tr><td>BrevisProof</td><td><a href="https://basescan.org/address/0x2294E22000dEFe09A307363f7aCD8aAa1fBc1983">0x2294E22000dEFe09A307363f7aCD8aAa1fBc1983</a></td></tr></tbody></table>
+<table data-full-width="false"><thead><tr><th width="171">Contract</th><th>Address</th></tr></thead><tbody><tr><td>BrevisRequest</td><td><a href="https://basescan.org/address/0x3463b37908cc3034c635f17f5a8012577cfc2663">0x3463b37908cc3034c635f17f5a8012577cfc2663</a></td></tr><tr><td>BrevisProof</td><td><a href="https://basescan.org/address/0x2294E22000dEFe09A307363f7aCD8aAa1fBc1983">0x2294E22000dEFe09A307363f7aCD8aAa1fBc1983</a></td></tr></tbody></table>
 
 ## Brevis SDK v0.2
 
