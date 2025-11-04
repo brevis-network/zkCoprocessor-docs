@@ -18,6 +18,7 @@ jobs:
       with:
         ref: main
         fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Setup Python
       uses: actions/setup-python@v4
@@ -105,11 +106,15 @@ jobs:
         if ! git diff --staged --quiet; then
           git commit -m "Sync src from main: $(git log main -1 --format='%h %s')"
           
-          # Try normal push first, then force push if needed
-          if ! git push origin deploy; then
-            echo "Normal push failed, attempting force push..."
-            git push --force-with-lease origin deploy
-          fi
+          # Push changes  
+          git push origin deploy
+          
+          # Trigger repository dispatch event to start GitHub Pages deployment
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/${{ github.repository }}/dispatches \
+            -d '{"event_type":"deploy-pages"}'
         else
           echo "No changes to commit"
         fi

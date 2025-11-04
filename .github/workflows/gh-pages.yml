@@ -4,6 +4,8 @@ on:
   push:
     branches: ["deploy"]  
   pull_request:
+  repository_dispatch:
+    types: [deploy-pages]
 
 jobs:
   deploy:
