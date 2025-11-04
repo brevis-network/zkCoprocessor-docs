@@ -8,6 +8,9 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
     
     steps:
     - name: Checkout main branch
@@ -88,11 +91,25 @@ jobs:
         
         echo "Updated src folder with processed files from main branch"
         
+        # Show what files are being synced
+        echo "Files in src directory:"
+        ls -la src/ || echo "No src directory found"
+        
         # Add and commit only src folder changes
         git add src
+        
+        # Check if there are changes to commit
+        echo "Checking for changes to commit..."
+        git status --porcelain
+        
         if ! git diff --staged --quiet; then
           git commit -m "Sync src from main: $(git log main -1 --format='%h %s')"
-          git push origin deploy
+          
+          # Try normal push first, then force push if needed
+          if ! git push origin deploy; then
+            echo "Normal push failed, attempting force push..."
+            git push --force-with-lease origin deploy
+          fi
         else
           echo "No changes to commit"
         fi
