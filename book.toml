@@ -1,0 +1,8 @@
+[book]
+title = "Incentra"
+authors = ["jie"]
+language = "en"
+
+[output.html]
+theme = "theme"
+additional-css = ["theme/custom.css"]
