@@ -1,0 +1,67 @@
+name: Sync Main to Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout main branch
+      uses: actions/checkout@v4
+      with:
+        ref: main
+        fetch-depth: 0
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install PyYAML
+
+    - name: Process markdown files
+      run: python .github/scripts/process_markdown.py
+
+    - name: Configure Git
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+    - name: Switch to deploy branch
+      run: |
+        git fetch origin deploy
+        git checkout deploy
+
+    - name: Sync processed files to deploy branch
+      run: |
+        # Remove existing src folder in deploy branch
+        rm -rf src
+        
+        # Copy processed files from main branch
+        git checkout main -- src
+        
+        # Add and commit changes
+        git add src
+        if ! git diff --staged --quiet; then
+          git commit -m "Sync from main: $(git log main -1 --format='%h %s')"
+          git push origin deploy
+        else
+          echo "No changes to commit"
+        fi
+
+    - name: Revert changes on main branch
+      run: |
+        # Switch back to main branch
+        git checkout main
+        
+        # Revert any changes made by the process_markdown.py script
+        git checkout -- src
+        
+        echo "Reverted processing changes on main branch"
