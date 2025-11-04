@@ -48,23 +48,40 @@ jobs:
 
     - name: Switch to deploy branch
       run: |
+        # Fetch the latest deploy branch
         git fetch origin deploy || echo "Deploy branch doesn't exist yet, will be created"
-        git checkout deploy || git checkout -b deploy
+        
+        # Create or reset deploy branch to ensure clean state
+        if git show-ref --verify --quiet refs/remotes/origin/deploy; then
+          # Deploy branch exists remotely, check it out
+          git checkout -B deploy origin/deploy
+          echo "Reset to latest deploy branch"
+        else
+          # Deploy branch doesn't exist, create it
+          git checkout --orphan deploy
+          git rm -rf . 2>/dev/null || true
+          echo "Created new orphan deploy branch"
+        fi
 
     - name: Sync processed files to deploy branch
       run: |
-        # Remove existing src folder in deploy branch (if it exists)
-        if [ -d "src" ]; then
-          rm -rf src
-          echo "Removed existing src folder"
-        fi
+        # Clear everything except .git
+        find . -maxdepth 1 -not -name '.' -not -name '.git' -exec rm -rf {} \; 2>/dev/null || true
         
         # Copy processed files from backup
-        cp -r /tmp/processed_src src
-        echo "Copied processed files to deploy branch"
+        cp -r /tmp/processed_src/* .
+        
+        # Also copy hidden files like .gitbook
+        cp -r /tmp/processed_src/.* . 2>/dev/null || true
+        
+        # Create src directory and move everything there
+        mkdir -p src
+        find . -maxdepth 1 -not -name '.' -not -name '.git' -not -name 'src' -exec mv {} src/ \; 2>/dev/null || true
+        
+        echo "Synced processed files to deploy branch"
         
         # Add and commit changes
-        git add src
+        git add .
         if ! git diff --staged --quiet; then
           git commit -m "Sync from main: $(git log main -1 --format='%h %s')"
           git push origin deploy
