@@ -21,11 +21,11 @@ app := sdk.NewBrevisApp(1, "RPC_URL", "OUTPUT_DIR")
 
 Depending on your project, you may want to first query an indexer, such as Dune, an Ethereum node, or your own service, to acquire the raw data (such as transactions) according to your business logic. This part is **not** handled by the Brevis SDK.
 
-{% hint style="warning" %}
+> **Note:** 
 **So why can't we just use the indexer data directly on chain?**
 
 If you directly post the data from an indexer to your contract without any validity proofs, your users would be trusting the entity who posted this data to behave correctly. Brevis's core role is to replace this trust of data validity on one party with a ZK proof so no one can fabricate data and computation results.&#x20;
-{% endhint %}
+
 
 After you acquire the raw data, feed the data into the `app` instance as Receipt/Storage/Transaction data through:&#x20;
 

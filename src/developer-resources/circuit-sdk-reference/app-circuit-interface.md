@@ -33,13 +33,13 @@ func (c *AppCircuit) Allocate() (maxReceipts, maxStorage, maxTransactions int) {
 
 Then you can have a maximum of 1 receipt, 2 storage, and 3 transactions as data points. The sum of these values cannot exceed `NumMaxDataPoints`.
 
-{% hint style="warning" %}
+> **Note:** 
 The less slots you allocate, the better your circuit will perform. You should always aim for allocating the least amount of slots possible. If you intend to build multiple circuits for your use case, the slot allocations for these circuits don't need to be the same.
-{% endhint %}
 
-{% hint style="warning" %}
+
+> **Note:** 
 &#x20;For performance optimization, allocate maxReceipts/maxStorage/maxTransaction as an _<mark style="color:orange;">**integral multiple of 32.**</mark>_ <mark style="color:red;">0 is allowed</mark>_<mark style="color:orange;">**.**</mark>_ Brevis app will use NextPowerOf2(maxReceipts+maxStorage+maxTransaction) as NumMaxDataPoints
-{% endhint %}
+
 
 Here is a visualization that may help you develop a mental model:
 

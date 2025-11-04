@@ -88,7 +88,7 @@ Otherwise, for most applications, the user needs to send the request with fee in
 
 You need to call `BrevisRequest.sendRequest` with the `requestId` and the `feeValue` (as transaction value) you acquire from in the previous step when you call `app.PrepareRequest` in Go. The parameter `_callback` is where you specify your app contract address.&#x20;
 
-{% code title="BrevisRequest contract" %}
+
 ```solidity
 function sendRequest(
     bytes32 _proofId,
@@ -103,7 +103,7 @@ struct Callback {
     uint64 gas;
 }
 ```
-{% endcode %}
+
 
 Or, you can send a raw transaction using the `calldata` you acquire from `app.PrepareRequest` as the transaction call data and the `feeValue` as the transaction value.
 

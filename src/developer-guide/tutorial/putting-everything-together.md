@@ -97,13 +97,13 @@ query: proofId 0x6f478f47319620692acf0d59241c9cbecdb9596f6f185309a11c6c4d75e83df
 
 </details>
 
-{% hint style="warning" %}
+> **Note:** 
 If there is a partnership between the developer's project and Brevis, the developer can hand over the corresponding <mark style="color:purple;">BREVIS\_PARTNER\_KEY</mark> and <mark style="color:purple;">CALLBACK\_ADDRESS</mark>  to Brevis gateway when using <mark style="color:red;">`submit`</mark> provided by Brevis SDK. Then you can _<mark style="color:red;">**skip**</mark>_ the subsequent sendRequest on-chain transaction
-{% endhint %}
 
-{% hint style="info" %}
+
+> **Note:** 
 <mark style="color:purple;">BREVIS\_PARTNER\_KEY</mark> and <mark style="color:purple;">CALLBACK\_ADDRESS</mark> are _<mark style="color:red;">**NOT**</mark>_ required to send requests to the Brevis gateway. Developers can leave them as _empty_ _string_
-{% endhint %}
+
 
 As we can see, our request is assigned a request id and the fee we are going to pay is 0 (this is only zero for the testnet). Our program is currently waiting for us to pay the fee.
 

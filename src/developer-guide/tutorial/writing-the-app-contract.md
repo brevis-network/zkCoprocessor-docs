@@ -6,7 +6,7 @@ Your app contract needs to inherit the `BrevisApp` abstract contract. You can ma
 yarn add brevis-contracts
 ```
 
-{% code title="TokenTransfer.sol" %}
+
 ````solidity
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -49,7 +49,7 @@ contract TokenTransfer is BrevisApp, Ownable {
 
 }
 ````
-{% endcode %}
+
 
 ### Checking the Verifying Key Hash
 

@@ -23,7 +23,7 @@ appCircuit := &MyAppCircuit{
 compiledCircuit, pk, vk, err := sdk.Compile(appCircuit, compileOutDir, srsDir)
 ```
 
-{% hint style="danger" %}
+> **Note:** 
 ### Pitfall Warning
 
 When giving your custom inputs default values, the following won't work
@@ -36,7 +36,7 @@ appCircuit := &MyAppCircuit{
 ```
 
 The underlying circuit framework sees the three zeros as one input signal instead of three separate inputs because they are all one instances
-{% endhint %}
+
 
 #### `compileOutDir`
 
@@ -46,9 +46,9 @@ This is the output directory to save your compilation outputs (compiledCircuit, 
 
 Compiling requires downloading a structured reference string (SRS) provided by Brevis. You don't need to configure anything other than a cache directory `srsDir` to save the downloaded file as the downloading step is automatically handled.&#x20;
 
-{% hint style="info" %}
+> **Note:** 
 &#x20;Brevis generates the SRS file with Aztec Ignition Ceremony Data. The file size is more than 3G.  A good practice is to save them in a separate directory from your `compileOutDir`, and use the same `srsDir` for all your apps. Please [<mark style="color:red;">install curl</mark>](https://developers.greenwayhealth.com/developer-platform/docs/installing-curl) as a command line tool to speed up the download process.
-{% endhint %}
+
 
 #### Constraint Count
 

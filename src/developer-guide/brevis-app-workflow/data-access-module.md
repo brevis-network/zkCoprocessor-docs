@@ -28,11 +28,11 @@ const proofReq = new ProofRequest();
 
 Depending on your project, you may want to first query an indexer, such as Dune, an Ethereum node, or your own service, to acquire the raw data (such as transactions) according to your business logic. This part is **not** handled by the Brevis SDK.
 
-{% hint style="warning" %}
+> **Note:** 
 **So why can't we just use the indexer data directly on chain?**
 
 If you directly post the data from an indexer to your contract without any validity proofs, your users would be trusting the entity who posted this data to behave correctly. Brevis's core role is to replace this trust of data validity on one party with a ZK proof so no one can fabricate data and computation results.&#x20;
-{% endhint %}
+
 
 After you acquire the raw data, you add the data to the `proofReq`. The data you add here is closely tied to how you [allocate](../../developer-resources/circuit-sdk-reference/app-circuit-interface.md#allocate) data slots for your circuit and is available in `CircuitInput` passed in to your `Define` function. [how to write an application circuit](application-circuit.md)
 
@@ -98,9 +98,9 @@ proofReq.setCustomInput({
 });
 ```
 
-{% hint style="info" %}
+> **Note:** 
 The keys of the custom input object you add in typescript matches what you define in your app circuit. The first letter can also be lower cased, e.g. `merkleProof` in the above example
-{% endhint %}
+
 
 #### Custom Input Types
 
@@ -140,6 +140,6 @@ The data you add here will be available for use in your[ Application Circuit.](a
 
 Read more about [Source Data Types](../../developer-resources/circuit-sdk-reference/brevis-app.md#source-data-types).
 
-{% hint style="info" %}
+> **Note:** 
 For advanced developers, there is also a way to access the receipt/tx/storage data via the [Go SDK](https://github.com/brevis-network/brevis-sdk). See [Go Workflow](../../developer-resources/circuit-sdk-reference/go-workflow.md) for details.
-{% endhint %}
+

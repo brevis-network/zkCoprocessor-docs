@@ -33,9 +33,9 @@ OutputUint(bitSize int, v Uint248)
 OutputAddress(v Uint248)
 ```
 
-{% hint style="warning" %}
+> **Note:** 
 You can output as many variables as you want, but since all circuits have a limited size, the actual amount of outputs you can have is bound by the upper limit of the circuit size.
-{% endhint %}
+
 
 #### Type Casting Functions
 

@@ -6,13 +6,13 @@ The data streams is an abstraction around the `sdk.CircuitVariable` interface. T
 
 Any type that satisfy this interface can be used in DataStreams. That means all pre-defined [circuit data types](circuit-data-types.md) can be used in data streams.&#x20;
 
-{% hint style="info" %}
+> **Note:** 
 It might be tempting to define your own struct that conforms to this interface and use them in data streams, but it can be error prone. Most of the time, you should find the TupleN types good enough for your needs.
-{% endhint %}
+
 
 ## Data Stream Functions
 
-{% code fullWidth="false" %}
+
 ```go
 // GetUnderlying gets an element from the DataStream. Performed on the underlying data
 // directly. It also requires the underlying data slot is valid
@@ -113,4 +113,4 @@ Mean(ds *DataStream[Uint248]) Uint248
 // Show pretty prints the data stream. Useful for debugging. 
 Show()
 ```
-{% endcode %}
+

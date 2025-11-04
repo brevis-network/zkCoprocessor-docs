@@ -49,9 +49,9 @@ The Brevis application circuit supports proving receipt,  storage value, and tra
 
 <table><thead><tr><th width="163">Name</th><th width="152">Type</th><th>Description</th></tr></thead><tbody><tr><td>Hash</td><td><a href="https://github.com/ethereum/go-ethereum/blob/25bc07749ce21376e1023a6e16ec173fa3fc4e43/common/types.go#L56">common.Hash</a></td><td>Transaction hash (<mark style="color:red;"><strong>*required</strong></mark>)</td></tr><tr><td>BlockNum</td><td><a href="https://pkg.go.dev/math/big">big.Int</a></td><td>Receipt's block number</td></tr><tr><td>BlockBaseFee</td><td><a href="https://pkg.go.dev/math/big">big.Int</a></td><td><a href="https://ethereum.org/en/developers/docs/gas/#base-fee">Block base fee</a></td></tr><tr><td>MptKeyPath</td><td><a href="https://pkg.go.dev/math/big">big.Int</a></td><td>Rlp encoded receipt index using <a href="https://github.com/ethereum/go-ethereum/blob/25bc07749ce21376e1023a6e16ec173fa3fc4e43/rlp/raw.go#L228">this</a></td></tr><tr><td>LeafHash</td><td><a href="https://github.com/ethereum/go-ethereum/blob/25bc07749ce21376e1023a6e16ec173fa3fc4e43/common/types.go#L56">common.Hash</a></td><td><p>Hash of transaction raw data </p><p>with rlp prefix. </p></td></tr></tbody></table>
 
-{% hint style="warning" %}
+> **Note:** 
 As of now, brevis will only prove the _**existence of a transaction**_, stay tuned for more tx information is usable
-{% endhint %}
+
 
 ### Adding Source Data
 
@@ -137,9 +137,9 @@ circuitInput, err := app.BuildCircuitInput(appCircuit)
 
 ## Submitting the Proof to Brevis
 
-{% hint style="info" %}
+> **Note:** 
 [Proof generation](peripheral-apis.md#proving-and-verifying) relies on a separate set of functions, but once you have a proof, your `BrevisApp` instance can handle submitting it to Brevis.
-{% endhint %}
+
 
 To submit your proof to Brevis, you need to first query Brevis RPC for the fee amount and acquire a `requestId`.&#x20;
 
@@ -199,12 +199,12 @@ tx, err := app.WaitFinalProofSubmitted(context.Background()) // blocks the routi
 
 The provers in the Brevis network only start working after you pay the fee. To pay, call the `sendRequest` function on the `BrevisRequest` contract ([address](../contract-addresses-and-rpc-endpoints.md#contract-addresses)) with the `feeValue` you got from `PrepareRequest`.
 
-{% hint style="info" %}
+> **Note:** 
 You can pay the fee any time after you acquire the `requestId` and `feeValue` from `PrepareRequest`. This process done in parallel with `SubmitProof` and `WaitFinalProofSubmitted`.
-{% endhint %}
 
-{% hint style="info" %}
+
+> **Note:** 
 #### Tip: Reducing End-to-end Proof Generation Time
 
 Once PrepareRequest is called **AND** Brevis receives the fee, Brevis starts proving the proofs that are independent from your proof. If your circuit is big and wants to minimize the proof generation time, you can call PrepareRequest first, then pay the fee. This allows your proof and Brevis's proofs to be generated in parallel.
-{% endhint %}
+

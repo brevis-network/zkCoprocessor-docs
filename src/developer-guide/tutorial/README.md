@@ -19,14 +19,14 @@ In the tutorial application, we are going to write an Brevis app checking that t
 
 ## Contents
 
-{% content-ref url="building-the-app-circuit.md" %}
+[Link](building-the-app-circuit.md)
 [building-the-app-circuit.md](building-the-app-circuit.md)
-{% endcontent-ref %}
 
-{% content-ref url="writing-the-app-contract.md" %}
+
+[Link](writing-the-app-contract.md)
 [writing-the-app-contract.md](writing-the-app-contract.md)
-{% endcontent-ref %}
 
-{% content-ref url="putting-everything-together.md" %}
+
+[Link](putting-everything-together.md)
 [putting-everything-together.md](putting-everything-together.md)
-{% endcontent-ref %}
+

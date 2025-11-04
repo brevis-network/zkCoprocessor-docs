@@ -6,11 +6,11 @@ We also provide a brief overview of some performance benchmarks.&#x20;
 
 ## Data Access Limits in Public Alpha
 
-{% hint style="info" %}
+> **Note:** 
 _The limits below are set up in a data-driven way according to Ethereum historical trace, which should cover >99% use cases._
 
 _If your project requests higher limits, please_ [_reach out to us_](https://form.typeform.com/to/lduiliob?typeform-source=brevis.network)_. Brevis can support **much higher data limits** on a partner-request basis._&#x20;
-{% endhint %}
+
 
 ### Transaction
 

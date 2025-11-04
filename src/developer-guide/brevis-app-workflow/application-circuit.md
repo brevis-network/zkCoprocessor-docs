@@ -32,7 +32,7 @@ type AppCircuit interface {
 
 Here is a demonstration of a custom app circuit in action:
 
-{% code title="demo_circuit.go" %}
+
 ```go
 package app
 
@@ -96,7 +96,7 @@ func (c *AppCircuit) Define(api *sdk.CircuitAPI, input sdk.DataInput) error {
     return nil
 }
 ```
-{% endcode %}
+
 
 ## Circuit API
 

@@ -6,7 +6,7 @@ Our app's goal is to allow anyone to prove to an on-chain smart contract that an
 
 Edit [circuit.go](https://github.com/brevis-network/brevis-quickstart-ts/blob/main/prover/circuits/circuit.go) and write our circuit
 
-{% code title="prover/circuits/circuit.go" %}
+
 ```go
 package circuits
 
@@ -55,7 +55,7 @@ func (c *AppCircuit) Define(api *sdk.CircuitAPI, in sdk.DataInput) error {
 	return nil
 }
 ```
-{% endcode %}
+
 
 ## Testing the Circuit
 
@@ -63,7 +63,7 @@ Edit [circuit\_test.go](https://github.com/brevis-network/brevis-quickstart-ts/b
 
 [Read more on testing here](../brevis-app-workflow/application-circuit.md#circuit-testing)
 
-{% code title="prover/circuits/circuit_test.go" %}
+
 ```go
 // ...
 
@@ -105,18 +105,18 @@ func TestCircuit(t *testing.T) {
 	test.ProverSucceeded(t, appCircuit, appCircuitAssignment, circuitInput)
 } 
 ```
-{% endcode %}
+
 
 ## Spin Up a Prover for Your AppCircuit
 
-{% code title="prover/cmd/main.go" %}
+
 ```go
 proverService, err := prover.NewService(&AppCircuit{}, config)
 // ...
 err = proverService.Serve(33247)
 // ...
 ```
-{% endcode %}
+
 
 Then, we run the main program to start up the prover
 
@@ -168,11 +168,11 @@ setup done in 2.392068s
 
 </details>
 
-{% hint style="warning" %}
+> **Note:** 
 command line tool [_**curl**_](https://everything.curl.dev/index.html) is required for downloading srs ignition file.&#x20;
 
 At the same time, you may download it through browser directly and put it into your srs file folder. Brevis sdk will use $HOME/kzgsrs/kzg\_srs\_100800000\_bn254\_MAIN\_IGNITI as _<mark style="color:red;">**file path**</mark>_ if srsDir configuration is $HOME/kzgsrs.
-{% endhint %}
+
 
 #### &#x20;The VK Hash
 

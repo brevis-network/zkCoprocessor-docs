@@ -10,10 +10,14 @@ Integrating your dApp with Brevis only takes three simple steps:
 
 Check out this short intro video to get an idea of what Brevis does:
 
-{% embed url="https://www.youtube.com/embed/TMwaMF1JziE?si=ZVeBvCAZwRiBFJ3a" %}
+[![YouTube Video](https://img.youtube.com/vi/TMwaMF1JziE/maxresdefault.jpg)](https://www.youtube.com/embed/TMwaMF1JziE?si=ZVeBvCAZwRiBFJ3a)
+
+[Watch on YouTube](https://www.youtube.com/embed/TMwaMF1JziE?si=ZVeBvCAZwRiBFJ3a)
 
 You can also check out a concrete example of Uniswap v4 trading fee discount hook built with Brevis SDK.&#x20;
 
-{% embed url="https://www.youtube.com/watch?v=1cjC8D_-jso" %}
+[![YouTube Video](https://img.youtube.com/vi/1cjC8D_-jso/maxresdefault.jpg)](https://www.youtube.com/watch?v=1cjC8D_-jso)
+
+[Watch on YouTube](https://www.youtube.com/watch?v=1cjC8D_-jso)
 
 In the following sections, we break down these steps with an end-to-end workflow.

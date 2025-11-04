@@ -44,6 +44,6 @@ Please refer to the docs for [Typescript SDK](https://github.com/brevis-network/
 
 You can find the protobuf definitions in [this repo](https://github.com/brevis-network/brevis-proto/blob/d9a9843fc4562e9a3fdcbf16ec831d0e85bba08b/sdk/prover.proto#L9).
 
-{% hint style="info" %}
+> **Note:** 
 If you are using Go, you can simply import `github.com/brevis-network/brevis-sdk/sdk/proto/sdkproto`
-{% endhint %}
+

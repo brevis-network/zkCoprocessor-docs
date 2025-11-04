@@ -14,9 +14,9 @@ type DataInput struct {
 
 You can create a `sdk.DataStream` around the list you want to process or you can directly access them.
 
-{% hint style="warning" %}
+> **Note:** 
 Not every data point in the lists is necessarily valid. For example, if you allocate 3 slots for receipts but add only two receipts through `app.AddReceipt`, then the last receipt item would remain empty. When using DataStream methods, e.g.`sdk.NewDataStream(input.Receipts).Mean(...)`,  empty checks are done for you so that when you do aggregation operations such as `Mean`, you won't account for data located at those empty slots. If you access `DataPoints` directly (e.g. inputs.Receipts\[3]), you are forgoing this automatic empty check.
-{% endhint %}
+
 
 ## `CircuitVariable` Data Types
 
@@ -54,7 +54,7 @@ Lists can hold `CircuitVariable`s of a homogeneous type (e.g. `sdk.List[sdk.Uint
 
 There are 7 pre-defined Tuple types from size 2 to 8. This is your go-to method of defining your custom data structures. You can use any type that implements `CircuitVariable` in Tuple fields. Nested Tuples are also possible.
 
-{% hint style="info" %}
+> **Note:** 
 #### Tip:
 
 If your Tuple gets too long, you can create a Go type alias for it to make your code more readable.
@@ -71,7 +71,7 @@ type MySchema = sdk.Tuple8[
     sdk.Receipt,
 ]
 ```
-{% endhint %}
+
 
 #### `sdk.Receipt`/`sdk.StorageSlot`/`sdk.Transaction`
 
@@ -106,9 +106,9 @@ type LogField struct {
 }
 ```
 
-{% hint style="info" %}
+> **Note:** 
 For each transaction receipt, you can choose to use up to `NumMaxLogFields` fields. Currently this limit is set to 3.
-{% endhint %}
+
 
 ```go
 type StorageSlot struct {
@@ -136,9 +136,9 @@ type Transaction struct {
 }
 ```
 
-{% hint style="warning" %}
+> **Note:** 
 Currently, only transactions of type 0 (legacy) and 2 (dynamic fee) are supported.
-{% endhint %}
+
 
 ## Defining Constant Variables
 
