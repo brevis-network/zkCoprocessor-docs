@@ -37,14 +37,21 @@ jobs:
     - name: Backup processed files
       run: |
         # Create backup of processed files before switching branches
-        # Copy all files and folders from root (excluding .git and .github)
-        mkdir -p /tmp/processed_src
-        
         # Copy all files and directories, including hidden ones like .gitbook
         # But exclude .git and .github directories
+        mkdir -p /tmp/processed_src
         find . -maxdepth 1 -not -name '.' -not -name '.git' -not -name '.github' -exec cp -r {} /tmp/processed_src/ \;
-        
         echo "Backed up processed files"
+
+    - name: Stash changes before branch switch
+      run: |
+        # Stash any changes made by the processing script to avoid branch switch conflicts
+        if ! git diff --quiet || ! git diff --cached --quiet; then
+          git stash push -m "Temporary stash of processed files for deploy sync"
+          echo "Stashed changes before branch switch"
+        else
+          echo "No changes to stash"
+        fi
 
     - name: Switch to deploy branch
       run: |
@@ -97,8 +104,15 @@ jobs:
         # Switch back to main branch
         git checkout main
         
-        # Revert any changes made by the process_markdown.py script
-        # Revert all tracked files except .github directory
-        git status --porcelain | grep -E '^.M' | grep -v '.github/' | cut -c4- | xargs -r git checkout --
+        # Drop the stash to revert changes (we don't need them anymore)
+        if git stash list | grep -q "Temporary stash of processed files for deploy sync"; then
+          git stash drop
+          echo "Dropped stash - changes reverted"
+        else
+          echo "No stash to drop"
+        fi
+        
+        # Ensure we're in clean state
+        git reset --hard HEAD
         
         echo "Reverted processing changes on main branch"
