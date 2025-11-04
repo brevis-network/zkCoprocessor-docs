@@ -1,0 +1,41 @@
+# Table of contents
+
+## Developer Guide
+
+* [Introduction](README.md)
+  * [Brevis coChain](developer-guide/introduction/brevis-cochain.md)
+* [Brevis App Workflow](developer-guide/brevis-app-workflow/README.md)
+  * [Data Access Module](developer-guide/brevis-app-workflow/data-access-module.md)
+  * [Application Circuit](developer-guide/brevis-app-workflow/application-circuit.md)
+  * [Compiling & Proving](developer-guide/brevis-app-workflow/compiling-and-proving.md)
+  * [Contract Integration](developer-guide/brevis-app-workflow/contract-integration.md)
+  * [coChain Mode](developer-guide/brevis-app-workflow/cochain-mode.md)
+* [Tutorial](developer-guide/tutorial/README.md)
+  * [Building the App Circuit](developer-guide/tutorial/building-the-app-circuit.md)
+  * [Writing the App Contract](developer-guide/tutorial/writing-the-app-contract.md)
+  * [Putting Everything Together](developer-guide/tutorial/putting-everything-together.md)
+
+## Developer Resources
+
+* [Circuit SDK Reference](developer-resources/circuit-sdk-reference/README.md)
+  * [Brevis App](developer-resources/circuit-sdk-reference/brevis-app.md)
+  * [App Circuit Interface](developer-resources/circuit-sdk-reference/app-circuit-interface.md)
+  * [Custom Inputs](developer-resources/circuit-sdk-reference/custom-inputs.md)
+  * [Circuit Data Types](developer-resources/circuit-sdk-reference/circuit-data-types.md)
+  * [Circuit API](developer-resources/circuit-sdk-reference/circuit-api.md)
+  * [DataStream API](developer-resources/circuit-sdk-reference/datastream-api.md)
+  * [Prover Service](developer-resources/circuit-sdk-reference/prover-service.md)
+  * [Peripheral APIs](developer-resources/circuit-sdk-reference/peripheral-apis.md)
+  * [Go Workflow](developer-resources/circuit-sdk-reference/go-workflow.md)
+* [Brevis SDK Typescript Reference](developer-resources/brevis-sdk-typescript-reference/README.md)
+  * [Brevis Client](developer-resources/brevis-sdk-typescript-reference/brevis-client.md)
+  * [Prover Client](developer-resources/brevis-sdk-typescript-reference/prover-client.md)
+* [More Examples and Ideas](developer-resources/more-examples-and-ideas.md)
+* [Limits and Performance](developer-resources/limits-and-performance.md)
+* [Contract Addresses & RPC Endpoints](developer-resources/contract-addresses-and-rpc-endpoints.md)
+* [Legacy Deployments](developer-resources/legacy-deployments.md)
+* [FAQ/Troubleshooting](developer-resources/faq-troubleshooting.md)
+* [Arithmetic Circuit Primer](developer-resources/arithmetic-circuit-primer.md)
+* [Security and Transparency](developer-resources/security-and-transparency/README.md)
+  * [Trusted Setup](developer-resources/security-and-transparency/trusted-setup.md)
+  * [Audit Reports](developer-resources/security-and-transparency/audit-reports.md)
