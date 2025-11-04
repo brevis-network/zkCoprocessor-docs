@@ -34,18 +34,28 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
+    - name: Backup processed files
+      run: |
+        # Create backup of processed files before switching branches
+        cp -r src /tmp/processed_src
+        echo "Backed up processed files"
+
     - name: Switch to deploy branch
       run: |
-        git fetch origin deploy
-        git checkout deploy
+        git fetch origin deploy || echo "Deploy branch doesn't exist yet, will be created"
+        git checkout deploy || git checkout -b deploy
 
     - name: Sync processed files to deploy branch
       run: |
-        # Remove existing src folder in deploy branch
-        rm -rf src
+        # Remove existing src folder in deploy branch (if it exists)
+        if [ -d "src" ]; then
+          rm -rf src
+          echo "Removed existing src folder"
+        fi
         
-        # Copy processed files from main branch
-        git checkout main -- src
+        # Copy processed files from backup
+        cp -r /tmp/processed_src src
+        echo "Copied processed files to deploy branch"
         
         # Add and commit changes
         git add src
@@ -55,6 +65,9 @@ jobs:
         else
           echo "No changes to commit"
         fi
+        
+        # Clean up backup
+        rm -rf /tmp/processed_src
 
     - name: Revert changes on main branch
       run: |
