@@ -8,7 +8,7 @@ AZTEC ran Ignition, an MPC ceremony to generate a CRS for privacy network and ot
 
 **Generate SRS steps:**
 
-* Get the ignition transcript files on Mainnet: [https://aztec-ignition.s3.eu-west-2.amazonaws.com/index.html#MAIN%20IGNITION](https://aztec-ignition.s3.eu-west-2.amazonaws.com/index.html#MAIN%20IGNITION/).
+* Get the ignition transcript files on Mainnet: [https://aztec-ignition.s3.eu-west-2.amazonaws.com/index.html#MAIN%20IGNITION](https://aztec-ignition.s3.eu-west-2.amazonaws.com/index.html#MAIN%20IGNITION/)
 * Verify that each participant signed the SHA256 digest of each transcript file they generated. the verifier tool is provided by Gnark team: [https://github.com/Consensys/gnark-ignition-verifier](https://github.com/Consensys/gnark-ignition-verifier)
 * Generate SRS file via [gnark-ignition-verifier](https://github.com/Consensys/gnark-ignition-verifier) main script, the participants generated 100.8 million BN254 points, Approximately corresponding to the constraints gates K = 26.
 
