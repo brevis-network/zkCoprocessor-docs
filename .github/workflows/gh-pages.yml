@@ -24,6 +24,9 @@ jobs:
             mdbook clean
             mdbook build
 
+      - name: Include custom tab icon in site output
+        run: cp theme/web_logo.svg book/web_logo.svg
+
       - name: Include CNAME in site output
         run: cp CNAME book/CNAME
 
