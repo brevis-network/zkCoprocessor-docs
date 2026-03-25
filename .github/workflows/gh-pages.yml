@@ -24,6 +24,9 @@ jobs:
             mdbook clean
             mdbook build
 
+      - name: Include CNAME in site output
+        run: cp CNAME book/CNAME
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
