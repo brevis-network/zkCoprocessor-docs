@@ -13,12 +13,27 @@ jobs:
       actions: read
     
     steps:
+    - name: Verify PAT_TOKEN is configured
+      env:
+        PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+      run: |
+        if [ -z "${PAT_TOKEN// }" ]; then
+          echo "::error::PAT_TOKEN secret is missing or empty."
+          echo "::error::Set a valid Personal Access Token (Contents: Read/Write) in"
+          echo "::error::Settings → Secrets and variables → Actions → PAT_TOKEN."
+          echo "::error::A PAT is required so the push to 'deploy' triggers the gh-pages workflow"
+          echo "::error::(pushes made with the default GITHUB_TOKEN do not trigger other workflows)."
+          exit 1
+        fi
+        echo "PAT_TOKEN is present."
+
     - name: Checkout main branch
       uses: actions/checkout@v4
       with:
         ref: main
         fetch-depth: 0
-        token: ${{ secrets.PAT_TOKEN || github.token }}
+        persist-credentials: true
+        token: ${{ secrets.PAT_TOKEN }}
 
     - name: Setup Python
       uses: actions/setup-python@v4
